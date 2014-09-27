@@ -11,7 +11,7 @@ namespace Assets.Scripts
         public float LogsToLevel;
         private int _logs;
         public int DamageLevelMultiplier;
-        public float SwingSpeedMultiplayerLevelPlus;
+        public float SwingSpeedLevelPlus;
         public float HitForceLevelPlus;
 
         public void Update()
@@ -41,7 +41,7 @@ namespace Assets.Scripts
             Instantiate(EffectPrefab, EffectSpawnLocation.position, EffectSpawnLocation.rotation);
 
             Axe.Damage *= DamageLevelMultiplier;
-            Axe.SwingSpeedMultiplayer += SwingSpeedMultiplayerLevelPlus;
+            Axe.SwingSpeedMultiplayer += SwingSpeedLevelPlus;
             Axe.HitForce += HitForceLevelPlus;
         }
     }
