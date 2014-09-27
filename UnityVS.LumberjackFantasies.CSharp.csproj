@@ -178,6 +178,7 @@
     <Compile Include="Assets\Scripts\AddOnFunctions.cs" />
     <Compile Include="Assets\Scripts\AxeStats.cs" />
     <Compile Include="Assets\Scripts\AxeSwinger.cs" />
+    <Compile Include="Assets\Scripts\ColorRandomizer.cs" />
     <Compile Include="Assets\Scripts\CuttableTree.cs" />
     <Compile Include="Assets\Scripts\GibScript.cs" />
     <Compile Include="Assets\Scripts\Lumberjack.cs" />
