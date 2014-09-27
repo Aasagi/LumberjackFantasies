@@ -8,7 +8,6 @@ namespace Assets.Scripts
         // Use this for initialization
         public GameObject Axe;
         public ParticleSystem Footsteps; 
-        public AxeSwinger AxeSwinger;
         private Vector3 _previousPosition;
         public ScoreDisplay Display;
 
@@ -39,7 +38,7 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                AxeSwinger.SwingAxe();
+
             }
             if (_previousPosition != transform.position)
             {

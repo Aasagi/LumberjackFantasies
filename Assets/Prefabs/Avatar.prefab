@@ -1235,6 +1235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Axe: {fileID: 11400010}
+  AxeOne: {fileID: 100008}
+  AxeThree: {fileID: 0}
+  AxeTwo: {fileID: 0}
   DamageLevelMultiplier: 2
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 400004}
@@ -1254,6 +1257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AxeBase: {fileID: 0}
+  _rotationProgress: 0
+  _swinging: 0
   Axe: {fileID: 11400010}
 --- !u!114 &11400008
 MonoBehaviour:
@@ -1268,7 +1273,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Axe: {fileID: 100008}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
-  AxeSwinger: {fileID: 11400006}
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400004}
