@@ -14,6 +14,7 @@ namespace Assets.Scripts
         private void Start()
         {
             AxeBase.SetActive(false);
+            collider.isTrigger = false;
         }
 
         public void SwingAxe()
@@ -22,6 +23,7 @@ namespace Assets.Scripts
             {
                 _swinging = true;
                 AxeBase.SetActive(true);
+                collider.isTrigger = true;
             }
         }
 
@@ -43,6 +45,7 @@ namespace Assets.Scripts
             _rotationProgress = 0.0f;
             AxeBase.transform.localRotation = _startRotation;
             AxeBase.SetActive(false);
+            collider.isTrigger = false;
         }
     }
 }
