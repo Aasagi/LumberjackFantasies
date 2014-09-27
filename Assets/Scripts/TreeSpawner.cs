@@ -15,7 +15,7 @@ public class TreeSpawner : MonoBehaviour
                 var xPos = Random.Range(-80, 80);
                 var zPos = Random.Range(-80, 80);
                 var yPos = terrain.SampleHeight(new Vector3(xPos, 0.0f, zPos));
-                var scale = Random.Range(1.0f, 2.0f);
+                var scale = Random.Range(0.8f, 1.2f);
                 var newObject = Instantiate(treePrefabs[Random.Range(0, treePrefabs.Count)], new Vector3(xPos, yPos, zPos), new Quaternion()) as GameObject;
                 newObject.transform.localScale = new Vector3(scale, scale, scale);
             }

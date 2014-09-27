@@ -74,8 +74,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 60a14bae6171330439bef98eed843ecd, type: 2}
-  - {fileID: 2100000, guid: 2d71d74c1db471c4d857a5a7d8629c7b, type: 2}
+  - {fileID: 2100000, guid: 7e4c45de15df77041b4964d9add27d1e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -89,7 +88,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 4300000, guid: 62dd5962435b3df45a8b7b43ce4a4231, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 527546d7a7937a544b829f0c96b5c913, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -147,10 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  Health: 30
+  Health: 60
   BirdScatterPrefab: {fileID: 100000, guid: 0d73d5fa7a738ac45858dd03af91501d, type: 2}
   TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
-  TreeDeathPrefab: {fileID: 100002, guid: 02ab537e9b91ce040904d77ad609a349, type: 2}
+  TreeDeathPrefab: {fileID: 100002, guid: d7c536c5ac7228747856a34ef4aa2be5, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
