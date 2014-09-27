@@ -736,7 +736,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1659,6 +1659,7 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_Animations:
+  - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -1693,18 +1694,18 @@ MonoBehaviour:
   walkAnimation: {fileID: 0}
   runAnimation: {fileID: 0}
   jumpPoseAnimation: {fileID: 0}
-  walkMaxAnimationSpeed: .75
+  walkMaxAnimationSpeed: 1
   trotMaxAnimationSpeed: 1
   runMaxAnimationSpeed: 1
   jumpAnimationSpeed: 1.14999998
   landAnimationSpeed: 1
-  walkSpeed: 5
-  trotSpeed: 4
-  runSpeed: 6
+  walkSpeed: 8
+  trotSpeed: 8
+  runSpeed: 8
   inAirControlAcceleration: 3
-  jumpHeight: .5
+  jumpHeight: 2
   gravity: 20
-  speedSmoothing: 10
+  speedSmoothing: 250
   rotateSpeed: 500
   trotAfterSeconds: 3
   canJump: 0
