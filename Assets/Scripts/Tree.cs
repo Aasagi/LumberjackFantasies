@@ -1,14 +1,15 @@
 ﻿using System;
 using Assets.Scripts;
 using UnityEngine;
-using System.Collections;
-using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class Tree : MonoBehaviour
 {
     public int Health;
 
     private float cutCooldown;
+    private bool isFirstHit = false;
+    public GameObject birdScatterPrefab;
     public GameObject treeHitPrefab;
     public GameObject treeDeathPrefab;
     // Use this for initialization
@@ -27,7 +28,7 @@ public class Tree : MonoBehaviour
         {
             if (Health <= 0)
             {
-                if (rigidbody.IsSleeping())
+                if (rigidbody.velocity.magnitude < 0.1f)
                 {
                     Instantiate(treeDeathPrefab, transform.position, new Quaternion());
                     AddOnFunctions.KillAndDestroy(gameObject);
@@ -36,16 +37,17 @@ public class Tree : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (Health > 0 && rigidbody.transform.up.y < 0.8)
-        {
-            InflictDamage(Health);
-        }
-    }
-
     private void InflictDamage(int damage)
     {
+        if (isFirstHit == false)
+        {
+            isFirstHit = true;
+            var chance = Random.Range(0, 100);
+            if (chance <= 20)
+            {
+                Instantiate(birdScatterPrefab, transform.position, new Quaternion());
+            }
+        }
         Health = Math.Max(0, Health - damage);
         Debug.Log("Health left: " + Health);
     }
@@ -57,9 +59,13 @@ public class Tree : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag.EndsWith("Tree") && collision.relativeVelocity.magnitude > 3.0f)
+        if (rigidbody.isKinematic == true && collision.collider.tag.EndsWith("Tree") && collision.relativeVelocity.magnitude > 3.0f)
         {
             rigidbody.isKinematic = false;
+            if (Health > 0)
+            {
+                InflictDamage(Health);
+            }
         }
     }
 
