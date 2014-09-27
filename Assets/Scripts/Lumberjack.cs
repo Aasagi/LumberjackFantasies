@@ -11,6 +11,7 @@ namespace Assets.Scripts
         private Vector3 _previousPosition;
 
         public float WalkSpeed = 2.0f;
+        public LumberjackLevler Levler;
 
         private void Start()
         {
@@ -44,6 +45,7 @@ namespace Assets.Scripts
             if (collider.tag.Equals("PickUp"))
             {
                 Destroy(collider.gameObject);
+                Levler.GiveLog(1);
             }
         }
     }
