@@ -20,6 +20,7 @@ namespace Assets.Scripts
         public float SwingSpeedLevelPlus;
         public int ThirdAxeLevel;
 
+
         private int _level = 1;
         private int _logs;
 
@@ -34,6 +35,7 @@ namespace Assets.Scripts
         public void Start()
         {
             if (LevelChanged != null) LevelChanged(_level, null);
+
         }
 
         public void GiveLog(int nbrOfLogs)
