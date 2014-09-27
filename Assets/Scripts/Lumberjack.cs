@@ -16,9 +16,6 @@ namespace Assets.Scripts
         {
             _previousPosition = transform.position;
             Footsteps.Stop();
-         //   axeCollider = Axe.GetComponent<BoxCollider>();
-
-           // axeCollider.enabled = false;
         }
 
         // Update is called once per frame
