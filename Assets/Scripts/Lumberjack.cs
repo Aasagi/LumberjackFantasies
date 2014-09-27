@@ -42,5 +42,13 @@ namespace Assets.Scripts
                 footsteps.Stop();
             }
         }
+
+        void OnTriggerEnter(Collider collider)
+        {
+            if (collider.tag.Equals("PickUp"))
+            {
+                Destroy(collider.gameObject);
+            }
+        }
     }
 }
