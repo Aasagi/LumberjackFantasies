@@ -6,9 +6,11 @@ namespace Assets.Scripts
     {
         public GameObject EffectPrefab;
         public Transform EffectSpawnLocation;
+        public AxeStats Axe;
         public float LevelRequirementIncrement = 10;
         public float LogsToLevel = 10;
         private int _logs;
+        public int AxeLevelDmgMultiplier;
 
         public void GiveLog(int nbrOfLogs)
         {
@@ -27,6 +29,8 @@ namespace Assets.Scripts
             LogsToLevel += LogsToLevel + LevelRequirementIncrement;
 
             Instantiate(EffectPrefab, EffectSpawnLocation.position, EffectSpawnLocation.rotation);
+
+            Axe.Damage *= AxeLevelDmgMultiplier;
         }
     }
 }

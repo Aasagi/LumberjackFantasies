@@ -3,15 +3,15 @@ using Assets.Scripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Tree : MonoBehaviour
+public class CuttableTree : MonoBehaviour
 {
     public int Health;
 
-    private float cutCooldown;
-    private bool isFirstHit = false;
-    public GameObject birdScatterPrefab;
-    public GameObject treeHitPrefab;
-    public GameObject treeDeathPrefab;
+    private float _cutCooldown;
+    private bool _isFirstHit = false;
+    public GameObject BirdScatterPrefab;
+    public GameObject TreeHitPrefab;
+    public GameObject TreeDeathPrefab;
     // Use this for initialization
     void Start()
     {
@@ -20,9 +20,9 @@ public class Tree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cutCooldown > 0.0f)
+        if (_cutCooldown > 0.0f)
         {
-            cutCooldown -= Time.deltaTime;
+            _cutCooldown -= Time.deltaTime;
         }
         else
         {
@@ -30,7 +30,7 @@ public class Tree : MonoBehaviour
             {
                 if (rigidbody.velocity.magnitude < 0.1f)
                 {
-                    Instantiate(treeDeathPrefab, transform.position, new Quaternion());
+                    Instantiate(TreeDeathPrefab, transform.position, new Quaternion());
                     AddOnFunctions.KillAndDestroy(gameObject);
                 }
             }
@@ -39,13 +39,13 @@ public class Tree : MonoBehaviour
 
     private void InflictDamage(int damage)
     {
-        if (isFirstHit == false)
+        if (_isFirstHit == false)
         {
-            isFirstHit = true;
+            _isFirstHit = true;
             var chance = Random.Range(0, 100);
             if (chance <= 20)
             {
-                Instantiate(birdScatterPrefab, transform.position, new Quaternion());
+                Instantiate(BirdScatterPrefab, transform.position, new Quaternion());
             }
         }
         Health = Math.Max(0, Health - damage);
@@ -59,7 +59,7 @@ public class Tree : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (rigidbody.isKinematic == true && collision.collider.tag.EndsWith("Tree") && collision.relativeVelocity.magnitude > 3.0f)
+        if (rigidbody.isKinematic == true && collision.collider.tag.EndsWith("CuttableTree") && collision.relativeVelocity.magnitude > 3.0f)
         {
             rigidbody.isKinematic = false;
             if (Health > 0)
@@ -71,16 +71,23 @@ public class Tree : MonoBehaviour
 
     private void Cut(Collider collider)
     {
-        if (Health <= 0 || cutCooldown > 0.0f)
+        
+
+        if (Health <= 0 || _cutCooldown > 0.0f)
         {
             return;
         }
 
-        InflictDamage(10);
+        var axe = collider.GetComponent<AxeStats>();
+        if (axe == null)
+        {
+            Debug.Log("Could not find axe stats");
+        }
+        InflictDamage(axe.Damage);
         var hitPosition = collider.transform.position;
 
-        cutCooldown = 0.2f;
-        Instantiate(treeHitPrefab, hitPosition, new Quaternion());
+        _cutCooldown = 0.2f;
+        Instantiate(TreeHitPrefab, hitPosition, new Quaternion());
         if (Health > 0)
         {
             animation.Play("JunkWiggle");
@@ -94,7 +101,7 @@ public class Tree : MonoBehaviour
     private void Timber(Vector3 hitPosition, Vector3 direction)
     {
         rigidbody.isKinematic = false;
-        Instantiate(treeDeathPrefab, hitPosition, new Quaternion());
+        Instantiate(TreeDeathPrefab, hitPosition, new Quaternion());
         rigidbody.AddForce(new Vector3(500.0f * direction.x, 0.0f, 500.0f * direction.z));
     }
 }

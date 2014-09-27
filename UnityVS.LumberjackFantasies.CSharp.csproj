@@ -58,13 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AddOnFunctions.cs" />
+    <Compile Include="Assets\Scripts\AxeStats.cs" />
     <Compile Include="Assets\Scripts\AxeSwinger.cs" />
+    <Compile Include="Assets\Scripts\CuttableTree.cs" />
     <Compile Include="Assets\Scripts\GibScript.cs" />
     <Compile Include="Assets\Scripts\Lumberjack.cs" />
     <Compile Include="Assets\Scripts\LumberjackLevler.cs" />
-    <Compile Include="Assets\Scripts\ObjExporterScript.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
-    <Compile Include="Assets\Scripts\Tree.cs" />
     <Compile Include="Assets\Scripts\TreeSpawner.cs" />
     <Compile Include="Assets\Scripts\destroyMe.cs" />
     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
