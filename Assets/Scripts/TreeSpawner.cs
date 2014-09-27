@@ -9,12 +9,14 @@ public class TreeSpawner : MonoBehaviour
 	void Start () {
 	    if (treePrefab != null)
 	    {
-            for(var i = 0; i < 500; i++)
+            for(var i = 0; i < 1000; i++)
             {
                 var xPos = Random.Range(-80, 80);
                 var zPos = Random.Range(-80, 80);
                 var yPos = terrain.SampleHeight(new Vector3(xPos, 0.0f, zPos));
-                Instantiate(treePrefab, new Vector3(xPos, yPos, zPos), new Quaternion());
+                var scale = Random.Range(1.0f, 2.0f);
+                var newObject = Instantiate(treePrefab, new Vector3(xPos, yPos, zPos), new Quaternion()) as GameObject;
+                newObject.transform.localScale = new Vector3(scale, scale, scale);
             }
 	    }
 	}
