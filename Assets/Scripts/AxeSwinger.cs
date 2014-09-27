@@ -1,49 +1,47 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class AxeSwinger : MonoBehaviour
     {
+        private readonly Quaternion _endRotation = Quaternion.Euler(0, 90, 0);
+        private readonly Quaternion _startRotation = Quaternion.Euler(0, -90, 0);
         public GameObject AxeBase;
         public float SwingSpeedMultiplayer;
-        private bool swinging;
+        private float _rotationProgress = 0.0f;
+        private bool _swinging;
 
         private void Start()
         {
-            //AxeBase.SetActive(false);
+            AxeBase.SetActive(false);
         }
 
         public void SwingAxe()
         {
-            if (!swinging)
+            if (!_swinging)
             {
-                swinging = true;
+                _swinging = true;
                 AxeBase.SetActive(true);
             }
         }
 
         private void Update()
         {
-            if (swinging)
+            if (!_swinging) return;
+            
+            _rotationProgress += Time.deltaTime*SwingSpeedMultiplayer;
+            AxeBase.transform.localRotation = Quaternion.Slerp(_startRotation, _endRotation, _rotationProgress);
+            if (_rotationProgress >= 1.0f)
             {
-                
-                var rotation = AxeBase.transform.localRotation;
-                rotation.y += Time.deltaTime*SwingSpeedMultiplayer;
-                if (rotation.y >= 0.3f)
-                {
-                    EndRotation();
-                }
-
-                AxeBase.transform.localRotation = rotation;
+                EndRotation();
             }
         }
 
         private void EndRotation()
         {
-            swinging = false;
-            var newRotation = new Quaternion(0, -0.25f, 0, 0);
-            AxeBase.transform.localRotation = newRotation;
+            _swinging = false;
+            _rotationProgress = 0.0f;
+            AxeBase.transform.localRotation = _startRotation;
             AxeBase.SetActive(false);
         }
     }
