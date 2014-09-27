@@ -1,18 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class LumberjackLevler : MonoBehaviour
     {
+        public AxeStats Axe;
+        public int DamageLevelMultiplier;
         public GameObject EffectPrefab;
         public Transform EffectSpawnLocation;
-        public AxeStats Axe;
+        public float HitForceLevelPlus;
+
+        public EventHandler LevelChanged;
         public float LevelRequirementIncrement;
         public float LogsToLevel;
-        private int _logs;
-        public int DamageLevelMultiplier;
         public float SwingSpeedLevelPlus;
-        public float HitForceLevelPlus;
+        private int _logs;
+        private int _level = 1;
 
         public void Update()
         {
@@ -20,6 +24,11 @@ namespace Assets.Scripts
             {
                 LevelUp();
             }
+        }
+
+        public void Start()
+        {
+            if (LevelChanged != null) LevelChanged(_level, null);
         }
 
         public void GiveLog(int nbrOfLogs)
@@ -43,6 +52,9 @@ namespace Assets.Scripts
             Axe.Damage *= DamageLevelMultiplier;
             Axe.SwingSpeedMultiplayer += SwingSpeedLevelPlus;
             Axe.HitForce += HitForceLevelPlus;
+
+            _level++;
+            if (LevelChanged != null) LevelChanged(_level, null);
         }
     }
 }

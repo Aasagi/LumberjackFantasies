@@ -1234,14 +1234,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2367152920e9c45b8eec8c33bf44c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Axe: {fileID: 11400010}
+  DamageLevelMultiplier: 2
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 400004}
-  Axe: {fileID: 11400010}
+  HitForceLevelPlus: 200
   LevelRequirementIncrement: 10
   LogsToLevel: 10
-  DamageLevelMultiplier: 2
   SwingSpeedLevelPlus: 1
-  HitForceLevelPlus: 200
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1269,6 +1269,7 @@ MonoBehaviour:
   Axe: {fileID: 100008}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   AxeSwinger: {fileID: 11400006}
+  Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400004}
 --- !u!114 &11400010
