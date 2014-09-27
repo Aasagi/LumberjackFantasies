@@ -11,7 +11,7 @@ public class TreeSpawner : MonoBehaviour
 	    {
             for(var i = 0; i < 20; i++)
 	        Instantiate(treePrefab,
-	            new Vector3(Random.Range(-20.0f, 20.0f), 5.0f, Random.Range(-20.0f, 20.0f)),
+	            new Vector3(Random.Range(-20.0f, 20.0f), 0.0f, Random.Range(-20.0f, 20.0f)),
 	            new Quaternion());
 	    }
 	}
