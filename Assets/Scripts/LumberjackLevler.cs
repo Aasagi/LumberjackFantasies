@@ -7,10 +7,20 @@ namespace Assets.Scripts
         public GameObject EffectPrefab;
         public Transform EffectSpawnLocation;
         public AxeStats Axe;
-        public float LevelRequirementIncrement = 10;
-        public float LogsToLevel = 10;
+        public float LevelRequirementIncrement;
+        public float LogsToLevel;
         private int _logs;
-        public int AxeLevelDmgMultiplier;
+        public int DamageLevelMultiplier;
+        public float SwingSpeedMultiplayerLevelPlus;
+        public float HitForceLevelPlus;
+
+        public void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.F1))
+            {
+                LevelUp();
+            }
+        }
 
         public void GiveLog(int nbrOfLogs)
         {
@@ -30,7 +40,9 @@ namespace Assets.Scripts
 
             Instantiate(EffectPrefab, EffectSpawnLocation.position, EffectSpawnLocation.rotation);
 
-            Axe.Damage *= AxeLevelDmgMultiplier;
+            Axe.Damage *= DamageLevelMultiplier;
+            Axe.SwingSpeedMultiplayer += SwingSpeedMultiplayerLevelPlus;
+            Axe.HitForce += HitForceLevelPlus;
         }
     }
 }

@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 
-public class AxeStats : MonoBehaviour
+namespace Assets.Scripts
 {
-    public int Damage;
+    public class AxeStats : MonoBehaviour
+    {
+        public int Damage;
+        public float SwingSpeedMultiplayer = 1.0f;
+        public float HitForce;
+    }
 }

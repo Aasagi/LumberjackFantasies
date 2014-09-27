@@ -480,7 +480,9 @@ MonoBehaviour:
   Axe: {fileID: 11400010}
   LevelRequirementIncrement: 10
   LogsToLevel: 10
-  AxeLevelDmgMultiplier: 0
+  DamageLevelMultiplier: 2
+  SwingSpeedMultiplayerLevelPlus: 1
+  HitForceLevelPlus: 500
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -493,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AxeBase: {fileID: 100002}
-  SwingSpeedMultiplayer: 3
+  Axe: {fileID: 11400010}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,6 +524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
+  SwingSpeedMultiplayer: 1
+  HitForce: 500
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

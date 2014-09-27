@@ -101,14 +101,14 @@ public class CuttableTree : MonoBehaviour
         }
         else
         {
-            Timber(hitPosition, transform.position - collider.transform.position);
+            Timber(hitPosition, transform.position - collider.transform.position, axe.HitForce);
         }
     }
 
-    private void Timber(Vector3 hitPosition, Vector3 direction)
+    private void Timber(Vector3 hitPosition, Vector3 direction, float hitForce)
     {
         rigidbody.isKinematic = false;
         Instantiate(TreeDeathPrefab, hitPosition, new Quaternion());
-        rigidbody.AddForce(new Vector3(500.0f * direction.x, 0.0f, 500.0f * direction.z));
+        rigidbody.AddForce(new Vector3(hitForce * direction.x, 0.0f, hitForce * direction.z));
     }
 }
