@@ -5,6 +5,14 @@ using Random = UnityEngine.Random;
 
 public class Tree : MonoBehaviour
 {
+    public enum TreeType
+    {
+        TreeLevel1,
+        TreeLevel2,
+        TreeLevel3
+    }
+
+    public TreeType Type;
     public int Health;
 
     private float cutCooldown;
@@ -12,6 +20,7 @@ public class Tree : MonoBehaviour
     public GameObject birdScatterPrefab;
     public GameObject treeHitPrefab;
     public GameObject treeDeathPrefab;
+
     // Use this for initialization
     void Start()
     {
