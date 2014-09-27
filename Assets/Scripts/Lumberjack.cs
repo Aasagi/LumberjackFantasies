@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -9,6 +10,7 @@ namespace Assets.Scripts
         public ParticleSystem Footsteps; 
         public AxeSwinger AxeSwinger;
         private Vector3 _previousPosition;
+        public ScoreDisplay Display;
 
         public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
@@ -17,6 +19,19 @@ namespace Assets.Scripts
         {
             _previousPosition = transform.position;
             Footsteps.Stop();
+
+            Levler.LevelChanged += LevelChanged;
+            Axe.GetComponent<AxeStats>().DownedTreesChanged += DownedTreesChanged;
+        }
+
+        private void DownedTreesChanged(object sender, EventArgs eventArgs)
+        {
+            Display.ChoppedTrees = (int) sender;
+        }
+
+        private void LevelChanged(object sender, EventArgs eventArgs)
+        {
+            Display.CurrentLevel = (int) sender;
         }
 
         // Update is called once per frame
@@ -46,6 +61,7 @@ namespace Assets.Scripts
             {
                 Destroy(collider.gameObject);
                 Levler.GiveLog(1);
+                Display.CollectedLogs++;
             }
         }
     }

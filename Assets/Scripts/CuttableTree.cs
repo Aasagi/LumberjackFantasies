@@ -102,6 +102,7 @@ public class CuttableTree : MonoBehaviour
         else
         {
             Timber(hitPosition, transform.position - collider.transform.position, axe.HitForce);
+            axe.DownedTrees++;
         }
     }
 
