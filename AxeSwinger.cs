@@ -1,17 +1,19 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class AxeSwinger : MonoBehaviour
     {
+        private readonly Vector3 endRotationEuler = new Vector3(0, 90, 0);
+        private readonly Vector3 startRotationEuler = new Vector3(0, -90, 0);
         public GameObject AxeBase;
         public float SwingSpeedMultiplayer;
+        private float swingProgress = 0;
         private bool swinging;
 
         private void Start()
         {
-            //AxeBase.SetActive(false);
+            AxeBase.SetActive(false);
         }
 
         public void SwingAxe()
@@ -27,23 +29,25 @@ namespace Assets.Scripts
         {
             if (swinging)
             {
-                
-                var rotation = AxeBase.transform.localRotation;
-                rotation.y += Time.deltaTime*SwingSpeedMultiplayer;
-                if (rotation.y >= 0.3f)
+                swingProgress += Time.deltaTime*SwingSpeedMultiplayer;
+
+                Quaternion newRotation = Quaternion.Lerp(Quaternion.Euler(startRotationEuler),
+                    Quaternion.Euler(endRotationEuler), swingProgress);
+                AxeBase.transform.localRotation = newRotation;
+
+                if (swingProgress >= 1.0f)
                 {
                     EndRotation();
                 }
-
-                AxeBase.transform.localRotation = rotation;
             }
         }
 
         private void EndRotation()
         {
             swinging = false;
-            var newRotation = new Quaternion(0, -0.25f, 0, 0);
-            AxeBase.transform.localRotation = newRotation;
+            swingProgress = 0.0f;
+            var newRotation =
+                AxeBase.transform.localRotation = Quaternion.Euler(startRotationEuler);
             AxeBase.SetActive(false);
         }
     }

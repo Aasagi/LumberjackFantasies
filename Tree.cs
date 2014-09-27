@@ -1,79 +1,80 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
-using Object = UnityEngine.Object;
 
-public class Tree : MonoBehaviour
+namespace Assets.Scripts
 {
-    public int Health;
-
-    private float cutCooldown;
-    public GameObject treeHitPrefab;
-    public GameObject treeDeathPrefab;
-    public GameObject logPickUp;
-    // Use this for initialization
-    void Start()
+    public class Tree : MonoBehaviour
     {
-    }
+        public int Health;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (cutCooldown > 0.0f)
+        private float cutCooldown;
+        public GameObject treeHitPrefab;
+        public GameObject treeDeathPrefab;
+        public GameObject logPickUp;
+        // Use this for initialization
+        void Start()
         {
-            cutCooldown -= Time.deltaTime;
         }
-        else
+
+        // Update is called once per frame
+        void Update()
         {
-            if (Health <= 0)
+            if (cutCooldown > 0.0f)
             {
-                if (rigidbody.IsSleeping())
+                cutCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                if (Health <= 0)
                 {
-                    Instantiate(treeDeathPrefab, transform.position, new Quaternion());
-                    Instantiate(logPickUp, transform.position, new Quaternion());
-                    Instantiate(logPickUp, transform.position, new Quaternion());
-                    Destroy(gameObject);
+                    if (rigidbody.IsSleeping())
+                    {
+                        Instantiate(treeDeathPrefab, transform.position, new Quaternion());
+                        Instantiate(logPickUp, transform.position, new Quaternion());
+                        Instantiate(logPickUp, transform.position, new Quaternion());
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
-    }
 
-    private void InflictDamage(int damage)
-    {
-        Health = Math.Max(0, Health - damage);
-        Debug.Log("Health left: " + Health);
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        Cut(collider);
-    }
-
-    private void Cut(Collider collider)
-    {
-        if (Health <= 0 || cutCooldown > 0.0f)
+        private void InflictDamage(int damage)
         {
-            return;
+            Health = Math.Max(0, Health - damage);
+            Debug.Log("Health left: " + Health);
         }
 
-        InflictDamage(10);
-        var hitPosition = collider.transform.position;
-
-        cutCooldown = 0.2f;
-        Instantiate(treeHitPrefab, hitPosition, new Quaternion());
-        if (Health > 0)
+        void OnTriggerEnter(Collider collider)
         {
-            //rigidbody.AddForce(new Vector3(0.0f, 100.0f, 0.0f));
+            Cut(collider);
         }
-        else
-        {
-            Timber(hitPosition, transform.position - collider.transform.position);
-        }
-    }
 
-    private void Timber(Vector3 hitPosition, Vector3 direction)
-    {
-        Instantiate(treeDeathPrefab, hitPosition, new Quaternion());
-        rigidbody.AddForce(new Vector3(500.0f * direction.x, 0.0f, 500.0f * direction.z));
+        private void Cut(Collider collider)
+        {
+            if (Health <= 0 || cutCooldown > 0.0f)
+            {
+                return;
+            }
+
+            InflictDamage(10);
+            var hitPosition = collider.transform.position;
+
+            cutCooldown = 0.2f;
+            Instantiate(treeHitPrefab, hitPosition, new Quaternion());
+            if (Health > 0)
+            {
+                //rigidbody.AddForce(new Vector3(0.0f, 100.0f, 0.0f));
+            }
+            else
+            {
+                Timber(hitPosition, transform.position - collider.transform.position);
+            }
+        }
+
+        private void Timber(Vector3 hitPosition, Vector3 direction)
+        {
+            Instantiate(treeDeathPrefab, hitPosition, new Quaternion());
+            rigidbody.AddForce(new Vector3(500.0f * direction.x, 0.0f, 500.0f * direction.z));
+        }
     }
 }
