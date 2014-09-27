@@ -67,7 +67,7 @@ public class CuttableTree : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (rigidbody.isKinematic == true && collision.collider.tag.EndsWith("CuttableTree") && collision.relativeVelocity.magnitude > 3.0f)
+        if (rigidbody.isKinematic == true && collision.collider.tag.Equals("Tree") && collision.relativeVelocity.magnitude > 3.0f)
         {
             rigidbody.isKinematic = false;
             if (Health > 0)
