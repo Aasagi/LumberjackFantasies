@@ -5,6 +5,14 @@ using Random = UnityEngine.Random;
 
 public class CuttableTree : MonoBehaviour
 {
+    public enum TreeType
+    {
+        TreeLevel1,
+        TreeLevel2,
+        TreeLevel3
+    }
+
+    public TreeType Type;
     public int Health;
 
     private float _cutCooldown;
