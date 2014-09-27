@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts;
 using UnityEngine;
 using System.Collections;
 using Object = UnityEngine.Object;
@@ -10,7 +11,6 @@ public class Tree : MonoBehaviour
     private float cutCooldown;
     public GameObject treeHitPrefab;
     public GameObject treeDeathPrefab;
-    public GameObject logPickUp;
     // Use this for initialization
     void Start()
     {
@@ -30,11 +30,17 @@ public class Tree : MonoBehaviour
                 if (rigidbody.IsSleeping())
                 {
                     Instantiate(treeDeathPrefab, transform.position, new Quaternion());
-                    Instantiate(logPickUp, transform.position, new Quaternion());
-                    Instantiate(logPickUp, transform.position, new Quaternion());
-                    Destroy(gameObject);
+                    AddOnFunctions.KillAndDestroy(gameObject);
                 }
             }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (Health > 0 && rigidbody.transform.up.y < 0.8)
+        {
+            InflictDamage(Health);
         }
     }
 
@@ -63,7 +69,7 @@ public class Tree : MonoBehaviour
         Instantiate(treeHitPrefab, hitPosition, new Quaternion());
         if (Health > 0)
         {
-            //rigidbody.AddForce(new Vector3(0.0f, 100.0f, 0.0f));
+            animation.Play("JunkWiggle");
         }
         else
         {
