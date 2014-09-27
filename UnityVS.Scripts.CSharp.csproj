@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FB81B072-156D-9F12-7807-7D354D63160B}</ProjectGuid>
+    <ProjectGuid>{FCA3078A-A20B-89F2-806E-F38B1348FA05}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,15 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UnityVS.LumberjackFantasies.CSharp.Plugins.csproj">
-      <Project>{A5BFD16E-0A05-D309-0BC0-B5F939671E8E}</Project>
-      <Name>UnityVS.LumberjackFantasies.CSharp.Plugins</Name>
+    <ProjectReference Include="UnityVS.Scripts.CSharp.Plugins.csproj">
+      <Project>{23A7FA3B-9BF1-DE08-E9D2-07D8DB5A52C7}</Project>
+      <Name>UnityVS.Scripts.CSharp.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LumberjackLevler.cs" />
+    <Compile Include="Assets\Scripts\AddOnFunctions.cs" />
     <Compile Include="Assets\Scripts\AxeSwinger.cs" />
     <Compile Include="Assets\Scripts\GibScript.cs" />
     <Compile Include="Assets\Scripts\Lumberjack.cs" />
+    <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\Tree.cs" />
     <Compile Include="Assets\Scripts\TreeSpawner.cs" />
     <Compile Include="Assets\Scripts\destroyMe.cs" />
