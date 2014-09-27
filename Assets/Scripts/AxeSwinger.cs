@@ -46,8 +46,7 @@ namespace Assets.Scripts
         {
             swinging = false;
             swingProgress = 0.0f;
-            var newRotation =
-                AxeBase.transform.localRotation = Quaternion.Euler(startRotationEuler);
+            AxeBase.transform.localRotation = Quaternion.Euler(startRotationEuler);
             AxeBase.SetActive(false);
         }
     }

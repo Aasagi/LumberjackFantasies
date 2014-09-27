@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class LumberjackLevler : MonoBehaviour {
+    private int logs;
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
 	
 	}
@@ -12,4 +13,9 @@ public class LumberjackLevler : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void GiveLog(int nbrOfLogs)
+    {
+        logs += nbrOfLogs;
+    }
 }
