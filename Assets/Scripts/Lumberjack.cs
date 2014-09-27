@@ -6,17 +6,16 @@ namespace Assets.Scripts
     {
         // Use this for initialization
         public GameObject Axe;
-        public ParticleSystem footsteps; 
-        private BoxCollider axeCollider;
-        public AxeSwinger axeSwinger;
-        private Vector3 previousPosition;
+        public ParticleSystem Footsteps; 
+        public AxeSwinger AxeSwinger;
+        private Vector3 _previousPosition;
 
         public float WalkSpeed = 2.0f;
 
         private void Start()
         {
-            previousPosition = transform.position;
-            footsteps.Stop();
+            _previousPosition = transform.position;
+            Footsteps.Stop();
         }
 
         // Update is called once per frame
@@ -24,19 +23,19 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                axeSwinger.SwingAxe();
+                AxeSwinger.SwingAxe();
             }
-            if (previousPosition != transform.position)
+            if (_previousPosition != transform.position)
             {
-                previousPosition = transform.position;
-                if (footsteps.isPlaying == false)
+                _previousPosition = transform.position;
+                if (Footsteps.isPlaying == false)
                 {
-                    footsteps.Play();
+                    Footsteps.Play();
                 }
             }
-            else if (footsteps.isStopped == false)
+            else if (Footsteps.isStopped == false)
             {
-                footsteps.Stop();
+                Footsteps.Stop();
             }
         }
 
