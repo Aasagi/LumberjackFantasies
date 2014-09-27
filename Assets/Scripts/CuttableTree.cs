@@ -79,8 +79,6 @@ public class CuttableTree : MonoBehaviour
 
     private void Cut(Collider collider)
     {
-        
-
         if (Health <= 0 || _cutCooldown > 0.0f)
         {
             return;
@@ -91,6 +89,7 @@ public class CuttableTree : MonoBehaviour
         {
             Debug.Log("Could not find axe stats");
         }
+       
         InflictDamage(axe.Damage);
         var hitPosition = collider.transform.position;
 

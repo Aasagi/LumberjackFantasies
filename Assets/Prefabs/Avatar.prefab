@@ -42,7 +42,6 @@ GameObject:
   - 4: {fileID: 400004}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Player
@@ -435,27 +434,6 @@ TrailRenderer:
       rgba: 16777215
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b167d00b3108411a8a963cba5ddde1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
-  distance: 8
-  height: 5
-  angularSmoothLag: .300000012
-  angularMaxSpeed: 175
-  heightSmoothLag: .300000012
-  snapSmoothLag: .200000003
-  snapMaxSpeed: 720
-  clampHeadPositionScreenSpace: .75
-  lockCameraTimeout: .200000003
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -499,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 400004}
-  Axe: {fileID: 0}
+  Axe: {fileID: 11400010}
   LevelRequirementIncrement: 10
   LogsToLevel: 10
   AxeLevelDmgMultiplier: 0
