@@ -20,9 +20,15 @@ public class CuttableTree : MonoBehaviour
     public GameObject BirdScatterPrefab;
     public GameObject TreeHitPrefab;
     public GameObject TreeDeathPrefab;
+    public PickUp pickupSpawner;
+    
     // Use this for initialization
     void Start()
     {
+        if (pickupSpawner == null)
+        {
+            pickupSpawner = GetComponent<PickUp>();
+        }
     }
 
     // Update is called once per frame
@@ -103,6 +109,8 @@ public class CuttableTree : MonoBehaviour
         {
             Timber(hitPosition, transform.position - collider.transform.position, axe.HitForce);
             axe.DownedTrees++;
+            var componentInParent = axe.GetComponentInParent<Lumberjack>();
+            pickupSpawner.PlayerPosition = componentInParent.transform;
         }
     }
 

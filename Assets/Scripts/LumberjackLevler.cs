@@ -73,7 +73,7 @@ namespace Assets.Scripts
             {
                 AxeOne.SetActive(true);
             }
-            if (level >= SecondAxeLevel && level < ThirdAxeLevel)
+            else if (level >= SecondAxeLevel && level < ThirdAxeLevel)
             {
                 AxeTwo.SetActive(true);
             }

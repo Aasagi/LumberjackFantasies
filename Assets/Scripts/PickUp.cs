@@ -4,6 +4,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public List<GameObject> SpawnableObjects;
+    public Transform PlayerPosition;
 
     public int MinSpawn = 1;
     public int MaxSpawn = 1;
@@ -21,16 +22,21 @@ public class PickUp : MonoBehaviour
 
     void OnDeath()
     {
-        SpawnPickups();
+        SpawnPickups(PlayerPosition);
     }
-    public void SpawnPickups()
+    public void SpawnPickups(Transform playerPosition)
     {
         var numberOfPickups = Random.Range(MinSpawn, MaxSpawn + 1);
 
         for (var spawnIndex = 0; spawnIndex < numberOfPickups; spawnIndex++)
         {
             var objectToSpawn = Random.Range(0, SpawnableObjects.Count);
-            Instantiate(SpawnableObjects[objectToSpawn], transform.position, new Quaternion());
+            var newObject = (GameObject)Instantiate(SpawnableObjects[objectToSpawn], transform.position, new Quaternion());
+            var woodenLog = newObject.GetComponent<GoToPlayer>();
+            if (woodenLog != null)
+            {
+                woodenLog.PlayerPosition = playerPosition;
+            }
         }
     }
 }

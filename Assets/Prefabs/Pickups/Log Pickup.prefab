@@ -14,6 +14,7 @@ GameObject:
   - 96: {fileID: 9600000}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400002}
   m_Layer: 9
   m_Name: Log Pickup
   m_TagString: PickUp
@@ -124,6 +125,19 @@ MonoBehaviour:
   m_fXMinScale: 1
   m_fZMaxScale: 1
   m_fZMinScale: 1
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c93e7b26f89c4241acfb96c6b335ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPosition: {fileID: 0}
+  SpeedMultiplayer: 5
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

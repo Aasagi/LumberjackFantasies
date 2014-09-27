@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnableObjects:
   - {fileID: 100000, guid: c3369bdd938faa64fbd612c4d66cf77a, type: 2}
+  PlayerPosition: {fileID: 0}
   MinSpawn: 0
   MaxSpawn: 3
 --- !u!114 &11400002
@@ -151,6 +152,7 @@ MonoBehaviour:
   BirdScatterPrefab: {fileID: 100000, guid: 0d73d5fa7a738ac45858dd03af91501d, type: 2}
   TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
   TreeDeathPrefab: {fileID: 100002, guid: d7c536c5ac7228747856a34ef4aa2be5, type: 2}
+  pickupSpawner: {fileID: 11400000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
