@@ -17,9 +17,6 @@ namespace Assets.Scripts
         {
             previousPosition = transform.position;
             footsteps.Stop();
-         //   axeCollider = Axe.GetComponent<BoxCollider>();
-
-           // axeCollider.enabled = false;
         }
 
         // Update is called once per frame
@@ -40,14 +37,6 @@ namespace Assets.Scripts
             else if (footsteps.isStopped == false)
             {
                 footsteps.Stop();
-            }
-        }
-
-        void OnTriggerEnter(Collider collider)
-        {
-            if (collider.tag.Equals("PickUp"))
-            {
-                Destroy(collider.gameObject);
             }
         }
     }

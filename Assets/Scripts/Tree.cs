@@ -55,6 +55,14 @@ public class Tree : MonoBehaviour
         Cut(collider);
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag.EndsWith("Tree") && collision.relativeVelocity.magnitude > 3.0f)
+        {
+            rigidbody.isKinematic = false;
+        }
+    }
+
     private void Cut(Collider collider)
     {
         if (Health <= 0 || cutCooldown > 0.0f)
@@ -79,6 +87,7 @@ public class Tree : MonoBehaviour
 
     private void Timber(Vector3 hitPosition, Vector3 direction)
     {
+        rigidbody.isKinematic = false;
         Instantiate(treeDeathPrefab, hitPosition, new Quaternion());
         rigidbody.AddForce(new Vector3(500.0f * direction.x, 0.0f, 500.0f * direction.z));
     }
