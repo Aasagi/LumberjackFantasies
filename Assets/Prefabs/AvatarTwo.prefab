@@ -1711,8 +1711,8 @@ MonoBehaviour:
   Axe: {fileID: 100070}
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 400046}
-  LevelRequirementIncrement: 10
-  LogsToLevel: 10
+  LevelRequirementIncrement: 5
+  LogsToLevel: 5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

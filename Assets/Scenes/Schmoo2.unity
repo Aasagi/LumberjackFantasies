@@ -1451,7 +1451,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400048, guid: bbb548f302c4b964592aba83885baa6e, type: 2}
       propertyPath: MatchDurationSecconds
-      value: 1e+14
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbb548f302c4b964592aba83885baa6e, type: 2}
@@ -2252,8 +2252,8 @@ MonoBehaviour:
   Axe: {fileID: 343363594}
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 854251354}
-  LevelRequirementIncrement: 10
-  LogsToLevel: 10
+  LevelRequirementIncrement: 5
+  LogsToLevel: 5
 --- !u!4 &871596567
 Transform:
   m_ObjectHideFlags: 0
@@ -5355,7 +5355,7 @@ MonoBehaviour:
   PlayerOneWinScreen: {fileID: 1565127021}
   PlayerTwoWinScreen: {fileID: 164800444}
   TimerDisplay: {fileID: 1375216133}
-  MatchDurationSecconds: 1e+14
+  MatchDurationSecconds: 120
   ReplayButton: {fileID: 1136342674}
 --- !u!1 &1989243613
 GameObject:
