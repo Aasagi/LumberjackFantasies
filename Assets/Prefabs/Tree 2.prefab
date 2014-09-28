@@ -190,8 +190,8 @@ MonoBehaviour:
   SpawnableObjects:
   - {fileID: 100000, guid: c3369bdd938faa64fbd612c4d66cf77a, type: 2}
   PlayerPosition: {fileID: 0}
-  MinSpawn: 0
-  MaxSpawn: 3
+  MinSpawn: 6
+  MaxSpawn: 9
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
