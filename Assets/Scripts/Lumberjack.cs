@@ -13,14 +13,18 @@ namespace Assets.Scripts
 
         public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
+        public int PlayerIndex { get; private set; }
 
         private void Start()
         {
+            PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
             _previousPosition = transform.position;
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
             Levler.Axe.GetComponent<AxeStats>().DownedTreesChanged += DownedTreesChanged;
+
+            Display.PlayerNumber = PlayerIndex;
         }
 
         private void DownedTreesChanged(object sender, EventArgs eventArgs)

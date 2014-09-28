@@ -21,7 +21,9 @@ public class CuttableTree : MonoBehaviour
     public GameObject TreeHitPrefab;
     public GameObject TreeDeathPrefab;
     public PickUp pickupSpawner;
-    
+
+    private AxeStats _axeThatCutMe;
+
     // Use this for initialization
     void Start()
     {
@@ -68,35 +70,34 @@ public class CuttableTree : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Cut(collider);
+        var axe = collider.GetComponentInParent<AxeStats>();
+        if (axe == null)
+        {
+            Debug.Log("Could not find axe stats");
+        }
+
+        _axeThatCutMe = axe;
+
+        Cut(collider, axe.Damage, axe.HitForce);
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (rigidbody.isKinematic == true && collision.collider.tag.Equals("Tree") && collision.relativeVelocity.magnitude > 3.0f)
         {
-            rigidbody.isKinematic = false;
-            if (Health > 0)
-            {
-                InflictDamage(Health);
-            }
+            _axeThatCutMe = collision.gameObject.GetComponent<CuttableTree>()._axeThatCutMe;
+            Cut(collider, Health, collision.relativeVelocity.magnitude * 300.0f);
         }
     }
 
-    private void Cut(Collider collider)
+    private void Cut(Collider collider, int damage, float hitForce)
     {
         if (Health <= 0 || _cutCooldown > 0.0f)
         {
             return;
         }
 
-        var axe = collider.GetComponentInParent<AxeStats>();
-        if (axe == null)
-        {
-            Debug.Log("Could not find axe stats");
-        }
-       
-        InflictDamage(axe.Damage);
+        InflictDamage(damage);
         var hitPosition = collider.transform.position;
 
         _cutCooldown = 0.2f;
@@ -107,15 +108,15 @@ public class CuttableTree : MonoBehaviour
         }
         else
         {
-            Timber(hitPosition, transform.position - collider.transform.position, axe.HitForce);
-            axe.DownedTrees++;
-            var componentInParent = axe.GetComponentInParent<Lumberjack>();
+            Timber(hitPosition, transform.position - collider.transform.position, hitForce);
+            var componentInParent = _axeThatCutMe.GetComponentInParent<Lumberjack>();
             pickupSpawner.PlayerPosition = componentInParent.transform;
         }
     }
 
     private void Timber(Vector3 hitPosition, Vector3 direction, float hitForce)
     {
+        _axeThatCutMe.DownedTrees++;
         rigidbody.isKinematic = false;
         Instantiate(TreeDeathPrefab, hitPosition, new Quaternion());
         rigidbody.AddForce(new Vector3(hitForce * direction.x, 0.0f, hitForce * direction.z));

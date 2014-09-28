@@ -2,14 +2,26 @@
 
 public class ScoreDisplay : MonoBehaviour
 {
+    public UILabel PlayerDisplay;
     public UILabel LevelDisplay;
     public UILabel LogsDisplay;
     public UILabel TreeDisplay;
 
+    private int _playerNumber;
     private int _choppedTrees;
     private int _collectedLogs;
     private int _currentLevel;
 
+    public int PlayerNumber
+    {
+        set
+        {
+            _playerNumber = value;
+            PlayerDisplay.text = _playerNumber.ToString();
+        }
+
+        get { return _playerNumber; }
+    }
     public int ChoppedTrees
     {
         set
