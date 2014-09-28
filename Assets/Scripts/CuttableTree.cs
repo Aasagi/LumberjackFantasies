@@ -90,7 +90,7 @@ public class CuttableTree : MonoBehaviour
             return;
         }
 
-        var axe = collider.GetComponent<AxeStats>();
+        var axe = collider.GetComponentInParent<AxeStats>();
         if (axe == null)
         {
             Debug.Log("Could not find axe stats");

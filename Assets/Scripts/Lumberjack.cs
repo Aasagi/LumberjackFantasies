@@ -20,7 +20,7 @@ namespace Assets.Scripts
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
-            Axe.GetComponent<AxeStats>().DownedTreesChanged += DownedTreesChanged;
+            Levler.Axe.GetComponent<AxeStats>().DownedTreesChanged += DownedTreesChanged;
         }
 
         private void DownedTreesChanged(object sender, EventArgs eventArgs)

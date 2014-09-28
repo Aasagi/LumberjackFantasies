@@ -76,7 +76,6 @@ GameObject:
   - 4: {fileID: 400008}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11400010}
   m_Layer: 10
   m_Name: Axe 2 Container
   m_TagString: Weapon
@@ -632,7 +631,6 @@ GameObject:
   - 4: {fileID: 400080}
   - 65: {fileID: 6500002}
   - 54: {fileID: 5400004}
-  - 114: {fileID: 11400000}
   m_Layer: 10
   m_Name: Axe 3 Container
   m_TagString: Weapon
@@ -684,10 +682,26 @@ GameObject:
   - 4: {fileID: 400086}
   - 65: {fileID: 6500004}
   - 54: {fileID: 5400006}
-  - 114: {fileID: 11400012}
   m_Layer: 10
   m_Name: Axe 1 Container
   m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100088
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400088}
+  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
+  m_Layer: 0
+  m_Name: AxeContainer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -751,11 +765,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: -.325706929, y: -.634315312, z: -.595426917, w: .370170265}
-  m_LocalPosition: {x: -4.59761432e-05, y: -0, z: 9.48141824e-05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.58639479e-05, y: -5.80675454e-08, z: 9.49293462e-05}
+  m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1.00000012}
   m_Children:
   - {fileID: 400082}
-  m_Father: {fileID: 400026}
+  m_Father: {fileID: 400088}
   m_RootOrder: 1
 --- !u!4 &400010
 Transform:
@@ -868,9 +882,7 @@ Transform:
   m_LocalPosition: {x: .092426762, y: 7.67579422e-07, z: -2.34368986e-08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400086}
-  - {fileID: 400008}
-  - {fileID: 400080}
+  - {fileID: 400088}
   m_Father: {fileID: 400028}
   m_RootOrder: 0
 --- !u!4 &400028
@@ -1219,11 +1231,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100080}
   m_LocalRotation: {x: -.325706929, y: -.634315312, z: -.595426917, w: .370170265}
-  m_LocalPosition: {x: -4.62909447e-05, y: 0, z: 9.44878266e-05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.61871859e-05, y: -1.88917355e-07, z: 9.47052176e-05}
+  m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1.00000012}
   m_Children:
   - {fileID: 400074}
-  m_Father: {fileID: 400026}
+  m_Father: {fileID: 400088}
   m_RootOrder: 2
 --- !u!4 &400082
 Transform:
@@ -1256,11 +1268,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100086}
-  m_LocalRotation: {x: -.32570675, y: -.634315193, z: -.595426917, w: .370170653}
-  m_LocalPosition: {x: -4.55003537e-05, y: -6.73939758e-06, z: 9.46629589e-05}
+  m_LocalRotation: {x: -.32570678, y: -.634315133, z: -.595426917, w: .370170593}
+  m_LocalPosition: {x: -4.55190529e-05, y: -0, z: 9.48134548e-05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400020}
+  m_Father: {fileID: 400088}
+  m_RootOrder: 0
+--- !u!4 &400088
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400086}
+  - {fileID: 400008}
+  - {fileID: 400080}
   m_Father: {fileID: 400026}
   m_RootOrder: 0
 --- !u!23 &2300000
@@ -1670,7 +1697,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100080}
+  m_GameObject: {fileID: 100088}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 920df0d4c7bf9594b848b66722895c08, type: 3}
@@ -1720,19 +1747,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2367152920e9c45b8eec8c33bf44c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axe: {fileID: 11400012}
-  AxeOne: {fileID: 100086}
-  AxeThree: {fileID: 100080}
-  AxeTwo: {fileID: 100008}
-  DamageLevelMultiplier: 2
+  Axe: {fileID: 100088}
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 400004}
-  HitForceLevelPlus: 200
   LevelRequirementIncrement: 10
   LogsToLevel: 10
-  SecondAxeLevel: 3
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6644271f3ec7aa468ea13f7d447e25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AxeStats: {fileID: 11400000}
+  AxeOne: {fileID: 100086}
+  AxeTwo: {fileID: 100008}
+  AxeThree: {fileID: 100080}
+  DamageLevelMultiplier: 2
   SwingSpeedLevelPlus: 1
+  SecondAxeLevel: 3
   ThirdAxeLevel: 6
+  HitForceLevelPlus: 10
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1744,39 +1783,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f53e8d4250eb47afca7ccd0a17ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axe: {fileID: 100086}
+  Axe: {fileID: 100088}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400004}
---- !u!114 &11400010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920df0d4c7bf9594b848b66722895c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 10
-  SwingSpeedMultiplayer: 1
-  HitForce: 100
---- !u!114 &11400012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920df0d4c7bf9594b848b66722895c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 10
-  SwingSpeedMultiplayer: 1
-  HitForce: 100
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
