@@ -87,7 +87,7 @@ namespace Assets.Scripts
             }
             else
             {
-                CurrentAnimation.Play("Idle");
+                CurrentAnimation.Play("Idle2");
                 Footsteps.Stop();
             }
             if (Input.GetButton(AttackInputButton))
