@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts
 {
@@ -76,30 +77,27 @@ namespace Assets.Scripts
             }
             _axeContainer.ToggleColliderActive(false);
 
-            if (CurrentAnimation != null && lockAnimationTimer <= 0.0f)
+            if (characterController.velocity.magnitude > 0.0f)
             {
-                if (characterController.velocity.magnitude > 0.0f)
-                    CurrentAnimation.Play("Run");
-                else
-                    CurrentAnimation.Play("Idle");
-            }
-            if (Input.GetButton(AttackInputButton))
-            {
-                _axeContainer.ToggleColliderActive(true);
-                PlayLockingAnimation("Chop");
-                //PerformGroundSmash();
-            }
-            if (_previousPosition != transform.position)
-            {
-                _previousPosition = transform.position;
+                CurrentAnimation.Play("Run");
                 if (Footsteps.isPlaying == false)
                 {
                     Footsteps.Play();
                 }
             }
-            else if (Footsteps.isStopped == false)
+            else
             {
+                CurrentAnimation.Play("Idle");
                 Footsteps.Stop();
+            }
+            if (Input.GetButton(AttackInputButton))
+            {
+                _axeContainer.ToggleColliderActive(true);
+                PlayLockingAnimation("Chop");
+                if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
+                {
+                    PerformGroundSmash();
+                }
             }
         }
 
