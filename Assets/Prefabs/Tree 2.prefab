@@ -207,7 +207,7 @@ MonoBehaviour:
   Health: 100
   BirdScatterPrefab: {fileID: 100000, guid: 0d73d5fa7a738ac45858dd03af91501d, type: 2}
   TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
-  TreeDeathPrefab: {fileID: 100002, guid: 02ab537e9b91ce040904d77ad609a349, type: 2}
+  TreeDeathPrefab: {fileID: 100002, guid: 43bd649102fc5a84cb49577382b0495a, type: 2}
   pickupSpawner: {fileID: 11400000}
 --- !u!136 &13600000
 CapsuleCollider:

@@ -66,6 +66,10 @@ ModelImporter:
     4300000: polySurface26
     7400000: Chop
     7400002: Run
+    7400004: Fall
+    7400006: Level
+    7400008: Idle
+    7400010: Idle2
     9500000: //RootNode
     11100000: //RootNode
     13700000: polySurface26
@@ -257,6 +261,350 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fall
+      takeName: Take 001
+      firstFrame: 69
+      lastFrame: 84
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball/L_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball/R_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist/L_Hand_END
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01/HeadEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist/R_Hand_END
+        weight: 1
+      - path: polySurface26
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Level
+      takeName: Take 001
+      firstFrame: 85
+      lastFrame: 98
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball/L_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball/R_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist/L_Hand_END
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01/HeadEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist/R_Hand_END
+        weight: 1
+      - path: polySurface26
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 99
+      lastFrame: 102
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball/L_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball/R_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist/L_Hand_END
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01/HeadEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist/R_Hand_END
+        weight: 1
+      - path: polySurface26
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle2
+      takeName: Take 001
+      firstFrame: 103
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/L_Hip/L_Knee/L_Ankle/L_Ball/L_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/R_Hip/R_Knee/R_Ankle/R_Ball/R_ToeEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/L_Clavicle01/L_Shoulder/L_Elbow/L_Wrist/L_Hand_END
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/Neck01/Head01/HeadEND
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Body_CTRL/Hips_CTRL/Pelvis/Spine01/Spine02/R_Clavicle01/R_Shoulder/R_Elbow/R_Wrist/R_Hand_END
+        weight: 1
+      - path: polySurface26
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -276,7 +624,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
