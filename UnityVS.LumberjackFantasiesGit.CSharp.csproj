@@ -186,8 +186,10 @@
     <Compile Include="Assets\Scripts\Lumberjack.cs" />
     <Compile Include="Assets\Scripts\LumberjackLevler.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
+    <Compile Include="Assets\Scripts\ReplayButton.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\TreeSpawner.cs" />
+    <Compile Include="Assets\Scripts\WinScreen.cs" />
     <Compile Include="Assets\Scripts\destroyMe.cs" />
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
