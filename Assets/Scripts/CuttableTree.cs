@@ -74,7 +74,7 @@ public class CuttableTree : MonoBehaviour
         {
             Cut(collider, collider.GetComponent<Attack>());
         }
-        else if (collider.tag.Equals("Weapon"))
+        else if (collider.tag.Equals("Weapon") || collider.tag.Equals("Weapon2"))
         {
             var axe = collider.GetComponentInParent<AxeStats>();
             Cut(collider, axe.GetComponent<Attack>());
