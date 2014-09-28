@@ -14,10 +14,12 @@ public class AxeContainer : MonoBehaviour
     public int ThirdAxeLevel;
     public float HitForceLevelPlus;
 
+    public int Level { get; private set; }
+
 	// Use this for initialization
-	void Start () 
-    {
-	
+	void Start ()
+	{
+	    Level = 1;
 	}
 	
 	// Update is called once per frame
@@ -26,13 +28,14 @@ public class AxeContainer : MonoBehaviour
 	
 	}
 
-    public void SetLevel(int level)
+    public void IncrementLevel()
     {
         AxeStats.Damage *= DamageLevelMultiplier;
         AxeStats.SwingSpeedMultiplayer += SwingSpeedLevelPlus;
         AxeStats.HitForce += HitForceLevelPlus;
 
-        ActiveAxeForLevel(level);
+        Level++;
+        ActiveAxeForLevel(Level);
     }
 
     private void ActiveAxeForLevel(int level)

@@ -1771,7 +1771,7 @@ MonoBehaviour:
   SwingSpeedLevelPlus: 1
   SecondAxeLevel: 3
   ThirdAxeLevel: 6
-  HitForceLevelPlus: 10
+  HitForceLevelPlus: 100
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
