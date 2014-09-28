@@ -29,7 +29,7 @@ GameObject:
   - 199: {fileID: 19900002}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: TreeDeath 2
+  m_Name: TreeDeath 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5940,7 +5940,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1bc78a67b5614554992b4c910a12efb5, type: 2}
+  - {fileID: 2100000, guid: 20ab504145eae704e9f1818b03496726, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
