@@ -40,6 +40,13 @@ namespace Assets.Scripts
             }
         }
 
+        public void TakeLogs(int nbrOfLogs)
+        {
+            Debug.Log("Log taken");
+
+            _logs -= nbrOfLogs;
+        }
+
         private void LevelUp()
         {
             LogsToLevel += LogsToLevel + LevelRequirementIncrement;
