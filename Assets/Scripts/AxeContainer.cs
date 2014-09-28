@@ -28,9 +28,9 @@ public class AxeContainer : MonoBehaviour
 
     public void SetLevel(int level)
     {
-        AxeStats.Damage *= DamageLevelMultiplier;
+        AxeStats.Attack.Damage *= DamageLevelMultiplier;
         AxeStats.SwingSpeedMultiplayer += SwingSpeedLevelPlus;
-        AxeStats.HitForce += HitForceLevelPlus;
+        AxeStats.Attack.HitForce += HitForceLevelPlus;
 
         ActiveAxeForLevel(level);
     }

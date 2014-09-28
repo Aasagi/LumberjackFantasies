@@ -5,9 +5,8 @@ namespace Assets.Scripts
 {
     public class AxeStats : MonoBehaviour
     {
-        public int Damage;
+        public Attack Attack;
         public float SwingSpeedMultiplayer = 1.0f;
-        public float HitForce;
         private int _downedTrees;
         public EventHandler DownedTreesChanged;
 

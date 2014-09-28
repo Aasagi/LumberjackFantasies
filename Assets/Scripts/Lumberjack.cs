@@ -7,7 +7,8 @@ namespace Assets.Scripts
     {
         // Use this for initialization
         public GameObject Axe;
-        public ParticleSystem Footsteps; 
+        public GameObject GroundSmashPrefab;
+        public ParticleSystem Footsteps;
         private Vector3 _previousPosition;
         public ScoreDisplay Display;
 
@@ -29,12 +30,12 @@ namespace Assets.Scripts
 
         private void DownedTreesChanged(object sender, EventArgs eventArgs)
         {
-            Display.ChoppedTrees = (int) sender;
+            Display.ChoppedTrees = (int)sender;
         }
 
         private void LevelChanged(object sender, EventArgs eventArgs)
         {
-            Display.CurrentLevel = (int) sender;
+            Display.CurrentLevel = (int)sender;
         }
 
         // Update is called once per frame
@@ -42,7 +43,9 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
-
+                var explosionHeight = Terrain.activeTerrain.SampleHeight(Axe.transform.position);
+                var explosionPos = new Vector3(Axe.transform.position.x, explosionHeight, Axe.transform.position.z);
+                Instantiate(GroundSmashPrefab, explosionPos, new Quaternion());
             }
             if (_previousPosition != transform.position)
             {
