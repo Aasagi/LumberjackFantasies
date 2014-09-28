@@ -638,6 +638,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &100080
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400080}
+  - 114: {fileID: 11400072}
+  m_Layer: 5
+  m_Name: Sprite (LumberSplitscreen)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -651,6 +667,7 @@ Transform:
   - {fileID: 400058}
   - {fileID: 400028}
   - {fileID: 400064}
+  - {fileID: 400080}
   m_Father: {fileID: 400002}
   m_RootOrder: 0
 --- !u!4 &400002
@@ -1066,9 +1083,9 @@ Transform:
   m_Children:
   - {fileID: 400054}
   - {fileID: 400070}
+  - {fileID: 400078}
   - {fileID: 400068}
   - {fileID: 400066}
-  - {fileID: 400078}
   m_Father: {fileID: 400000}
   m_RootOrder: 2
 --- !u!4 &400066
@@ -1078,11 +1095,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 128, y: 128, z: 1}
+  m_LocalPosition: {x: 0, y: .5, z: 0}
+  m_LocalScale: {x: 600, y: 600, z: 1}
   m_Children: []
   m_Father: {fileID: 400064}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &400068
 Transform:
   m_ObjectHideFlags: 1
@@ -1090,11 +1107,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .3515625, y: 0, z: 0}
-  m_LocalScale: {x: 255.000015, y: 76, z: 1}
+  m_LocalPosition: {x: 0, y: .5, z: 0}
+  m_LocalScale: {x: 600, y: 600, z: 1}
   m_Children: []
   m_Father: {fileID: 400064}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &400070
 Transform:
   m_ObjectHideFlags: 1
@@ -1156,7 +1173,19 @@ Transform:
   - {fileID: 400076}
   - {fileID: 400074}
   m_Father: {fileID: 400064}
-  m_RootOrder: 4
+  m_RootOrder: 2
+--- !u!4 &400080
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .3515625, z: 0}
+  m_LocalScale: {x: 69.9800034, y: 733.097168, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_RootOrder: 3
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -1737,7 +1766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 0
+  mDepth: 10
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
   mSpriteName: Window
   mFillCenter: 1
@@ -1878,9 +1907,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 4
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mDepth: 101
+  mAtlas: {fileID: 11400000, guid: 7d8fecbe247b6df4da08bc9d1095fe0c, type: 2}
+  mSpriteName: Player 2 VictoryScreen
   mFillCenter: 1
   mType: 0
   mFillDirection: 4
@@ -1899,9 +1928,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 3
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: NGUI
+  mDepth: 100
+  mAtlas: {fileID: 11400000, guid: 7d8fecbe247b6df4da08bc9d1095fe0c, type: 2}
+  mSpriteName: Player 1 VictoryScreen
   mFillCenter: 1
   mType: 0
   mFillDirection: 4
@@ -1920,7 +1949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mDepth: 2
+  mDepth: 11
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
   mText: 00:00
   mMaxLineWidth: 0
@@ -2031,7 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 4
+  mDepth: 1001
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
   mText: "Replay?\t"
   mMaxLineWidth: 0
@@ -2060,7 +2089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 3
+  mDepth: 1000
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
   mSpriteName: Bright
   mFillCenter: 1
@@ -2079,6 +2108,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba121fbd6dad7741a981a765008c8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mDepth: 2
+  mAtlas: {fileID: 11400000, guid: 7d8fecbe247b6df4da08bc9d1095fe0c, type: 2}
+  mSpriteName: LumberSplitscreen
+  mFillCenter: 1
+  mType: 0
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

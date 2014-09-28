@@ -47,7 +47,7 @@ namespace Assets
             }
 
             Time.timeScale = 0;
-            ReplayButton.SetActive(true);
+            //ReplayButton.SetActive(true);
         }
     }
 }

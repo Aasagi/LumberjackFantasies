@@ -15,6 +15,7 @@ public class ReplayButton : MonoBehaviour {
 
     public void OnClick()
     {
-        Application.LoadLevel(Application.loadedLevel); 
+        Time.timeScale = 1;     
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
