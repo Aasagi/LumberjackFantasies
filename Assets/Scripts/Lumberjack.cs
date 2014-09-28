@@ -16,6 +16,19 @@ namespace Assets.Scripts
         public LumberjackLevler Levler;
         public int PlayerIndex { get; private set; }
 
+        private int _downedTrees;
+        public EventHandler DownedTreesChanged;
+
+        public int DownedTrees
+        {
+            get { return _downedTrees; }
+            set
+            {
+                _downedTrees = value;
+                if (DownedTreesChanged != null) DownedTreesChanged(_downedTrees, null);
+            }
+        }
+
         private void Start()
         {
             PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
@@ -23,12 +36,12 @@ namespace Assets.Scripts
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
-            Levler.Axe.GetComponent<AxeStats>().DownedTreesChanged += DownedTreesChanged;
+            DownedTreesChanged += OnDownedTreesChanged;
 
             Display.PlayerNumber = PlayerIndex;
         }
 
-        private void DownedTreesChanged(object sender, EventArgs eventArgs)
+        private void OnDownedTreesChanged(object sender, EventArgs eventArgs)
         {
             Display.ChoppedTrees = (int)sender;
         }
@@ -43,9 +56,7 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                var explosionHeight = Terrain.activeTerrain.SampleHeight(Axe.transform.position);
-                var explosionPos = new Vector3(Axe.transform.position.x, explosionHeight, Axe.transform.position.z);
-                Instantiate(GroundSmashPrefab, explosionPos, new Quaternion());
+                PerformGroundSmash();
             }
             if (_previousPosition != transform.position)
             {
@@ -59,6 +70,14 @@ namespace Assets.Scripts
             {
                 Footsteps.Stop();
             }
+        }
+
+        private void PerformGroundSmash()
+        {
+            var explosionHeight = Terrain.activeTerrain.SampleHeight(Axe.transform.position);
+            var explosionPos = new Vector3(Axe.transform.position.x, explosionHeight, Axe.transform.position.z);
+            var groundSmash = Instantiate(GroundSmashPrefab, explosionPos, new Quaternion()) as GameObject;
+            groundSmash.GetComponent<Attack>().Owner = gameObject;
         }
 
         void OnTriggerEnter(Collider collider)

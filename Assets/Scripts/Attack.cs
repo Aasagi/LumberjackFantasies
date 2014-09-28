@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Attack : MonoBehaviour
 {
+    public GameObject Owner;
     public int Damage;
     public float HitForce;
     public bool Explosive;
