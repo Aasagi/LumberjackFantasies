@@ -47,7 +47,6 @@ GameObject:
   - 136: {fileID: 13600000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400004}
   m_Layer: 8
   m_Name: Tree
   m_TagString: Tree
@@ -139,14 +138,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 4300000, guid: dace1c529cf9ce64b9aa1cf3b4aa8a05, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 38dac736dec87cb4ab9a83533b1bf3cf, type: 3}
 --- !u!33 &3300002
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Mesh: {fileID: 4300002, guid: dace1c529cf9ce64b9aa1cf3b4aa8a05, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 38dac736dec87cb4ab9a83533b1bf3cf, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -210,24 +209,6 @@ MonoBehaviour:
   TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
   TreeDeathPrefab: {fileID: 100002, guid: d7c536c5ac7228747856a34ef4aa2be5, type: 2}
   pickupSpawner: {fileID: 11400000}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6722aab973ad2514a9897b8ae5d411e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Colors:
-  - {r: .882353067, g: .147058845, b: 1, a: 1}
-  - {r: .147058845, g: 1, b: 1, a: 1}
-  - {r: 1, g: .147058845, b: .147058845, a: 1}
-  - {r: .147058845, g: 1, b: .417647123, a: 1}
-  - {r: .652941227, g: 1, b: .147058845, a: 1}
-  - {r: .808823526, g: .762968302, b: .297361583, a: 1}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
