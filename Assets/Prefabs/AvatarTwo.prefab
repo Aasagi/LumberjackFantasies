@@ -1730,7 +1730,7 @@ MonoBehaviour:
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400000}
-  AttackInputButton: Fire2One
+  AttackInputButton: Fire1Two
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
