@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ScoreDisplay : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ScoreDisplay : MonoBehaviour
     private int _choppedTrees;
     private int _collectedLogs;
     private int _currentLevel;
+
+    public EventHandler LogsChanged;
+    public EventHandler LevelChanged;
+    public EventHandler TreesChanged;
 
     public int PlayerNumber
     {
@@ -27,6 +32,7 @@ public class ScoreDisplay : MonoBehaviour
         set
         {
             _choppedTrees = value;
+            if (TreesChanged != null) TreesChanged(_choppedTrees, null);
             TreeDisplay.text = _choppedTrees.ToString();
         }
 
@@ -38,6 +44,7 @@ public class ScoreDisplay : MonoBehaviour
         set
         {
             _collectedLogs = value;
+            if (LogsChanged != null) LogsChanged(_collectedLogs, null);
             LogsDisplay.text = _collectedLogs.ToString();
         }
         get { return _collectedLogs; }
@@ -48,6 +55,7 @@ public class ScoreDisplay : MonoBehaviour
         set
         {
             _currentLevel = value;
+            if (LevelChanged != null) LevelChanged(_currentLevel, null);
             LevelDisplay.text = _currentLevel.ToString();
         }
         get { return _currentLevel; }

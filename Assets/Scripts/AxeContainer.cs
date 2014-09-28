@@ -7,6 +7,7 @@ public class AxeContainer : MonoBehaviour
     public GameObject AxeOne;
     public GameObject AxeTwo;
     public GameObject AxeThree;
+    private GameObject _activeAxe;
 
     public int DamageLevelMultiplier;
     public float SwingSpeedLevelPlus;
@@ -20,6 +21,7 @@ public class AxeContainer : MonoBehaviour
 	void Start ()
 	{
 	    Level = 1;
+	    _activeAxe = AxeOne;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +40,11 @@ public class AxeContainer : MonoBehaviour
         ActiveAxeForLevel(Level);
     }
 
+    public void ToggleColliderActive(bool activate)
+    {
+        _activeAxe.GetComponent<Collider>().isTrigger = activate;
+    }
+
     private void ActiveAxeForLevel(int level)
     {
         AxeOne.SetActive(false);
@@ -48,16 +55,19 @@ public class AxeContainer : MonoBehaviour
         {
             Debug.Log("Activating axe 1");
             AxeOne.SetActive(true);
+            _activeAxe = AxeOne;
         }
         else if (level >= SecondAxeLevel && level < ThirdAxeLevel)
         {
             Debug.Log("Activating axe 2");
             AxeTwo.SetActive(true);
+            _activeAxe = AxeTwo;
         }
         else
         {
             Debug.Log("Activating axe 3");
             AxeThree.SetActive(true);
+            _activeAxe = AxeThree;
         }
     }
 }

@@ -1,19 +1,28 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts
 {
     public class Lumberjack : MonoBehaviour
     {
+
         // Use this for initialization
+        private Animation CurrentAnimation;
+        private AxeContainer _axeContainer;
         public GameObject Axe;
         public GameObject GroundSmashPrefab;
         public ParticleSystem Footsteps;
         private Vector3 _previousPosition;
+        private float lockAnimationTimer;
+        private CharacterController characterController;
+        private Vector3 lockPosition;
+        private Quaternion lockRotation;
         public ScoreDisplay Display;
 
         public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
+        public string AttackInputButton;
         public int PlayerIndex { get; private set; }
 
         private int _downedTrees;
@@ -31,6 +40,9 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            _axeContainer = Axe.GetComponent<AxeContainer>();
+            CurrentAnimation = GetComponentInChildren<Animation>();
+            characterController = GetComponentInParent<CharacterController>();
             PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
             _previousPosition = transform.position;
             Footsteps.Stop();
@@ -49,27 +61,52 @@ namespace Assets.Scripts
         private void LevelChanged(object sender, EventArgs eventArgs)
         {
             Display.CurrentLevel = (int)sender;
+
+            PlayLockingAnimation("Level");
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (lockAnimationTimer > 0.0f)
             {
-                PerformGroundSmash();
+                characterController.transform.position = lockPosition;
+                characterController.transform.rotation = lockRotation;
+                lockAnimationTimer -= Time.deltaTime;
+                return;
             }
-            if (_previousPosition != transform.position)
+            _axeContainer.ToggleColliderActive(false);
+
+            if (characterController.velocity.magnitude > 0.0f)
             {
-                _previousPosition = transform.position;
+                CurrentAnimation.Play("Run");
                 if (Footsteps.isPlaying == false)
                 {
                     Footsteps.Play();
                 }
             }
-            else if (Footsteps.isStopped == false)
+            else
             {
+                CurrentAnimation.Play("Idle");
                 Footsteps.Stop();
             }
+            if (Input.GetButton(AttackInputButton))
+            {
+                _axeContainer.ToggleColliderActive(true);
+                PlayLockingAnimation("Chop");
+                if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
+                {
+                    PerformGroundSmash();
+                }
+            }
+        }
+
+        private void PlayLockingAnimation(string animationName)
+        {
+            CurrentAnimation.Play(animationName);
+            lockAnimationTimer = CurrentAnimation.clip.length;
+            lockPosition = characterController.transform.position;
+            lockRotation = characterController.transform.rotation;
         }
 
         private void PerformGroundSmash()
