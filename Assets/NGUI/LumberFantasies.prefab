@@ -39,21 +39,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 02bed54603471334e8351652b365cab3, type: 2}
+  material: {fileID: 2100000, guid: 1c4e177202e05814eab1a17169b555a4, type: 2}
   sprites:
+  - name: Player 2 VictoryScreen
+    outer:
+      serializedVersion: 2
+      x: 1921
+      y: 2872
+      width: 1218
+      height: 1224
+    inner:
+      serializedVersion: 2
+      x: 1921
+      y: 2872
+      width: 1218
+      height: 1224
+    rotated: 0
+    paddingLeft: .281609207
+    paddingRight: .294745475
+    paddingTop: .0441176482
+    paddingBottom: .0253267977
   - name: LumberSplitscreen
     outer:
       serializedVersion: 2
       x: 0
-      y: 1762
-      width: 1024
-      height: 1024
+      y: 2787
+      width: 1920
+      height: 1309
     inner:
       serializedVersion: 2
       x: 0
-      y: 1762
-      width: 1024
-      height: 1024
+      y: 2787
+      width: 1920
+      height: 1309
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -63,38 +81,20 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 2787
-      width: 1920
-      height: 1309
+      y: 1562
+      width: 1218
+      height: 1224
     inner:
       serializedVersion: 2
       x: 0
-      y: 2787
-      width: 1920
-      height: 1309
+      y: 1562
+      width: 1218
+      height: 1224
     rotated: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Player 2 VictoryScreen
-    outer:
-      serializedVersion: 2
-      x: 1921
-      y: 2787
-      width: 1920
-      height: 1309
-    inner:
-      serializedVersion: 2
-      x: 1921
-      y: 2787
-      width: 1920
-      height: 1309
-    rotated: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: .281609207
+    paddingRight: .294745475
+    paddingTop: .0441176482
+    paddingBottom: .0253267977
   mCoordinates: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
