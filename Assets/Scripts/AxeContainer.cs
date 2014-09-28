@@ -30,9 +30,9 @@ public class AxeContainer : MonoBehaviour
 
     public void IncrementLevel()
     {
-        AxeStats.Damage *= DamageLevelMultiplier;
+        AxeStats.Attack.Damage *= DamageLevelMultiplier;
         AxeStats.SwingSpeedMultiplayer += SwingSpeedLevelPlus;
-        AxeStats.HitForce += HitForceLevelPlus;
+        AxeStats.Attack.HitForce += HitForceLevelPlus;
 
         Level++;
         ActiveAxeForLevel(Level);

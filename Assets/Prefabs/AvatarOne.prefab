@@ -699,6 +699,7 @@ GameObject:
   - 4: {fileID: 400088}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: AxeContainer
   m_TagString: Untagged
@@ -1703,9 +1704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920df0d4c7bf9594b848b66722895c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Attack: {fileID: 11400010}
   SwingSpeedMultiplayer: 1
-  HitForce: 100
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1787,10 +1787,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Axe: {fileID: 100088}
+  GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400004}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba6b7dc2b5fa8645aea42d9e7a671c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 10
+  HitForce: 100
+  Explosive: 0
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
