@@ -1782,7 +1782,7 @@ MonoBehaviour:
   AxeTwo: {fileID: 100074}
   AxeThree: {fileID: 100022}
   DamageLevelMultiplier: 2
-  SwingSpeedLevelPlus: 1
+  SwingSpeedLevelPlus: 4
   SecondAxeLevel: 3
   ThirdAxeLevel: 6
   HitForceLevelPlus: 100
@@ -1811,8 +1811,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Owner: {fileID: 100044}
-  Damage: 10
-  HitForce: 100
+  Damage: 5
+  HitForce: 150
   Explosive: 0
 --- !u!136 &13600000
 CapsuleCollider:
