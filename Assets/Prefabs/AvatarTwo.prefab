@@ -1010,7 +1010,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100046}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: -7.21095276, y: 9.822155, z: -2.59510803}
+  m_LocalPosition: {x: .0953054428, y: 10.0102901, z: -5.43428993}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400036}
@@ -1685,7 +1685,7 @@ Animation:
   m_GameObject: {fileID: 100010}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_Animations:
   - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
@@ -1726,6 +1726,7 @@ MonoBehaviour:
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400000}
+  AttackInputButton: Fire2One
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1737,10 +1738,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92e2bb84e143134380491314a99a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 0}
-  walkAnimation: {fileID: 0}
-  runAnimation: {fileID: 0}
-  jumpPoseAnimation: {fileID: 0}
+  idleAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  walkAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  runAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  jumpPoseAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  attackAnimation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   walkMaxAnimationSpeed: 1
   trotMaxAnimationSpeed: 1
   runMaxAnimationSpeed: 1
@@ -1749,6 +1751,7 @@ MonoBehaviour:
   VerticalAxisName: VerticalTwo
   HorizontalAxisName: HorizontalTwo
   JumpButton: JumpTwo
+  AttackButton: Fire1Two
   walkSpeed: 8
   trotSpeed: 8
   runSpeed: 8
@@ -1790,7 +1793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920df0d4c7bf9594b848b66722895c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: {fileID: 0}
+  Attack: {fileID: 11400010}
   SwingSpeedMultiplayer: 1
 --- !u!114 &11400010
 MonoBehaviour:
@@ -1803,7 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6b7dc2b5fa8645aea42d9e7a671c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
+  Owner: {fileID: 100044}
   Damage: 10
   HitForce: 100
   Explosive: 0
