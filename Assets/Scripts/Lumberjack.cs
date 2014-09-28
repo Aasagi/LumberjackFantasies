@@ -12,9 +12,9 @@ namespace Assets.Scripts
         public GameObject GroundSmashPrefab;
         public ParticleSystem Footsteps;
         private Vector3 _previousPosition;
-        private float attackTimer;
+        private float lockAnimationTimer;
         private CharacterController characterController;
-        private Vector3 attackPosition;
+        private Vector3 lockPosition;
         public ScoreDisplay Display;
 
         public float WalkSpeed = 2.0f;
@@ -37,6 +37,7 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            CurrentAnimation = GetComponentInChildren<Animation>();
             characterController = GetComponentInParent<CharacterController>();
             PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
             _previousPosition = transform.position;
@@ -56,28 +57,34 @@ namespace Assets.Scripts
         private void LevelChanged(object sender, EventArgs eventArgs)
         {
             Display.CurrentLevel = (int)sender;
+            
+            CurrentAnimation.Play("Level");
+            lockAnimationTimer = CurrentAnimation.clip.length;
+            lockPosition = characterController.transform.position;
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (attackTimer > 0.0f)
+            if (lockAnimationTimer > 0.0f)
             {
-                characterController.transform.position = attackPosition;
-                attackTimer -= Time.deltaTime;
+                characterController.transform.position = lockPosition;
+                lockAnimationTimer -= Time.deltaTime;
                 return;
             }
 
-            if (CurrentAnimation != null && attackTimer <= 0.0f)
+            if (CurrentAnimation != null && lockAnimationTimer <= 0.0f)
             {
-                CurrentAnimation.Play("Run");
+                if (characterController.velocity.magnitude > 0.0f)
+                    CurrentAnimation.Play("Run");
+                else
+                    CurrentAnimation.Play("Idle");
             }
             if (Input.GetButton(AttackInputButton))
             {
-                CurrentAnimation = GetComponentInChildren<Animation>();
                 CurrentAnimation.Play("Chop");
-                attackTimer = CurrentAnimation.clip.length;
-                attackPosition = characterController.transform.position;
+                lockAnimationTimer = CurrentAnimation.clip.length;
+                lockPosition = characterController.transform.position;
                 //PerformGroundSmash();
             }
             if (_previousPosition != transform.position)
