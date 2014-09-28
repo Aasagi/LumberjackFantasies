@@ -47,8 +47,9 @@ namespace Assets.Scripts
             Instantiate(EffectPrefab, EffectSpawnLocation.position, EffectSpawnLocation.rotation);
 
             _level++;
+            Axe.GetComponent<AxeContainer>().IncrementLevel();
             if (LevelChanged != null) LevelChanged(_level, null);
-            Axe.GetComponent<AxeContainer>().SetLevel(_level);
+
         }
     }
 }
