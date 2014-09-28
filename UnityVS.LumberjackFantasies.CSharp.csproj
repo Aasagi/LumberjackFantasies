@@ -176,6 +176,8 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Scripts\AddOnFunctions.cs" />
+    <Compile Include="Assets\Scripts\Attack.cs" />
+    <Compile Include="Assets\Scripts\AxeContainer.cs" />
     <Compile Include="Assets\Scripts\AxeStats.cs" />
     <Compile Include="Assets\Scripts\ColorRandomizer.cs" />
     <Compile Include="Assets\Scripts\CuttableTree.cs" />

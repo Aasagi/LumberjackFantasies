@@ -7,30 +7,48 @@ namespace Assets.Scripts
     {
         // Use this for initialization
         public GameObject Axe;
-        public ParticleSystem Footsteps; 
+        public GameObject GroundSmashPrefab;
+        public ParticleSystem Footsteps;
         private Vector3 _previousPosition;
         public ScoreDisplay Display;
 
         public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
+        public int PlayerIndex { get; private set; }
+
+        private int _downedTrees;
+        public EventHandler DownedTreesChanged;
+
+        public int DownedTrees
+        {
+            get { return _downedTrees; }
+            set
+            {
+                _downedTrees = value;
+                if (DownedTreesChanged != null) DownedTreesChanged(_downedTrees, null);
+            }
+        }
 
         private void Start()
         {
+            PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
             _previousPosition = transform.position;
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
-            Axe.GetComponent<AxeStats>().DownedTreesChanged += DownedTreesChanged;
+            DownedTreesChanged += OnDownedTreesChanged;
+
+            Display.PlayerNumber = PlayerIndex;
         }
 
-        private void DownedTreesChanged(object sender, EventArgs eventArgs)
+        private void OnDownedTreesChanged(object sender, EventArgs eventArgs)
         {
-            Display.ChoppedTrees = (int) sender;
+            Display.ChoppedTrees = (int)sender;
         }
 
         private void LevelChanged(object sender, EventArgs eventArgs)
         {
-            Display.CurrentLevel = (int) sender;
+            Display.CurrentLevel = (int)sender;
         }
 
         // Update is called once per frame
@@ -38,7 +56,7 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
-
+                PerformGroundSmash();
             }
             if (_previousPosition != transform.position)
             {
@@ -52,6 +70,14 @@ namespace Assets.Scripts
             {
                 Footsteps.Stop();
             }
+        }
+
+        private void PerformGroundSmash()
+        {
+            var explosionHeight = Terrain.activeTerrain.SampleHeight(Axe.transform.position);
+            var explosionPos = new Vector3(Axe.transform.position.x, explosionHeight, Axe.transform.position.z);
+            var groundSmash = Instantiate(GroundSmashPrefab, explosionPos, new Quaternion()) as GameObject;
+            groundSmash.GetComponent<Attack>().Owner = gameObject;
         }
 
         void OnTriggerEnter(Collider collider)

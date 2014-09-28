@@ -21,7 +21,9 @@ public class CuttableTree : MonoBehaviour
     public GameObject TreeHitPrefab;
     public GameObject TreeDeathPrefab;
     public PickUp pickupSpawner;
-    
+
+    private Attack _attackThatHitMe;
+
     // Use this for initialization
     void Start()
     {
@@ -68,56 +70,84 @@ public class CuttableTree : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Cut(collider);
+        if (collider.tag.Equals("Attack"))
+        {
+            Cut(collider, collider.GetComponent<Attack>());
+        }
+        else if (collider.tag.Equals("Weapon"))
+        {
+            var axe = collider.GetComponentInParent<AxeStats>();
+            Cut(collider, axe.GetComponent<Attack>());
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (rigidbody.isKinematic == true && collision.collider.tag.Equals("Tree") && collision.relativeVelocity.magnitude > 3.0f)
         {
-            rigidbody.isKinematic = false;
-            if (Health > 0)
-            {
-                InflictDamage(Health);
-            }
+            _attackThatHitMe = collision.gameObject.GetComponent<CuttableTree>()._attackThatHitMe;
+            InflictDamage(Health);
+            Timber(collider.transform.position, transform.position - collider.transform.position, collision.relativeVelocity.magnitude * 300.0f, false);
         }
     }
 
-    private void Cut(Collider collider)
+    private void Cut(Collider collider, Attack attack)
     {
-        if (Health <= 0 || _cutCooldown > 0.0f)
+        if (attack == null)
         {
-            return;
+            Debug.Log("Attack is null :(");
         }
 
-        var axe = collider.GetComponent<AxeStats>();
-        if (axe == null)
+        if (attack.Explosive == false)
         {
-            Debug.Log("Could not find axe stats");
+            if (Health <= 0 || _cutCooldown > 0.0f)
+            {
+                return;
+            }
         }
-       
-        InflictDamage(axe.Damage);
+
+        _attackThatHitMe = attack;
+
+        InflictDamage(attack.Damage);
         var hitPosition = collider.transform.position;
 
         _cutCooldown = 0.2f;
         Instantiate(TreeHitPrefab, hitPosition, new Quaternion());
         if (Health > 0)
         {
-            animation.Play("JunkWiggle");
+            var animation = GetComponentInParent<Animation>();
+            if (animation != null)
+            {
+                animation.Play("JunkWiggle");
+            }
         }
         else
         {
-            Timber(hitPosition, transform.position - collider.transform.position, axe.HitForce);
-            axe.DownedTrees++;
-            var componentInParent = axe.GetComponentInParent<Lumberjack>();
-            pickupSpawner.PlayerPosition = componentInParent.transform;
+            var explosionRadius = attack.Explosive ? collider.GetComponent<SphereCollider>().radius : 0.0f;
+            Timber(hitPosition, transform.position - collider.transform.position, attack.HitForce, attack.Explosive, attack.transform.position, explosionRadius);
         }
     }
 
-    private void Timber(Vector3 hitPosition, Vector3 direction, float hitForce)
+    private void Timber(Vector3 hitPosition, Vector3 direction, float hitForce, bool explosive, Vector3 attackPosition = new Vector3(), float explosionRadius = 0.0f)
     {
+        if (_attackThatHitMe != null)
+        {
+            if (_attackThatHitMe.Owner != null)
+            {
+                var componentInParent = _attackThatHitMe.Owner.GetComponent<Lumberjack>();
+                pickupSpawner.PlayerPosition = componentInParent.transform;
+                _attackThatHitMe.Owner.GetComponent<Lumberjack>().DownedTrees++;
+            }
+        }
         rigidbody.isKinematic = false;
         Instantiate(TreeDeathPrefab, hitPosition, new Quaternion());
-        rigidbody.AddForce(new Vector3(hitForce * direction.x, 0.0f, hitForce * direction.z));
+        if (explosive)
+        {
+            rigidbody.AddExplosionForce(hitForce, attackPosition, explosionRadius);
+        }
+        else
+        {
+            rigidbody.AddForce(new Vector3(hitForce * direction.x, 0.0f, hitForce * direction.z));
+        }
     }
 }
