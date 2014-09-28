@@ -1803,6 +1803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6b7dc2b5fa8645aea42d9e7a671c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 100006}
   Damage: 10
   HitForce: 100
   Explosive: 0
