@@ -1756,9 +1756,9 @@ MonoBehaviour:
   HorizontalAxisName: HorizontalTwo
   JumpButton: JumpTwo
   AttackButton: Fire1Two
-  walkSpeed: 8
-  trotSpeed: 8
-  runSpeed: 8
+  walkSpeed: 7
+  trotSpeed: 7
+  runSpeed: 7
   inAirControlAcceleration: 3
   jumpHeight: 2
   gravity: 20
