@@ -94,6 +94,11 @@ public class CuttableTree : MonoBehaviour
 
     private void Cut(Collider collider, Attack attack)
     {
+        if (attack == null)
+        {
+            Debug.Log("Attack is null :(");
+        }
+
         if (attack.Explosive == false)
         {
             if (Health <= 0 || _cutCooldown > 0.0f)
