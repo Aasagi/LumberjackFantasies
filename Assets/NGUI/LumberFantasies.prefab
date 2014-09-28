@@ -41,16 +41,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1c4e177202e05814eab1a17169b555a4, type: 2}
   sprites:
+  - name: LumberSplitscreen
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 337
+      width: 219
+      height: 1309
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 337
+      width: 219
+      height: 1309
+    rotated: 0
+    paddingLeft: 3.84931517
+    paddingRight: 3.91780829
+    paddingTop: 0
+    paddingBottom: 0
   - name: Player 2 VictoryScreen
     outer:
       serializedVersion: 2
-      x: 1921
+      x: 0
       y: 2872
       width: 1218
       height: 1224
     inner:
       serializedVersion: 2
-      x: 1921
+      x: 0
       y: 2872
       width: 1218
       height: 1224
@@ -59,35 +77,17 @@ MonoBehaviour:
     paddingRight: .294745475
     paddingTop: .0441176482
     paddingBottom: .0253267977
-  - name: LumberSplitscreen
-    outer:
-      serializedVersion: 2
-      x: 0
-      y: 2787
-      width: 1920
-      height: 1309
-    inner:
-      serializedVersion: 2
-      x: 0
-      y: 2787
-      width: 1920
-      height: 1309
-    rotated: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
   - name: Player 1 VictoryScreen
     outer:
       serializedVersion: 2
       x: 0
-      y: 1562
+      y: 1647
       width: 1218
       height: 1224
     inner:
       serializedVersion: 2
       x: 0
-      y: 1562
+      y: 1647
       width: 1218
       height: 1224
     rotated: 0

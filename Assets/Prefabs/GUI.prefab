@@ -1907,7 +1907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 4
+  mDepth: 100
   mAtlas: {fileID: 11400000, guid: 7d8fecbe247b6df4da08bc9d1095fe0c, type: 2}
   mSpriteName: Player 2 VictoryScreen
   mFillCenter: 1
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 3
+  mDepth: 100
   mAtlas: {fileID: 11400000, guid: 7d8fecbe247b6df4da08bc9d1095fe0c, type: 2}
   mSpriteName: Player 1 VictoryScreen
   mFillCenter: 1
