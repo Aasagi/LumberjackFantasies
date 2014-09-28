@@ -375,7 +375,7 @@ GameObject:
   - 4: {fileID: 400046}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AvatarTwo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1439,7 +1439,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .300000012, y: 1.46000004, z: .550000012}
@@ -1451,7 +1451,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100022}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .300000012, y: 2.8499999, z: 1.08000004}
@@ -1463,7 +1463,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100074}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .300000012, y: 1.75999999, z: .699999988}
@@ -1685,10 +1685,14 @@ Animation:
   m_GameObject: {fileID: 100010}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_Animations:
   - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400004, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400008, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400010, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400006, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1726,6 +1730,7 @@ MonoBehaviour:
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400000}
+  AttackInputButton: Fire2One
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1737,10 +1742,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92e2bb84e143134380491314a99a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 0}
-  walkAnimation: {fileID: 0}
-  runAnimation: {fileID: 0}
-  jumpPoseAnimation: {fileID: 0}
+  idleAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  walkAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  runAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  jumpPoseAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  attackAnimation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   walkMaxAnimationSpeed: 1
   trotMaxAnimationSpeed: 1
   runMaxAnimationSpeed: 1
@@ -1749,9 +1755,10 @@ MonoBehaviour:
   VerticalAxisName: VerticalTwo
   HorizontalAxisName: HorizontalTwo
   JumpButton: JumpTwo
-  walkSpeed: 8
-  trotSpeed: 8
-  runSpeed: 8
+  AttackButton: Fire1Two
+  walkSpeed: 7
+  trotSpeed: 7
+  runSpeed: 7
   inAirControlAcceleration: 3
   jumpHeight: 2
   gravity: 20
