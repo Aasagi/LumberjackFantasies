@@ -1010,7 +1010,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100046}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: -7.21095276, y: 9.822155, z: -2.59510803}
+  m_LocalPosition: {x: .0953054428, y: 10.0102901, z: -5.43428993}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400036}
@@ -1749,9 +1749,9 @@ MonoBehaviour:
   VerticalAxisName: VerticalTwo
   HorizontalAxisName: HorizontalTwo
   JumpButton: JumpTwo
-  walkSpeed: 8
-  trotSpeed: 8
-  runSpeed: 8
+  walkSpeed: 7
+  trotSpeed: 7
+  runSpeed: 7
   inAirControlAcceleration: 3
   jumpHeight: 2
   gravity: 20
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920df0d4c7bf9594b848b66722895c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: {fileID: 0}
+  Attack: {fileID: 11400010}
   SwingSpeedMultiplayer: 1
 --- !u!114 &11400010
 MonoBehaviour:
