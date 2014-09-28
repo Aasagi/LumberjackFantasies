@@ -1685,7 +1685,7 @@ Animation:
   m_GameObject: {fileID: 100010}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_Animations:
   - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
@@ -1726,6 +1726,7 @@ MonoBehaviour:
   Display: {fileID: 0}
   WalkSpeed: 5
   Levler: {fileID: 11400000}
+  AttackInputButton: Fire2One
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1737,10 +1738,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92e2bb84e143134380491314a99a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 0}
-  walkAnimation: {fileID: 0}
-  runAnimation: {fileID: 0}
-  jumpPoseAnimation: {fileID: 0}
+  idleAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  walkAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  runAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  jumpPoseAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  attackAnimation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   walkMaxAnimationSpeed: 1
   trotMaxAnimationSpeed: 1
   runMaxAnimationSpeed: 1
@@ -1749,6 +1751,7 @@ MonoBehaviour:
   VerticalAxisName: VerticalTwo
   HorizontalAxisName: HorizontalTwo
   JumpButton: JumpTwo
+  AttackButton: Fire1Two
   walkSpeed: 7
   trotSpeed: 7
   runSpeed: 7
@@ -1803,7 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6b7dc2b5fa8645aea42d9e7a671c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
+  Owner: {fileID: 100044}
   Damage: 10
   HitForce: 100
   Explosive: 0

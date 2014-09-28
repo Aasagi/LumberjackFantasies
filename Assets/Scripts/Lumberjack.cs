@@ -5,15 +5,21 @@ namespace Assets.Scripts
 {
     public class Lumberjack : MonoBehaviour
     {
+
         // Use this for initialization
+        private Animation CurrentAnimation;
         public GameObject Axe;
         public GameObject GroundSmashPrefab;
         public ParticleSystem Footsteps;
         private Vector3 _previousPosition;
+        private float attackTimer;
+        private CharacterController characterController;
+        private Vector3 attackPosition;
         public ScoreDisplay Display;
 
         public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
+        public string AttackInputButton;
         public int PlayerIndex { get; private set; }
 
         private int _downedTrees;
@@ -31,6 +37,7 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            characterController = GetComponentInParent<CharacterController>();
             PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
             _previousPosition = transform.position;
             Footsteps.Stop();
@@ -54,9 +61,24 @@ namespace Assets.Scripts
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (attackTimer > 0.0f)
             {
-                PerformGroundSmash();
+                characterController.transform.position = attackPosition;
+                attackTimer -= Time.deltaTime;
+                return;
+            }
+
+            if (CurrentAnimation != null && attackTimer <= 0.0f)
+            {
+                CurrentAnimation.Play("Run");
+            }
+            if (Input.GetButton(AttackInputButton))
+            {
+                CurrentAnimation = GetComponentInChildren<Animation>();
+                CurrentAnimation.Play("Chop");
+                attackTimer = CurrentAnimation.clip.length;
+                attackPosition = characterController.transform.position;
+                //PerformGroundSmash();
             }
             if (_previousPosition != transform.position)
             {

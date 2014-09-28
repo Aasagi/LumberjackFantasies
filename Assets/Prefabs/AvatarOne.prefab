@@ -40,6 +40,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400002}
+  - 111: {fileID: 11100002}
   m_Layer: 0
   m_Name: AvatarOne
   m_TagString: Player
@@ -1685,7 +1686,23 @@ Animation:
   m_GameObject: {fileID: 100072}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_Animations:
+  - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 1
+--- !u!111 &11100002
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_Animations:
   - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
@@ -1717,10 +1734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92e2bb84e143134380491314a99a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 0}
-  walkAnimation: {fileID: 0}
-  runAnimation: {fileID: 0}
-  jumpPoseAnimation: {fileID: 0}
+  idleAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  walkAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  runAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  jumpPoseAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  attackAnimation: {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   walkMaxAnimationSpeed: 1
   trotMaxAnimationSpeed: 1
   runMaxAnimationSpeed: 1
@@ -1729,6 +1747,7 @@ MonoBehaviour:
   VerticalAxisName: VerticalOne
   HorizontalAxisName: HorizontalOne
   JumpButton: JumpOne
+  AttackButton: Fire1One
   walkSpeed: 7
   trotSpeed: 7
   runSpeed: 7
@@ -1792,6 +1811,7 @@ MonoBehaviour:
   Display: {fileID: 0}
   WalkSpeed: 1
   Levler: {fileID: 11400004}
+  AttackInputButton: Fire1One
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1803,7 +1823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6b7dc2b5fa8645aea42d9e7a671c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 0}
+  Owner: {fileID: 100006}
   Damage: 5
   HitForce: 150
   Explosive: 0
