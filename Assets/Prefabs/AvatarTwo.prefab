@@ -27,7 +27,7 @@ GameObject:
   - 54: {fileID: 5400000}
   m_Layer: 10
   m_Name: Axe 1 Container
-  m_TagString: Weapon
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - 54: {fileID: 5400002}
   m_Layer: 10
   m_Name: Axe 3 Container
-  m_TagString: Weapon
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ GameObject:
   - 136: {fileID: 13600000}
   m_Layer: 11
   m_Name: Lumberjack
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -593,7 +593,7 @@ GameObject:
   - 54: {fileID: 5400006}
   m_Layer: 10
   m_Name: Axe 2 Container
-  m_TagString: Weapon
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -854,9 +854,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100022}
-  m_LocalRotation: {x: -.325706929, y: -.634315312, z: -.595426917, w: .370170265}
-  m_LocalPosition: {x: -4.61871859e-05, y: -1.88917355e-07, z: 9.47052176e-05}
-  m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1.00000012}
+  m_LocalRotation: {x: -.325706929, y: -.634315312, z: -.595426917, w: .370170236}
+  m_LocalPosition: {x: -4.6252273e-05, y: -1.85689288e-07, z: 9.468395e-05}
+  m_LocalScale: {x: 1.00000024, y: 1.00000024, z: 1}
   m_Children:
   - {fileID: 400078}
   m_Father: {fileID: 400070}

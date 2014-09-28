@@ -27,6 +27,7 @@ namespace Assets.Scripts
 
         private int _downedTrees;
         public EventHandler DownedTreesChanged;
+        private float invincibilityTimer;
 
         public int DownedTrees
         {
@@ -63,11 +64,16 @@ namespace Assets.Scripts
             Display.CurrentLevel = (int)sender;
 
             PlayLockingAnimation("Level");
+            invincibilityTimer = 2.0f;
         }
 
         // Update is called once per frame
         private void Update()
         {
+            if (invincibilityTimer > 0.0f)
+            {
+                invincibilityTimer -= Time.deltaTime;
+            }
             if (lockAnimationTimer > 0.0f)
             {
                 characterController.transform.position = lockPosition;
@@ -124,6 +130,18 @@ namespace Assets.Scripts
                 Destroy(collider.gameObject);
                 Levler.GiveLog(1);
                 Display.CollectedLogs++;
+            }
+            if (invincibilityTimer <= 0.0f && collider.isTrigger && gameObject.tag.Equals("Player") && collider.tag.Equals("Weapon2"))
+            {
+                PlayLockingAnimation("Fall");
+                Display.CollectedLogs = Math.Max(0, Display.CollectedLogs-5);
+                invincibilityTimer = 2.0f;
+            }
+            if (invincibilityTimer <= 0.0f && collider.isTrigger && gameObject.tag.Equals("Player2") && collider.tag.Equals("Weapon"))
+            {
+                PlayLockingAnimation("Fall");
+                Display.CollectedLogs = Math.Max(0, Display.CollectedLogs - 5);
+                invincibilityTimer = 2.0f;
             }
         }
     }
