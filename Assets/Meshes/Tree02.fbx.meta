@@ -1,29 +1,20 @@
 fileFormatVersion: 2
-guid: 527546d7a7937a544b829f0c96b5c913
+guid: dace1c529cf9ce64b9aa1cf3b4aa8a05
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: polySurface21
-    100002: polySurface22
-    100004: polySurface23
-    100006: transform1
-    100008: transform2
-    100010: transform3
-    100012: //RootNode
-    100014: Tree02
-    400000: polySurface21
-    400002: polySurface22
-    400004: polySurface23
-    400006: transform1
-    400008: transform2
-    400010: transform3
-    400012: //RootNode
-    400014: Tree02
-    2300000: Tree02
-    2300002: //RootNode
-    3300000: Tree02
-    3300002: //RootNode
-    4300000: Tree02
+    100000: //RootNode
+    100002: Tree02 1
+    100004: Tree_Stump02
+    400000: //RootNode
+    400002: Tree02 1
+    400004: Tree_Stump02
+    2300000: Tree02 1
+    2300002: Tree_Stump02
+    3300000: Tree02 1
+    3300002: Tree_Stump02
+    4300000: Tree_Stump02
+    4300002: Tree02
     9500000: //RootNode
   materials:
     importMaterials: 1
