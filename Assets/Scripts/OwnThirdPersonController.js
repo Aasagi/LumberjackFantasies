@@ -48,7 +48,7 @@ var jumpHeight = 0.5;
 var gravity = 20.0;
 // The gravity in controlled descent mode
 var speedSmoothing = 10.0;
-var rotateSpeed = 500.0;
+//var rotateSpeed = 500.0;
 var trotAfterSeconds = 3.0;
 
 var canJump = true;
@@ -97,7 +97,7 @@ private var inAirVelocity = Vector3.zero;
 private var lastGroundedTime = 0.0;
 
 
-private var isControllable = true;
+public var isControllable = true;
 
 function Awake ()
 {
@@ -150,8 +150,8 @@ function UpdateSmoothedMovementDirection ()
     // Always orthogonal to the forward vector
     var right = Vector3(forward.z, 0, -forward.x);
 
-    var v = Input.GetAxisRaw(VerticalAxisName);
-    var h = Input.GetAxisRaw(HorizontalAxisName);
+    var v = Input.GetAxis(VerticalAxisName);
+    var h = Input.GetAxis(HorizontalAxisName);
 
     // Are we moving backwards or looking backwards
     if (v < -0.2)
@@ -179,17 +179,17 @@ function UpdateSmoothedMovementDirection ()
         if (targetDirection != Vector3.zero)
         {
             // If we are really slow, just snap to the target direction
-            if (moveSpeed < walkSpeed * 0.9 && grounded)
-            {
+            //if (moveSpeed < walkSpeed * 0.9 && grounded)
+            //{
                 moveDirection = targetDirection.normalized;
-            }
-                // Otherwise smoothly turn towards it
-            else
-            {
-                moveDirection = Vector3.RotateTowards(moveDirection, targetDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000);
+            //}
+            //    // Otherwise smoothly turn towards it
+            //else
+            //{
+            //    moveDirection = Vector3.RotateTowards(moveDirection, targetDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000);
 				
-                moveDirection = moveDirection.normalized;
-            }
+            //    moveDirection = moveDirection.normalized;
+            //}
         }
 		
         // Smooth the speed based on the current target direction
@@ -450,7 +450,7 @@ function CalculateJumpVerticalSpeed (targetJumpHeight : float)
 
         function IsMoving ()  : boolean
         {
-                return Mathf.Abs(Input.GetAxisRaw(VerticalAxisName)) + Mathf.Abs(Input.GetAxisRaw(HorizontalAxisName)) > 0.5;
+                return Mathf.Abs(Input.GetAxis(VerticalAxisName)) + Mathf.Abs(Input.GetAxis(HorizontalAxisName)) > 0.5;
             }
 
             function HasJumpReachedApex ()
