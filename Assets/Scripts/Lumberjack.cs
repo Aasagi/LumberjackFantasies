@@ -8,20 +8,18 @@ namespace Assets.Scripts
     {
 
         // Use this for initialization
-        private Animation currentAnimation;
-        private AxeContainer axeContainer;
+        private Animation CurrentAnimation;
+        private AxeContainer _axeContainer;
         public GameObject Axe;
         public GameObject GroundSmashPrefab;
         public ParticleSystem Footsteps;
         private float lockAnimationTimer;
         private CharacterController characterController;
-        private Vector3 lockPosition;
-        private Quaternion lockRotation;
         public ScoreDisplay Display;
 
-        public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
         public string AttackInputButton;
+        private float attackTimer;
 
         private int _downedTrees;
         public EventHandler DownedTreesChanged;
@@ -39,8 +37,8 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            axeContainer = Axe.GetComponent<AxeContainer>();
-            currentAnimation = GetComponentInChildren<Animation>();
+            _axeContainer = Axe.GetComponent<AxeContainer>();
+            CurrentAnimation = GetComponentInChildren<Animation>();
             characterController = GetComponentInParent<CharacterController>();
             Footsteps.Stop();
 
@@ -64,22 +62,34 @@ namespace Assets.Scripts
         // Update is called once per frame
         private void Update()
         {
+            _axeContainer.ToggleColliderActive(attackTimer > 0.0f);
+
+            characterController.enabled = lockAnimationTimer <= 0.0f;
+
             if (invincibilityTimer > 0.0f)
             {
                 invincibilityTimer -= Time.deltaTime;
             }
+            if (attackTimer > 0.0f)
+            {
+                attackTimer -= Time.deltaTime;
+            }
             if (lockAnimationTimer > 0.0f)
             {
-                characterController.transform.position = lockPosition;
-                characterController.transform.rotation = lockRotation;
                 lockAnimationTimer -= Time.deltaTime;
                 return;
             }
-            axeContainer.ToggleColliderActive(false);
 
             if (characterController.velocity.magnitude > 0.0f)
             {
-                currentAnimation.Play("Run");
+                if (attackTimer <= 0.0f)
+                {
+                    CurrentAnimation.Play("Run");
+                }
+                else
+                {
+                    CurrentAnimation.Blend("Run");
+                }
                 if (Footsteps.isPlaying == false)
                 {
                     Footsteps.Play();
@@ -87,14 +97,17 @@ namespace Assets.Scripts
             }
             else
             {
-                currentAnimation.Play("Idle2");
+                if (attackTimer <= 0.0f)
+                {
+                    CurrentAnimation.Play("Idle2");
+                }
                 Footsteps.Stop();
             }
-            if (Input.GetButton(AttackInputButton))
+            if (Input.GetButton(AttackInputButton) && attackTimer <= 0.0f)
             {
-                axeContainer.ToggleColliderActive(true);
-                PlayLockingAnimation("Chop");
-                if (axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
+                CurrentAnimation.Play("Chop");
+                attackTimer = CurrentAnimation.clip.length;
+                if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
                 {
                     PerformGroundSmash();
                 }
@@ -103,10 +116,8 @@ namespace Assets.Scripts
 
         private void PlayLockingAnimation(string animationName)
         {
-            currentAnimation.Play(animationName);
-            lockAnimationTimer = currentAnimation.clip.length;
-            lockPosition = characterController.transform.position;
-            lockRotation = characterController.transform.rotation;
+            CurrentAnimation.Play(animationName);
+            lockAnimationTimer = CurrentAnimation.clip.length;
         }
 
         private void PerformGroundSmash()
