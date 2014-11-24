@@ -1335,6 +1335,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: bbb548f302c4b964592aba83885baa6e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.3515625
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: bbb548f302c4b964592aba83885baa6e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .703125
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: bbb548f302c4b964592aba83885baa6e, type: 2}
+      propertyPath: mText
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbb548f302c4b964592aba83885baa6e, type: 2}
   m_RootGameObject: {fileID: 410231495}
@@ -1848,7 +1860,7 @@ GameObject:
   - 136: {fileID: 510613654}
   m_Layer: 11
   m_Name: Lumberjack
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1931,8 +1943,8 @@ MonoBehaviour:
   Axe: {fileID: 1197873201}
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 1131210928}
-  LevelRequirementIncrement: 10
-  LogsToLevel: 10
+  LevelRequirementIncrement: 5
+  LogsToLevel: 5
 --- !u!1 &525339024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,7 +2319,7 @@ MonoBehaviour:
   PlayerOneWinScreen: {fileID: 1277110233}
   PlayerTwoWinScreen: {fileID: 2070666895}
   TimerDisplay: {fileID: 2026287832}
-  MatchDurationSecconds: 10
+  MatchDurationSecconds: 120
   ReplayButton: {fileID: 575275107}
 --- !u!1 &609465060
 GameObject:
@@ -2787,7 +2799,7 @@ MonoBehaviour:
   mPivot: 3
   mDepth: 1
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 1
+  mText: 2
   mMaxLineWidth: 0
   mMaxLineHeight: 0
   mEncoding: 1
@@ -3078,8 +3090,8 @@ MonoBehaviour:
   Axe: {fileID: 343363594}
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 854251354}
-  LevelRequirementIncrement: 10
-  LogsToLevel: 10
+  LevelRequirementIncrement: 5
+  LogsToLevel: 5
 --- !u!4 &871596567
 Transform:
   m_ObjectHideFlags: 0
@@ -3178,11 +3190,11 @@ MonoBehaviour:
     e00: 360
     e01: 0
     e02: 0
-    e03: -3600000
+    e03: -3599999.75
     e10: 0
     e11: 360
     e12: 0
-    e13: -3600000
+    e13: -3600000.75
     e20: 0
     e21: 0
     e22: 360
@@ -3592,7 +3604,7 @@ GameObject:
   - 54: {fileID: 1051583407}
   m_Layer: 10
   m_Name: Axe 1 Container
-  m_TagString: Weapon
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3679,7 +3691,7 @@ GameObject:
   - 54: {fileID: 1064426747}
   m_Layer: 10
   m_Name: Axe 3 Container
-  m_TagString: Weapon
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3690,9 +3702,9 @@ Transform:
   m_PrefabParentObject: {fileID: 400022, guid: 3e60d9471295a0b4ebfb63e361f0c43e, type: 2}
   m_PrefabInternal: {fileID: 1873716284}
   m_GameObject: {fileID: 1064426745}
-  m_LocalRotation: {x: -.325706929, y: -.634315312, z: -.595426917, w: .370170265}
-  m_LocalPosition: {x: -4.61871859e-05, y: -1.88917355e-07, z: 9.47052176e-05}
-  m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1.00000012}
+  m_LocalRotation: {x: -.325706929, y: -.634315312, z: -.595426917, w: .370170236}
+  m_LocalPosition: {x: -4.6252273e-05, y: -1.85689288e-07, z: 9.468395e-05}
+  m_LocalScale: {x: 1.00000024, y: 1.00000024, z: 1}
   m_Children:
   - {fileID: 1184521130}
   m_Father: {fileID: 1197873202}
@@ -3757,10 +3769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 1077866697}
-  treePrefabs:
-  - {fileID: 100000, guid: 704dc4bb2cd542645a246a6d99ab5647, type: 2}
-  - {fileID: 100000, guid: d21d3418dd134dc4a993b4d648561b94, type: 2}
-  - {fileID: 100000, guid: 5d357d7fe1394a9489e4e69f79053a3f, type: 2}
+  TreePrefabs: []
 --- !u!154 &1077866696
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -4719,7 +4728,7 @@ Transform:
   m_PrefabInternal: {fileID: 353995212}
   m_GameObject: {fileID: 1394768105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.3515625, y: .703125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 879872664}
@@ -7583,7 +7592,7 @@ GameObject:
   - 54: {fileID: 1813482986}
   m_Layer: 10
   m_Name: Axe 2 Container
-  m_TagString: Weapon
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -23,7 +23,6 @@ namespace Assets.Scripts
         public float WalkSpeed = 2.0f;
         public LumberjackLevler Levler;
         public string AttackInputButton;
-        public int PlayerIndex { get; private set; }
 
         private int _downedTrees;
         public EventHandler DownedTreesChanged;
@@ -44,14 +43,11 @@ namespace Assets.Scripts
             _axeContainer = Axe.GetComponent<AxeContainer>();
             CurrentAnimation = GetComponentInChildren<Animation>();
             characterController = GetComponentInParent<CharacterController>();
-            PlayerIndex = AddOnFunctions.GetPlayerNumberAssigned();
             _previousPosition = transform.position;
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
             DownedTreesChanged += OnDownedTreesChanged;
-
-            Display.PlayerNumber = PlayerIndex;
         }
 
         private void OnDownedTreesChanged(object sender, EventArgs eventArgs)
