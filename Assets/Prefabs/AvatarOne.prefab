@@ -40,7 +40,6 @@ GameObject:
   - 4: {fileID: 400004}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400002}
-  - 111: {fileID: 11100002}
   m_Layer: 11
   m_Name: AvatarOne
   m_TagString: Player
@@ -1698,22 +1697,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!111 &11100002
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  m_Animations:
-  - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1759,9 +1742,9 @@ MonoBehaviour:
   jumpHeight: 2
   gravity: 20
   speedSmoothing: 250
-  rotateSpeed: 500
   trotAfterSeconds: 3
   canJump: 0
+  isControllable: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1814,7 +1797,6 @@ MonoBehaviour:
   GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   Display: {fileID: 0}
-  WalkSpeed: 1
   Levler: {fileID: 11400004}
   AttackInputButton: Fire1One
 --- !u!114 &11400010
