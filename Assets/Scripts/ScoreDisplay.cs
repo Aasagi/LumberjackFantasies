@@ -7,6 +7,7 @@ public class ScoreDisplay : MonoBehaviour
     public UILabel LevelDisplay;
     public UILabel LogsDisplay;
     public UILabel TreeDisplay;
+    public UISlider LevelProgressBar;  
 
     private int _playerNumber;
     private int _choppedTrees;
@@ -69,5 +70,12 @@ public class ScoreDisplay : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+    }
+
+    public void UpdateLevelProgress(int currentLogs, int logsRequiredToLevel)
+    {
+        LevelProgressBar.numberOfSteps = logsRequiredToLevel;
+        LevelProgressBar.sliderValue = (float)currentLogs / (float)logsRequiredToLevel;
+
     }
 }

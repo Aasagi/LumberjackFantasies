@@ -8,12 +8,11 @@ namespace Assets.Scripts
     {
 
         // Use this for initialization
-        private Animation CurrentAnimation;
-        private AxeContainer _axeContainer;
+        private Animation currentAnimation;
+        private AxeContainer axeContainer;
         public GameObject Axe;
         public GameObject GroundSmashPrefab;
         public ParticleSystem Footsteps;
-        private Vector3 _previousPosition;
         private float lockAnimationTimer;
         private CharacterController characterController;
         private Vector3 lockPosition;
@@ -40,10 +39,9 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            _axeContainer = Axe.GetComponent<AxeContainer>();
-            CurrentAnimation = GetComponentInChildren<Animation>();
+            axeContainer = Axe.GetComponent<AxeContainer>();
+            currentAnimation = GetComponentInChildren<Animation>();
             characterController = GetComponentInParent<CharacterController>();
-            _previousPosition = transform.position;
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
@@ -77,11 +75,11 @@ namespace Assets.Scripts
                 lockAnimationTimer -= Time.deltaTime;
                 return;
             }
-            _axeContainer.ToggleColliderActive(false);
+            axeContainer.ToggleColliderActive(false);
 
             if (characterController.velocity.magnitude > 0.0f)
             {
-                CurrentAnimation.Play("Run");
+                currentAnimation.Play("Run");
                 if (Footsteps.isPlaying == false)
                 {
                     Footsteps.Play();
@@ -89,14 +87,14 @@ namespace Assets.Scripts
             }
             else
             {
-                CurrentAnimation.Play("Idle2");
+                currentAnimation.Play("Idle2");
                 Footsteps.Stop();
             }
             if (Input.GetButton(AttackInputButton))
             {
-                _axeContainer.ToggleColliderActive(true);
+                axeContainer.ToggleColliderActive(true);
                 PlayLockingAnimation("Chop");
-                if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
+                if (axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
                 {
                     PerformGroundSmash();
                 }
@@ -105,8 +103,8 @@ namespace Assets.Scripts
 
         private void PlayLockingAnimation(string animationName)
         {
-            CurrentAnimation.Play(animationName);
-            lockAnimationTimer = CurrentAnimation.clip.length;
+            currentAnimation.Play(animationName);
+            lockAnimationTimer = currentAnimation.clip.length;
             lockPosition = characterController.transform.position;
             lockRotation = characterController.transform.rotation;
         }
