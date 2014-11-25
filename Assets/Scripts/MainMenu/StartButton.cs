@@ -7,7 +7,7 @@ namespace Assets.Scripts.MainMenuGui
         #region Methods
         private void OnClick()
         {
-            Application.LoadLevel("Main");
+            Application.LoadLevel("GameScene");
         }
         #endregion
     }

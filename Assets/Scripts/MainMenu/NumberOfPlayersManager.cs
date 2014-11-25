@@ -20,7 +20,7 @@ namespace Assets.Scripts.MainMenuGui
 
             set
             {
-                nbrOfPlayers = LimitToRange(value, 1, 6);
+                nbrOfPlayers = LimitToRange(value, 2, 4);
                 NumberOfPlayersLabel.text = nbrOfPlayers.ToString(CultureInfo.InvariantCulture);
                 //GameManager.NumberOfPlayers = nbrOfPlayers;
             }

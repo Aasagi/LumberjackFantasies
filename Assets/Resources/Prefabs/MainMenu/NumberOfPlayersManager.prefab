@@ -366,7 +366,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 10
-  mAtlas: {fileID: 11400000, guid: 36a403d2ea715c54d82c79270eae9106, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Mainmenu_nbrofplayers_bg
   mFillCenter: 1
   mType: 1
@@ -387,7 +387,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 15
-  mFont: {fileID: 11400000, guid: 71be9b52c05ad044b9e316aaa7ebe04b, type: 2}
+  mFont: {fileID: 0}
   mText: Number of players
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 12
-  mFont: {fileID: 11400000, guid: 71be9b52c05ad044b9e316aaa7ebe04b, type: 2}
+  mFont: {fileID: 0}
   mText: '-'
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 13
-  mAtlas: {fileID: 11400000, guid: 36a403d2ea715c54d82c79270eae9106, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Mainmenu_nbrofplayers_button
   mFillCenter: 1
   mType: 1
@@ -539,7 +539,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 11
-  mAtlas: {fileID: 11400000, guid: 36a403d2ea715c54d82c79270eae9106, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Mainmenu_nbrofplayers_button
   mFillCenter: 1
   mType: 1
@@ -1596,7 +1596,7 @@ MonoBehaviour:
       kerning: 
   mSpacingX: 0
   mSpacingY: 0
-  mAtlas: {fileID: 11400000, guid: 9a0561c04c8e7fe49b0559dc1c59195d, type: 2}
+  mAtlas: {fileID: 0}
   mReplacement: {fileID: 0}
   mPixelSize: 1
   mSymbols: []
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 14
-  mFont: {fileID: 11400000, guid: 71be9b52c05ad044b9e316aaa7ebe04b, type: 2}
+  mFont: {fileID: 0}
   mText: +
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 16
-  mFont: {fileID: 11400000, guid: 71be9b52c05ad044b9e316aaa7ebe04b, type: 2}
+  mFont: {fileID: 0}
   mText: 0
   mMaxLineWidth: 0
   mMaxLineHeight: 0

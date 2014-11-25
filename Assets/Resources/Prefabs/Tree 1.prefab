@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnableObjects:
-  - {fileID: 100000, guid: c3369bdd938faa64fbd612c4d66cf77a, type: 2}
+  - {fileID: 100000, guid: 0a3d1b0c74faec54d9268f07efaabe27, type: 2}
   PlayerPosition: {fileID: 0}
   MinSpawn: 3
   MaxSpawn: 6
