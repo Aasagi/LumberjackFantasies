@@ -87,6 +87,7 @@ namespace Assets.Scripts.Game
             }
             Health = Math.Max(0, Health - damage);
             Debug.Log("Health left: " + Health);
+            AudioSingleton.Instance.PlaySound(SoundType.WoodChop);
         }
 
         private void OnCollisionEnter(Collision collision)

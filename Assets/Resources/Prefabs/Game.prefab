@@ -6595,6 +6595,18 @@ MonoBehaviour:
   LogPickUpSounds: []
   PainSounds: []
   Player: {fileID: 8200000}
+  WoodChopSounds:
+  - {fileID: 8300000, guid: 92f8a55c2ab8a3e4ba14c1dd2ab6e93c, type: 3}
+  - {fileID: 8300000, guid: 2f08c7f4084e171438bc714329b186d9, type: 3}
+  - {fileID: 8300000, guid: 0ca972815e57c5c40b5128c6efa2e52c, type: 3}
+  - {fileID: 8300000, guid: e56f948fcce99844badbeef7932abbf9, type: 3}
+  - {fileID: 8300000, guid: fb0f9b221373317419b3109c381030e2, type: 3}
+  - {fileID: 8300000, guid: 8cebf97a2fab40c4296d012d4196307c, type: 3}
+  - {fileID: 8300000, guid: 2b0f2467aa7f23b4e86ff50a36c0dd5f, type: 3}
+  - {fileID: 8300000, guid: f9a3922da5d5bfc4c9bb3c5a2ce31876, type: 3}
+  - {fileID: 8300000, guid: 44d3a3577e1c4cd49b9ac31f882cb490, type: 3}
+  - {fileID: 8300000, guid: 203a236212c2cbd46a8f2792627badf7, type: 3}
+  - {fileID: 8300000, guid: abb3c9fedffd2a8478572033f98cbb72, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
