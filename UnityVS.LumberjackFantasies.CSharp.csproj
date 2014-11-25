@@ -177,6 +177,7 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Scripts\Game\AddOnFunctions.cs" />
     <Compile Include="Assets\Scripts\Game\Attack.cs" />
+    <Compile Include="Assets\Scripts\Game\AudioSingleton.cs" />
     <Compile Include="Assets\Scripts\Game\AxeContainer.cs" />
     <Compile Include="Assets\Scripts\Game\AxeStats.cs" />
     <Compile Include="Assets\Scripts\Game\ChildLiberator.cs" />
