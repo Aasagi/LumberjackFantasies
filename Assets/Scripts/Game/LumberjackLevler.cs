@@ -81,6 +81,8 @@ namespace Assets.Scripts.Game
             {
                 LevelChanged(level, null);
             }
+
+            AudioSingleton.Instance.PlaySound(SoundType.LevelUp);
         }
         #endregion
     }
