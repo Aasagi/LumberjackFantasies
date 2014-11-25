@@ -11,9 +11,9 @@ namespace Assets.Scripts.Game
         public GameObject PlayerOneWinScreen;
         public ScoreDisplay PlayerTwoScore;
         public GameObject PlayerTwoWinScreen;
-        public GameObject ReplayButton;
+        public GameObject MyReplayButton;
         public UILabel TimerDisplay;
-        private float _elapsedTime;
+        private float elapsedTime;
         #endregion
 
         #region Methods
@@ -28,6 +28,8 @@ namespace Assets.Scripts.Game
                 PlayerTwoWinScreen.SetActive(true);
             }
 
+            MyReplayButton.SetActive(true);
+
             Time.timeScale = 0;
             //ReplayButton.SetActive(true);
         }
@@ -35,18 +37,18 @@ namespace Assets.Scripts.Game
         // Use this for initialization
         private void Start()
         {
-            _elapsedTime = MatchDurationSecconds;
+            elapsedTime = MatchDurationSecconds;
         }
 
         // Update is called once per frame
         private void Update()
         {
-            _elapsedTime -= Time.deltaTime;
+            elapsedTime -= Time.deltaTime;
 
-            var time = TimeSpan.FromSeconds(_elapsedTime);
+            var time = TimeSpan.FromSeconds(elapsedTime);
             TimerDisplay.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
 
-            if (_elapsedTime <= 0)
+            if (elapsedTime <= 0)
             {
                 DisplayWinScreen();
             }

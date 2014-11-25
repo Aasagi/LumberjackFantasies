@@ -10,7 +10,7 @@ namespace Assets.Scripts.Game
         public void OnClick()
         {
             Time.timeScale = 1;
-            Application.LoadLevel(Application.loadedLevel);
+            Application.LoadLevel("MainMenuScene");
         }
         #endregion
 
