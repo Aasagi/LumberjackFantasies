@@ -1,81 +1,111 @@
 ﻿using System;
 using UnityEngine;
 
-public class ScoreDisplay : MonoBehaviour
+namespace Assets.Scripts.Game
 {
-    public UILabel PlayerDisplay;
-    public UILabel LevelDisplay;
-    public UILabel LogsDisplay;
-    public UILabel TreeDisplay;
-    public UISlider LevelProgressBar;  
-
-    private int _playerNumber;
-    private int _choppedTrees;
-    private int _collectedLogs;
-    private int _currentLevel;
-
-    public EventHandler LogsChanged;
-    public EventHandler LevelChanged;
-    public EventHandler TreesChanged;
-
-    public int PlayerNumber
+    public class ScoreDisplay : MonoBehaviour
     {
-        set
+        #region Fields
+        public EventHandler LevelChanged;
+        public UILabel LevelDisplay;
+        public UISlider LevelProgressBar;
+        public EventHandler LogsChanged;
+        public UILabel LogsDisplay;
+        public UILabel PlayerDisplay;
+        public UILabel TreeDisplay;
+        public EventHandler TreesChanged;
+        private int _choppedTrees;
+        private int _collectedLogs;
+        private int _currentLevel;
+        private int _playerNumber;
+        #endregion
+
+        #region Public Properties
+        public int ChoppedTrees
         {
-            _playerNumber = value;
-            PlayerDisplay.text = _playerNumber.ToString();
+            set
+            {
+                _choppedTrees = value;
+                if (TreesChanged != null)
+                {
+                    TreesChanged(_choppedTrees, null);
+                }
+                TreeDisplay.text = _choppedTrees.ToString();
+            }
+
+            get
+            {
+                return _choppedTrees;
+            }
         }
 
-        get { return _playerNumber; }
-    }
-    public int ChoppedTrees
-    {
-        set
+        public int CollectedLogs
         {
-            _choppedTrees = value;
-            if (TreesChanged != null) TreesChanged(_choppedTrees, null);
-            TreeDisplay.text = _choppedTrees.ToString();
+            set
+            {
+                _collectedLogs = value;
+                if (LogsChanged != null)
+                {
+                    LogsChanged(_collectedLogs, null);
+                }
+                LogsDisplay.text = _collectedLogs.ToString();
+            }
+            get
+            {
+                return _collectedLogs;
+            }
         }
 
-        get { return _choppedTrees; }
-    }
-
-    public int CollectedLogs
-    {
-        set
+        public int CurrentLevel
         {
-            _collectedLogs = value;
-            if (LogsChanged != null) LogsChanged(_collectedLogs, null);
-            LogsDisplay.text = _collectedLogs.ToString();
+            set
+            {
+                _currentLevel = value;
+                if (LevelChanged != null)
+                {
+                    LevelChanged(_currentLevel, null);
+                }
+                LevelDisplay.text = _currentLevel.ToString();
+            }
+            get
+            {
+                return _currentLevel;
+            }
         }
-        get { return _collectedLogs; }
-    }
-
-    public int CurrentLevel
-    {
-        set
+        public int PlayerNumber
         {
-            _currentLevel = value;
-            if (LevelChanged != null) LevelChanged(_currentLevel, null);
-            LevelDisplay.text = _currentLevel.ToString();
+            set
+            {
+                _playerNumber = value;
+                PlayerDisplay.text = _playerNumber.ToString();
+            }
+
+            get
+            {
+                return _playerNumber;
+            }
         }
-        get { return _currentLevel; }
-    }
+        #endregion
 
-    // Use this for initialization
-    private void Start()
-    {
-    }
+        #region Public Methods and Operators
+        public void UpdateLevelProgress(int currentLogs, int logsRequiredToLevel)
+        {
+            LevelProgressBar.numberOfSteps = logsRequiredToLevel;
+            LevelProgressBar.sliderValue = (float)currentLogs / (float)logsRequiredToLevel;
+        }
+        #endregion
 
-    // Update is called once per frame
-    private void Update()
-    {
-    }
+        // Use this for initialization
 
-    public void UpdateLevelProgress(int currentLogs, int logsRequiredToLevel)
-    {
-        LevelProgressBar.numberOfSteps = logsRequiredToLevel;
-        LevelProgressBar.sliderValue = (float)currentLogs / (float)logsRequiredToLevel;
+        #region Methods
+        private void Start()
+        {
+        }
 
+        // Update is called once per frame
+        private void Update()
+        {
+        }
+        #endregion
     }
 }

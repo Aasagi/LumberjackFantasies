@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class Attack : MonoBehaviour
+namespace Assets.Scripts.Game
 {
-    public GameObject Owner;
-    public int Damage;
-    public float HitForce;
-    public bool Explosive;
-	// Use this for initialization
-	void Start () 
+    public class Attack : MonoBehaviour
     {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
-	}
+        #region Fields
+        public int Damage;
+        public bool Explosive;
+        public float HitForce;
+        public GameObject Owner;
+        #endregion
+
+        // Use this for initialization
+
+        #region Methods
+        private void Start()
+        {
+        }
+
+        // Update is called once per frame
+        private void Update()
+        {
+        }
+        #endregion
+    }
 }

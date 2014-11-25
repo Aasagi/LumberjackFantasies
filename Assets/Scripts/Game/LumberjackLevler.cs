@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Game
 {
     public class LumberjackLevler : MonoBehaviour
     {
@@ -10,9 +10,9 @@ namespace Assets.Scripts
         public GameObject EffectPrefab;
         public Transform EffectSpawnLocation;
         public EventHandler LevelChanged;
-        public ScoreDisplay ScoreDisplay;
         public int LevelRequirementIncrement;
         public int LogsToLevel;
+        public ScoreDisplay ScoreDisplay;
 
         private int level = 1;
         private int logs = 0;

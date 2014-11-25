@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class destroyMe : MonoBehaviour {
-	
-	public float Countdown;
-	
+namespace Assets.Scripts.Game
+{
+    public class destroyMe : MonoBehaviour
+    {
+        #region Fields
+        public float Countdown;
+        #endregion
 
-	void Start () {
-			Destroy(gameObject, Countdown);
-	}
-	
-
+        #region Methods
+        private void Start()
+        {
+            Destroy(gameObject, Countdown);
+        }
+        #endregion
+    }
 }

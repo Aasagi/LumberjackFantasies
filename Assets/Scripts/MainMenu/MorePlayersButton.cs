@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.MainMenu
 {
     public class MorePlayersButton : MonoBehaviour
     {
         #region Fields
-        public MainMenuGui.NumberOfPlayersManager Manager;
+        public NumberOfPlayersManager Manager;
         #endregion
 
         #region Methods
