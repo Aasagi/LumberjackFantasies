@@ -1956,7 +1956,6 @@ MonoBehaviour:
   GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   Display: {fileID: 2118922097}
-  WalkSpeed: 5
   Levler: {fileID: 510613657}
   AttackInputButton: Fire1Two
 --- !u!114 &510613657
@@ -2953,7 +2952,6 @@ GameObject:
   - 4: {fileID: 854251354}
   - 143: {fileID: 854251357}
   - 114: {fileID: 854251356}
-  - 111: {fileID: 854251355}
   m_Layer: 11
   m_Name: PlayerOneAvatar
   m_TagString: Player
@@ -2974,23 +2972,6 @@ Transform:
   - {fileID: 1199721844}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!111 &854251355
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11100002, guid: 1c22b0d3e440e3b4fb1f6c3aa58153ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 593991644}
-  m_GameObject: {fileID: 854251353}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  m_Animations:
-  - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!114 &854251356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3024,9 +3005,9 @@ MonoBehaviour:
   jumpHeight: 2
   gravity: 20
   speedSmoothing: 250
-  rotateSpeed: 500
   trotAfterSeconds: 3
   canJump: 0
+  isControllable: 1
 --- !u!143 &854251357
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3077,7 +3058,6 @@ MonoBehaviour:
   GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   Display: {fileID: 1746112545}
-  WalkSpeed: 1
   Levler: {fileID: 871596566}
   AttackInputButton: Fire1One
 --- !u!114 &871596566
@@ -4108,9 +4088,9 @@ MonoBehaviour:
   jumpHeight: 2
   gravity: 20
   speedSmoothing: 250
-  rotateSpeed: 500
   trotAfterSeconds: 3
   canJump: 0
+  isControllable: 1
 --- !u!143 &1131210930
 CharacterController:
   m_ObjectHideFlags: 0

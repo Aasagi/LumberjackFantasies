@@ -69,10 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 11400000}
-  treePrefabs:
-  - {fileID: 100000, guid: 704dc4bb2cd542645a246a6d99ab5647, type: 2}
-  - {fileID: 100000, guid: d21d3418dd134dc4a993b4d648561b94, type: 2}
-  - {fileID: 100000, guid: 5d357d7fe1394a9489e4e69f79053a3f, type: 2}
+  TreePrefabs: []
 --- !u!154 &15400000
 TerrainCollider:
   m_ObjectHideFlags: 1
