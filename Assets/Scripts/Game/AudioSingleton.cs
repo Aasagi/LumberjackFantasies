@@ -18,7 +18,7 @@ namespace Assets.Scripts.Game
     public class AudioSingleton : MonoBehaviour
     {
         #region Fields
-        public List<AudioSource> CriterFoundSounds;
+        public List<AudioClip> CriterFoundSounds;
         public List<AudioClip> EnemySpottedSounds;
         public List<AudioClip> GruntSounds;
         public List<AudioClip> LevelUpSounds;
@@ -28,7 +28,6 @@ namespace Assets.Scripts.Game
         public List<AudioClip> WoodChopSounds;
         private readonly Dictionary<SoundType, List<AudioClip>> audioClips =
             new Dictionary<SoundType, List<AudioClip>>();
-        private readonly List<AudioSource> audioSources = new List<AudioSource>();
         #endregion
 
         #region Public Properties
@@ -38,11 +37,11 @@ namespace Assets.Scripts.Game
         #region Public Methods and Operators
         public void PlaySound(SoundType type)
         {
-            //Player.clip = GetRandomSound(type);
-            var player = new AudioSource { clip = GetRandomSound(type) };
-            player.Play();
+            Player.clip = GetRandomSound(type);
 
-            audioSources.Add(player);
+            Player.Play();
+
+
         }
         #endregion
 
@@ -60,7 +59,7 @@ namespace Assets.Scripts.Game
             Instance = this;
 
             audioClips.Add(SoundType.LevelUp, LevelUpSounds);
-            //audioClips.Add(SoundType.Criters, CriterFoundSounds);
+            audioClips.Add(SoundType.Criters, CriterFoundSounds);
             audioClips.Add(SoundType.Enemy, EnemySpottedSounds);
             audioClips.Add(SoundType.Grunt, GruntSounds);
             audioClips.Add(SoundType.Pain, PainSounds);
@@ -71,11 +70,11 @@ namespace Assets.Scripts.Game
         // Update is called once per frame
         private void Update()
         {
-            var toRemove = audioSources.Where(audio => !audio.isPlaying);
-            foreach (var removedAudio in toRemove)
-            {
-                audioSources.Remove(removedAudio);
-            }
+            //var toRemove = audioSources.Where(audio => !audio.isPlaying);
+            //foreach (var removedAudio in toRemove)
+            //{
+            //    audioSources.Remove(removedAudio);
+            //}
         }
         #endregion
     }
