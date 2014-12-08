@@ -1010,7 +1010,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100046}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: .5, y: 10.0102901, z: -2.5}
+  m_LocalPosition: {x: 3.46031952, y: -1.41178703, z: -1.38986635}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400036}
@@ -1711,9 +1711,9 @@ MonoBehaviour:
   Axe: {fileID: 100070}
   EffectPrefab: {fileID: 100006, guid: 20fc797ac6e993442937bc1a76f6deee, type: 2}
   EffectSpawnLocation: {fileID: 400046}
-  ScoreDisplay: {fileID: 0}
   LevelRequirementIncrement: 5
   LogsToLevel: 5
+  ScoreDisplay: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1725,13 +1725,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f53e8d4250eb47afca7ccd0a17ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axe: {fileID: 100070}
-  GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
-  Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
-  Display: {fileID: 0}
-  WalkSpeed: 5
-  Levler: {fileID: 11400000}
   AttackInputButton: Fire1Two
+  Axe: {fileID: 100070}
+  Display: {fileID: 0}
+  Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
+  GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
+  Levler: {fileID: 11400000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1764,9 +1763,9 @@ MonoBehaviour:
   jumpHeight: 2
   gravity: 20
   speedSmoothing: 250
-  rotateSpeed: 500
   trotAfterSeconds: 3
   canJump: 0
+  isControllable: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1778,15 +1777,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6644271f3ec7aa468ea13f7d447e25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AxeStats: {fileID: 11400008}
   AxeOne: {fileID: 100002}
-  AxeTwo: {fileID: 100074}
+  AxeStats: {fileID: 11400008}
   AxeThree: {fileID: 100022}
+  AxeTwo: {fileID: 100074}
   DamageLevelMultiplier: 2
-  SwingSpeedLevelPlus: 4
-  SecondAxeLevel: 3
-  ThirdAxeLevel: 6
   HitForceLevelPlus: 100
+  SecondAxeLevel: 3
+  SwingSpeedLevelPlus: 4
+  ThirdAxeLevel: 6
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1811,10 +1810,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6b7dc2b5fa8645aea42d9e7a671c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Owner: {fileID: 100044}
   Damage: 5
-  HitForce: 150
   Explosive: 0
+  HitForce: 150
+  Owner: {fileID: 100044}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
