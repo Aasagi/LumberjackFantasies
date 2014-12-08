@@ -66,6 +66,7 @@ namespace Assets.Scripts.Game
             if (collider.tag.Equals("PickUp"))
             {
                 Destroy(collider.gameObject);
+                AudioSingleton.Instance.PlaySound(SoundType.PickUpLog);
                 Levler.GiveLog(1);
                 Display.CollectedLogs++;
             }
@@ -156,6 +157,7 @@ namespace Assets.Scripts.Game
             if (Input.GetButton(AttackInputButton) && attackTimer <= 0.0f)
             {
                 CurrentAnimation.Play("Chop");
+                AudioSingleton.Instance.PlaySound(SoundType.Grunt);
                 attackTimer = CurrentAnimation.clip.length;
                 if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
                 {

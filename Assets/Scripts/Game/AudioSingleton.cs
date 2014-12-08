@@ -18,7 +18,7 @@ namespace Assets.Scripts.Game
     public class AudioSingleton : MonoBehaviour
     {
         #region Fields
-        public List<AudioSource> AudioSources;
+        private List<AudioSource> AudioSources;
         public List<AudioClip> CriterFoundSounds;
         public List<AudioClip> EnemySpottedSounds;
         public List<AudioClip> GruntSounds;
