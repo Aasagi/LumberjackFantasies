@@ -153,6 +153,8 @@ namespace Assets.Scripts.Game
             {
                 rigidbody.AddForce(new Vector3(hitForce * direction.x, 0.0f, hitForce * direction.z));
             }
+
+            gameObject.layer = LayerMask.NameToLayer("FallenTrees");
         }
 
         private void Update()
