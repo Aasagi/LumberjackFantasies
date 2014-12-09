@@ -192,6 +192,7 @@
     <Compile Include="Assets\Scripts\Game\ChildLiberator.cs" />
     <Compile Include="Assets\Scripts\Game\ColorRandomizer.cs" />
     <Compile Include="Assets\Scripts\Game\CuttableTree.cs" />
+    <Compile Include="Assets\Scripts\Game\GameSetup.cs" />
     <Compile Include="Assets\Scripts\Game\GibScript.cs" />
     <Compile Include="Assets\Scripts\Game\GoToPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\HighScoreManager.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Assets\Scripts\Game\PickUp.cs" />
     <Compile Include="Assets\Scripts\Game\ReplayButton.cs" />
     <Compile Include="Assets\Scripts\Game\ScoreDisplay.cs" />
+    <Compile Include="Assets\Scripts\Game\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\Game\TreeSpawner.cs" />
     <Compile Include="Assets\Scripts\Game\WinScreen.cs" />
     <Compile Include="Assets\Scripts\Game\destroyMe.cs" />

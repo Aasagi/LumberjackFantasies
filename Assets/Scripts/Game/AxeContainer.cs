@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Game
 {
@@ -16,6 +17,22 @@ namespace Assets.Scripts.Game
         public float SwingSpeedLevelPlus;
         public int ThirdAxeLevel;
         private GameObject _activeAxe;
+
+        public event EventHandler ActiveAxeChanged;
+
+        public GameObject ActiveAxe
+        {
+            get { return _activeAxe; }
+            private set
+            {
+                _activeAxe = value;
+                if (ActiveAxeChanged != null)
+                {
+                    ActiveAxeChanged(this, null);
+                }
+            }
+        }
+
         #endregion
 
         #region Public Properties
@@ -37,7 +54,7 @@ namespace Assets.Scripts.Game
 
         public void ToggleColliderActive(bool activate)
         {
-            _activeAxe.GetComponent<Collider>().isTrigger = activate;
+            ActiveAxe.GetComponent<Collider>().isTrigger = activate;
         }
         #endregion
 
@@ -52,26 +69,26 @@ namespace Assets.Scripts.Game
             {
                 Debug.Log("Activating axe 1");
                 AxeOne.SetActive(true);
-                _activeAxe = AxeOne;
+                ActiveAxe = AxeOne;
             }
             else if (level >= SecondAxeLevel && level < ThirdAxeLevel)
             {
                 Debug.Log("Activating axe 2");
                 AxeTwo.SetActive(true);
-                _activeAxe = AxeTwo;
+                ActiveAxe = AxeTwo;
             }
             else
             {
                 Debug.Log("Activating axe 3");
                 AxeThree.SetActive(true);
-                _activeAxe = AxeThree;
+                ActiveAxe = AxeThree;
             }
         }
 
-        private void Start()
+        public void Initialize()
         {
+            ActiveAxe = AxeOne;
             Level = 1;
-            _activeAxe = AxeOne;
         }
 
         // Update is called once per frame

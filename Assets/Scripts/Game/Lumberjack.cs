@@ -10,7 +10,7 @@ namespace Assets.Scripts.Game
 
         #region Fields
         public string AttackInputButton;
-        public GameObject Axe;
+        public AxeContainer AxeContainer;
         public ScoreDisplay Display;
         public EventHandler DownedTreesChanged;
         public ParticleSystem Footsteps;
@@ -18,7 +18,6 @@ namespace Assets.Scripts.Game
 
         public LumberjackLevler Levler;
         private Animation CurrentAnimation;
-        private AxeContainer _axeContainer;
 
         private int _downedTrees;
         private float attackTimer;
@@ -62,6 +61,11 @@ namespace Assets.Scripts.Game
             Display.ChoppedTrees = (int)sender;
         }
 
+        private void OnActiveAxeChanged(object sender, EventArgs e)
+        {
+            Physics.IgnoreCollision(gameObject.collider, AxeContainer.ActiveAxe.collider, true);
+        }
+
         // Update is called once per frame
 
         private void OnTriggerEnter(Collider collider)
@@ -73,15 +77,7 @@ namespace Assets.Scripts.Game
                 Levler.GiveLog(1);
                 Display.CollectedLogs++;
             }
-            if (invincibilityTimer <= 0.0f && collider.isTrigger && gameObject.tag.Equals("Player")
-                && collider.tag.Equals("Weapon2"))
-            {
-                PlayLockingAnimation("Fall");
-                Display.CollectedLogs = Math.Max(0, Display.CollectedLogs - 5);
-                invincibilityTimer = 2.0f;
-            }
-            if (invincibilityTimer <= 0.0f && collider.isTrigger && gameObject.tag.Equals("Player2")
-                && collider.tag.Equals("Weapon"))
+            if (invincibilityTimer <= 0.0f && collider.isTrigger && collider.tag.Equals("Weapon"))
             {
                 PlayLockingAnimation("Fall");
                 Display.CollectedLogs = Math.Max(0, Display.CollectedLogs - 5);
@@ -91,8 +87,8 @@ namespace Assets.Scripts.Game
 
         private void PerformGroundSmash()
         {
-            var explosionHeight = Terrain.activeTerrain.SampleHeight(Axe.transform.position);
-            var explosionPos = new Vector3(Axe.transform.position.x, explosionHeight, Axe.transform.position.z);
+            var explosionHeight = Terrain.activeTerrain.SampleHeight(AxeContainer.transform.position);
+            var explosionPos = new Vector3(AxeContainer.transform.position.x, explosionHeight, AxeContainer.transform.position.z);
             var groundSmash = Instantiate(GroundSmashPrefab, explosionPos, new Quaternion()) as GameObject;
             groundSmash.GetComponent<Attack>().Owner = gameObject;
         }
@@ -105,18 +101,20 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
-            _axeContainer = Axe.GetComponent<AxeContainer>();
             CurrentAnimation = GetComponentInChildren<Animation>();
             characterController = GetComponentInParent<CharacterController>();
             Footsteps.Stop();
 
             Levler.LevelChanged += LevelChanged;
             DownedTreesChanged += OnDownedTreesChanged;
+            AxeContainer.ActiveAxeChanged += OnActiveAxeChanged;
+
+            AxeContainer.Initialize();
         }
 
         private void Update()
         {
-            _axeContainer.ToggleColliderActive(attackTimer > 0.0f);
+            AxeContainer.ToggleColliderActive(attackTimer > 0.0f);
 
             characterController.enabled = lockAnimationTimer <= 0.0f;
 
@@ -163,7 +161,7 @@ namespace Assets.Scripts.Game
                 CurrentAnimation.Play("Chop");
                 AudioSingleton.Instance.PlaySound(SoundType.Grunt);
                 attackTimer = CurrentAnimation["Chop"].length / CurrentAnimation["Chop"].speed;
-                if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
+                if (AxeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
                 {
                     PerformGroundSmash();
                 }

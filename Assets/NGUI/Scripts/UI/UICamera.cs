@@ -181,13 +181,13 @@ public class UICamera : MonoBehaviour
 	/// Name of the axis used to send up and down key events.
 	/// </summary>
 
-	public string verticalAxisName = "Vertical";
+	public string verticalAxisName = "VerticalMovement1";
 
 	/// <summary>
 	/// Name of the axis used to send left and right key events.
 	/// </summary>
 
-	public string horizontalAxisName = "Horizontal";
+	public string horizontalAxisName = "HorizontalMovement1";
 
 	/// <summary>
 	/// Various keys used by the camera.
