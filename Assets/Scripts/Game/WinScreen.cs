@@ -14,6 +14,7 @@ namespace Assets.Scripts.Game
         public GameObject MyReplayButton;
         public UILabel TimerDisplay;
         private float elapsedTime;
+        private HighScoreManager highScore;
         #endregion
 
         #region Methods
@@ -30,6 +31,9 @@ namespace Assets.Scripts.Game
 
             MyReplayButton.SetActive(true);
 
+            highScore.AddHighScore("PlayerOne", PlayerOneScore.CollectedLogs);
+            highScore.AddHighScore("PlayerTwo", PlayerTwoScore.CollectedLogs);
+
             Time.timeScale = 0;
             //ReplayButton.SetActive(true);
         }
@@ -38,6 +42,7 @@ namespace Assets.Scripts.Game
         private void Start()
         {
             elapsedTime = MatchDurationSecconds;
+            highScore = new HighScoreManager();
         }
 
         // Update is called once per frame
@@ -49,6 +54,11 @@ namespace Assets.Scripts.Game
             TimerDisplay.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
 
             if (elapsedTime <= 0)
+            {
+                DisplayWinScreen();
+            }
+
+            if (Input.GetKeyDown(KeyCode.F2))
             {
                 DisplayWinScreen();
             }
