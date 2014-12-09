@@ -18,13 +18,14 @@ namespace Assets.Scripts.Game
     public class AudioSingleton : MonoBehaviour
     {
         #region Fields
+        private List<AudioSource> AudioSources;
         public List<AudioClip> CriterFoundSounds;
         public List<AudioClip> EnemySpottedSounds;
         public List<AudioClip> GruntSounds;
         public List<AudioClip> LevelUpSounds;
         public List<AudioClip> LogPickUpSounds;
+        public int MaxiumumSimultaneousSounds = 10;
         public List<AudioClip> PainSounds;
-        public AudioSource Player;
         public List<AudioClip> WoodChopSounds;
         private readonly Dictionary<SoundType, List<AudioClip>> audioClips =
             new Dictionary<SoundType, List<AudioClip>>();
@@ -37,15 +38,23 @@ namespace Assets.Scripts.Game
         #region Public Methods and Operators
         public void PlaySound(SoundType type)
         {
-            Player.clip = GetRandomSound(type);
+            var player = GetAvailiblePlayer();
+            if (player == null)
+            {
+                return;
+            }
 
-            Player.Play();
-
-
+            player.clip = GetRandomSound(type);
+            player.Play();
         }
         #endregion
 
         #region Methods
+        private AudioSource GetAvailiblePlayer()
+        {
+            return AudioSources.FirstOrDefault(s => s.isPlaying == false);
+        }
+
         private AudioClip GetRandomSound(SoundType type)
         {
             var container = audioClips[type];
@@ -65,6 +74,13 @@ namespace Assets.Scripts.Game
             audioClips.Add(SoundType.Pain, PainSounds);
             audioClips.Add(SoundType.PickUpLog, LogPickUpSounds);
             audioClips.Add(SoundType.WoodChop, WoodChopSounds);
+
+            AudioSources = new List<AudioSource>();
+            for (var i = 0; i < MaxiumumSimultaneousSounds; i++)
+            {
+                var source = gameObject.AddComponent<AudioSource>();
+                AudioSources.Add(source);
+            }
         }
 
         // Update is called once per frame
