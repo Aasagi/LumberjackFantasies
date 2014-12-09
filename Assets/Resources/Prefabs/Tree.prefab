@@ -47,6 +47,7 @@ GameObject:
   - 136: {fileID: 13600000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 8
   m_Name: Tree
   m_TagString: Tree
@@ -209,6 +210,21 @@ MonoBehaviour:
   TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
   Type: 0
   pickupSpawner: {fileID: 11400000}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6722aab973ad2514a9897b8ae5d411e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Colors:
+  - {r: 0, g: .470588237, b: .215686277, a: 1}
+  - {r: .199999928, g: 1, b: 0, a: 1}
+  - {r: 0, g: .792156875, b: .635294139, a: 1}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
