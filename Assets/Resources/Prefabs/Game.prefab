@@ -3588,7 +3588,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0546875, y: .703125, z: 0}
+  m_LocalPosition: {x: .703125, y: -.703125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400138}
@@ -5772,11 +5772,11 @@ MonoBehaviour:
     e00: 360
     e01: 0
     e02: 0
-    e03: -3599999.75
+    e03: -3600001.5
     e10: 0
     e11: 360
     e12: 0
-    e13: -3600000
+    e13: -3599998.5
     e20: 0
     e21: 0
     e22: 360
@@ -6512,32 +6512,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 14c8196c1a240754a96485f5f45f697b, type: 3}
   - {fileID: 8300000, guid: bc85a4ff07907154a906b562f27aa4b5, type: 3}
   LogPickUpSounds:
-  - {fileID: 8300000, guid: ac25bc10ba1a80b46ad3b19bbc0168a5, type: 3}
-  - {fileID: 8300000, guid: 6d9d6c905e8de1140ac3c6b4b11c4b9a, type: 3}
-  - {fileID: 8300000, guid: 5a8458b0b28bb554f9873c8846c30b69, type: 3}
-  - {fileID: 8300000, guid: 4b64b8e0e3f6b3445a166762033c9b22, type: 3}
-  - {fileID: 8300000, guid: 8c87ef61aac86e74f9662f8b35d58e3d, type: 3}
-  - {fileID: 8300000, guid: 5feb82f1a79407242a569ae488efdb40, type: 3}
-  - {fileID: 8300000, guid: d556a3422b0149845a7a583baa775aad, type: 3}
-  - {fileID: 8300000, guid: a1c8d7520f9eca7449f295afa0684e48, type: 3}
-  - {fileID: 8300000, guid: 30bdf1a2f35c2794ebad07fc8d495c8a, type: 3}
-  - {fileID: 8300000, guid: 181a46a2211fdaf478c39dfbb288bbee, type: 3}
-  - {fileID: 8300000, guid: ffed92149688431409ea59dc0bb809c2, type: 3}
-  - {fileID: 8300000, guid: 24bc4af496e83674babf508abf3acb7e, type: 3}
-  - {fileID: 8300000, guid: fdf1b4d56680e714cb58a22fdadb905b, type: 3}
-  - {fileID: 8300000, guid: 05279a979142414439b101c456b70b4a, type: 3}
-  - {fileID: 8300000, guid: 811f7bb70dc2f6246b572b497e4595fb, type: 3}
-  - {fileID: 8300000, guid: 026c1018e8551844b846fa2f71648264, type: 3}
-  - {fileID: 8300000, guid: d7b122a9cd3da2a4995e34865105cf1a, type: 3}
-  - {fileID: 8300000, guid: ca5a633a8aabf5046b7924453a373b69, type: 3}
-  - {fileID: 8300000, guid: 1bfcf33a608253242a8438bb99e846cb, type: 3}
-  - {fileID: 8300000, guid: 7ba0fc8a8e842c84da193ac8fad710ae, type: 3}
-  - {fileID: 8300000, guid: dd0f479bfda6c774b9ca46891e9fe971, type: 3}
-  - {fileID: 8300000, guid: 8b3378dbad3ff934ba7944e504b75014, type: 3}
-  - {fileID: 8300000, guid: a766d22cb479e7547b1008d42444c2f8, type: 3}
-  - {fileID: 8300000, guid: 31e6ef3ce59dfe144a6e64f8beab7485, type: 3}
-  - {fileID: 8300000, guid: 53b0809da4c5bf8409b8689735cb7aef, type: 3}
-  - {fileID: 8300000, guid: 726be78e8a197974e9c56ec67f89864e, type: 3}
+  - {fileID: 8300000, guid: 160061ac245347b43aa8774e460942d0, type: 3}
   MaxiumumSimultaneousSounds: 10
   PainSounds: []
   WoodChopSounds:

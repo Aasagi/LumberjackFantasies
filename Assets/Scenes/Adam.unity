@@ -1917,7 +1917,7 @@ Transform:
   m_PrefabInternal: {fileID: 488121923}
   m_GameObject: {fileID: 386882746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .703125, y: -.703125, z: 0}
+  m_LocalPosition: {x: -1.0546875, y: .703125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1494772964}
@@ -2492,16 +2492,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400206, guid: af57dee28c60ef340b2c00bbc398c219, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .703125
+      value: -1.0546875
       objectReference: {fileID: 0}
     - target: {fileID: 400206, guid: af57dee28c60ef340b2c00bbc398c219, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.703125
+      value: .703125
       objectReference: {fileID: 0}
     - target: {fileID: 11400120, guid: af57dee28c60ef340b2c00bbc398c219, type: 2}
       propertyPath: LogPickUpSounds.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 160061ac245347b43aa8774e460942d0, type: 3}
+    - target: {fileID: 11400018, guid: af57dee28c60ef340b2c00bbc398c219, type: 2}
+      propertyPath: SwingSpeedMultiplayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400020, guid: af57dee28c60ef340b2c00bbc398c219, type: 2}
+      propertyPath: SwingSpeedLevelPlus
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af57dee28c60ef340b2c00bbc398c219, type: 2}
   m_RootGameObject: {fileID: 931494920}
@@ -6694,11 +6702,11 @@ MonoBehaviour:
     e00: 360
     e01: 0
     e02: 0
-    e03: -3600001.5
+    e03: -3599999.75
     e10: 0
     e11: 360
     e12: 0
-    e13: -3599998.5
+    e13: -3600000
     e20: 0
     e21: 0
     e22: 360
@@ -7591,7 +7599,7 @@ MonoBehaviour:
   DamageLevelMultiplier: 2
   HitForceLevelPlus: 100
   SecondAxeLevel: 3
-  SwingSpeedLevelPlus: 4
+  SwingSpeedLevelPlus: 1
   ThirdAxeLevel: 6
 --- !u!114 &1771135733
 MonoBehaviour:
@@ -7606,7 +7614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attack: {fileID: 1771135731}
-  SwingSpeedMultiplayer: 3
+  SwingSpeedMultiplayer: 1
 --- !u!1 &1778968566
 GameObject:
   m_ObjectHideFlags: 0

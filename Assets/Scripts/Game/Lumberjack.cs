@@ -50,6 +50,9 @@ namespace Assets.Scripts.Game
         {
             Display.CurrentLevel = (int)sender;
 
+            characterController = GetComponentInParent<CharacterController>();
+            characterController.stepOffset += 1.0f;
+
             PlayLockingAnimation("Level");
             invincibilityTimer = 2.0f;
         }
@@ -156,9 +159,10 @@ namespace Assets.Scripts.Game
             }
             if (Input.GetButton(AttackInputButton) && attackTimer <= 0.0f)
             {
+                CurrentAnimation["Chop"].speed = Axe.GetComponent<AxeContainer>().AxeStats.SwingSpeedMultiplayer;
                 CurrentAnimation.Play("Chop");
                 AudioSingleton.Instance.PlaySound(SoundType.Grunt);
-                attackTimer = CurrentAnimation.clip.length;
+                attackTimer = CurrentAnimation["Chop"].length / CurrentAnimation["Chop"].speed;
                 if (_axeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
                 {
                     PerformGroundSmash();
