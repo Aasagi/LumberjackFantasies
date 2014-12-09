@@ -26,8 +26,8 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  m_Layer: 8
-  m_Name: Stump
+  m_Layer: 0
+  m_Name: Tree_stump02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -18.551651, y: 9.30688572, z: -13.1737366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -75,8 +75,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .297606379, y: 1.94340765, z: .297606379}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 1
@@ -104,7 +104,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7e4c45de15df77041b4964d9add27d1e, type: 2}
+  - {fileID: 2100000, guid: ba3b46bcc3d1c1b4d9355c6f962b1b1f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -138,7 +138,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 4300000, guid: 38dac736dec87cb4ab9a83533b1bf3cf, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 38dac736dec87cb4ab9a83533b1bf3cf, type: 3}
 --- !u!33 &3300002
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -187,11 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591416d5ef08def418ab687693b6f0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxSpawn: 6
+  MinSpawn: 3
+  PlayerPosition: {fileID: 0}
   SpawnableObjects:
   - {fileID: 100000, guid: 0a3d1b0c74faec54d9268f07efaabe27, type: 2}
-  PlayerPosition: {fileID: 0}
-  MinSpawn: 3
-  MaxSpawn: 6
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,11 +203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684b965b149497344bc9f09e894ac104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
-  Health: 60
   BirdScatterPrefab: {fileID: 100000, guid: 0d73d5fa7a738ac45858dd03af91501d, type: 2}
-  TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
+  Health: 60
   TreeDeathPrefab: {fileID: 100002, guid: d7c536c5ac7228747856a34ef4aa2be5, type: 2}
+  TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
+  Type: 1
   pickupSpawner: {fileID: 11400000}
 --- !u!136 &13600000
 CapsuleCollider:
