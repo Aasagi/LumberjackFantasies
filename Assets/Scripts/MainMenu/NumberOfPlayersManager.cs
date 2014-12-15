@@ -7,7 +7,7 @@ namespace Assets.Scripts.MainMenu
     {
         #region Fields
         public UILabel NumberOfPlayersLabel;
-        private static int nbrOfPlayers = 4;
+        private static int nbrOfPlayers = 1;
         #endregion
 
         public static int NumberOfPlayers
