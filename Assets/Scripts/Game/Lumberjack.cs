@@ -51,8 +51,9 @@ namespace Assets.Scripts.Game
         {
             Display.CurrentLevel = (int)sender;
 
-            characterController = GetComponentInParent<CharacterController>();
-            characterController.stepOffset += 1.0f;
+            var controller = GetComponentInParent<ThirdPersonController>();
+            controller.walkSpeed *= Levler.RunSpeedMultiplayer;
+            CurrentAnimation["Run"].speed *= Levler.RunSpeedMultiplayer;
 
             PlayLockingAnimation("Level");
             invincibilityTimer = 2.0f;
