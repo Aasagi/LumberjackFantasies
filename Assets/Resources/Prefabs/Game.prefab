@@ -4153,6 +4153,11 @@ MonoBehaviour:
   - {fileID: 11476788}
   - {fileID: 11476736}
   - {fileID: 11400116}
+  PlayerMaterials:
+  - {fileID: 2100000, guid: 64e281c9d2ea7db4f829b5e72386b517, type: 2}
+  - {fileID: 2100000, guid: 2960db0e26a5f144c8d41f37d60e9be3, type: 2}
+  - {fileID: 2100000, guid: a2e37cc85d4f1ad468e1b56775b96700, type: 2}
+  - {fileID: 2100000, guid: 12c35eb7fcb95c6499c407f9d29e9ef5, type: 2}
   TwoPlayerSplitSprite: {fileID: 11476792}
   FourPlayerSplitSprite: {fileID: 11476790}
 --- !u!114 &11476764
