@@ -221,10 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6722aab973ad2514a9897b8ae5d411e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Colors:
-  - {r: .0646626279, g: .382352948, b: .211457416, a: 1}
-  - {r: 0, g: .56078434, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
+  Colors: []
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
