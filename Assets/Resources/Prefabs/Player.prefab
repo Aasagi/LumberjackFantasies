@@ -1639,7 +1639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attack: {fileID: 11400004}
-  SwingSpeedMultiplayer: 3
+  SwingSpeedMultiplayer: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   DamageLevelMultiplier: 2
   HitForceLevelPlus: 100
   SecondAxeLevel: 3
-  SwingSpeedLevelPlus: 4
+  SwingSpeedLevelPlus: .200000003
   ThirdAxeLevel: 6
 --- !u!114 &11400004
 MonoBehaviour:
