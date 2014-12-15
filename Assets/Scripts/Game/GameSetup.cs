@@ -7,15 +7,37 @@ public class GameSetup : MonoBehaviour
 {
     public List<GameObject> Cameras;
     public List<GameObject> Players;
-    public List<ScoreDisplay> PlayerDisplays; 
+    public List<ScoreDisplay> PlayerDisplays;
+
+    public UISprite TwoPlayerSplitSprite;
+    public UISprite FourPlayerSplitSprite; 
 
 	// Use this for initialization
 	void Start ()
 	{
+	    SetSpriteActives();
+
 	    SetupPlayers();
 
 	    SetupCameras();
 	}
+
+    private void SetSpriteActives()
+    {
+        for (var i = NumberOfPlayersManager.NumberOfPlayers; i < PlayerDisplays.Count; i++)
+        {
+            PlayerDisplays[i].gameObject.SetActive(false);
+        }
+
+        if (NumberOfPlayersManager.NumberOfPlayers < 3 && FourPlayerSplitSprite != null)
+        {
+            NGUITools.SetActive(FourPlayerSplitSprite.gameObject, false);
+        }
+        if (NumberOfPlayersManager.NumberOfPlayers < 2 && TwoPlayerSplitSprite != null)
+        {
+            NGUITools.SetActive(TwoPlayerSplitSprite.gameObject, false);
+        }
+    }
 
     private void SetupPlayers()
     {
@@ -56,23 +78,26 @@ public class GameSetup : MonoBehaviour
             camera.GetComponent<SmoothFollow>().target = Players[i].transform;
         }
 
-        if (NumberOfPlayersManager.NumberOfPlayers == 2)
+        switch (NumberOfPlayersManager.NumberOfPlayers)
         {
-            Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0, 0.5f, 1);
-            Cameras[1].GetComponent<Camera>().rect = new Rect(0.5f, 0, 0.5f, 1);
-        }
-        else if (NumberOfPlayersManager.NumberOfPlayers == 3)
-        {
-            Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0.5f, 0.5f, 0.5f);
-            Cameras[1].GetComponent<Camera>().rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-            Cameras[2].GetComponent<Camera>().rect = new Rect(0, 0, 0.5f, 0.5f);
-        }
-        else if (NumberOfPlayersManager.NumberOfPlayers == 4)
-        {
-            Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0.5f, 0.5f, 0.5f);
-            Cameras[1].GetComponent<Camera>().rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-            Cameras[2].GetComponent<Camera>().rect = new Rect(0, 0, 0.5f, 0.5f);
-            Cameras[3].GetComponent<Camera>().rect = new Rect(0.5f, 0, 0.5f, 0.5f);
+            case 1:
+                Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0, 1, 1);
+                break;
+            case 2:
+                Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0, 0.5f, 1);
+                Cameras[1].GetComponent<Camera>().rect = new Rect(0.5f, 0, 0.5f, 1);
+                break;
+            case 3:
+                Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0.5f, 0.5f, 0.5f);
+                Cameras[1].GetComponent<Camera>().rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+                Cameras[2].GetComponent<Camera>().rect = new Rect(0, 0, 0.5f, 0.5f);
+                break;
+            case 4:
+                Cameras[0].GetComponent<Camera>().rect = new Rect(0, 0.5f, 0.5f, 0.5f);
+                Cameras[1].GetComponent<Camera>().rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+                Cameras[2].GetComponent<Camera>().rect = new Rect(0, 0, 0.5f, 0.5f);
+                Cameras[3].GetComponent<Camera>().rect = new Rect(0.5f, 0, 0.5f, 0.5f);
+                break;
         }
     }
 

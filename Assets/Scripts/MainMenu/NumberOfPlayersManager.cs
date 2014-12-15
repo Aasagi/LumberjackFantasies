@@ -20,7 +20,7 @@ namespace Assets.Scripts.MainMenu
         #region Public Properties
         public void SetNumberOfPlayers(int value)
         {
-            nbrOfPlayers = LimitToRange(value, 2, 4);
+            nbrOfPlayers = LimitToRange(value, 1, 4);
             NumberOfPlayersLabel.text = nbrOfPlayers.ToString(CultureInfo.InvariantCulture);
         }
         #endregion

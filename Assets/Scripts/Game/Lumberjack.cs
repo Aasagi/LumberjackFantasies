@@ -157,7 +157,7 @@ namespace Assets.Scripts.Game
             }
             if (Input.GetButton(AttackInputButton) && attackTimer <= 0.0f)
             {
-                CurrentAnimation["Chop"].speed = Axe.GetComponent<AxeContainer>().AxeStats.SwingSpeedMultiplayer;
+                CurrentAnimation["Chop"].speed = AxeContainer.AxeStats.SwingSpeedMultiplayer;
                 CurrentAnimation.Play("Chop");
                 AudioSingleton.Instance.PlaySound(SoundType.Grunt);
                 attackTimer = CurrentAnimation["Chop"].length / CurrentAnimation["Chop"].speed;
