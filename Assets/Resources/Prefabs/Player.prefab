@@ -1691,6 +1691,7 @@ MonoBehaviour:
   Display: {fileID: 0}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
+  LumberJackModel: {fileID: 100022}
   Levler: {fileID: 11400010}
 --- !u!114 &11400010
 MonoBehaviour:
@@ -1822,7 +1823,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.83270526
   m_Radius: .300000012
-  m_SlopeLimit: 60
+  m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0

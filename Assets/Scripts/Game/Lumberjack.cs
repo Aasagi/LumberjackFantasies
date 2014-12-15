@@ -16,6 +16,8 @@ namespace Assets.Scripts.Game
         public ParticleSystem Footsteps;
         public GameObject GroundSmashPrefab;
 
+        public GameObject LumberJackModel;
+
         public LumberjackLevler Levler;
         private Animation CurrentAnimation;
 

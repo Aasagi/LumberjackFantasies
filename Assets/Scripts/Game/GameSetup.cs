@@ -8,19 +8,20 @@ public class GameSetup : MonoBehaviour
     public List<GameObject> Cameras;
     public List<GameObject> Players;
     public List<ScoreDisplay> PlayerDisplays;
+    public List<Material> PlayerMaterials;
 
     public UISprite TwoPlayerSplitSprite;
-    public UISprite FourPlayerSplitSprite; 
+    public UISprite FourPlayerSplitSprite;
 
-	// Use this for initialization
-	void Start ()
-	{
-	    SetSpriteActives();
+    // Use this for initialization
+    void Start()
+    {
+        SetSpriteActives();
 
-	    SetupPlayers();
+        SetupPlayers();
 
-	    SetupCameras();
-	}
+        SetupCameras();
+    }
 
     private void SetSpriteActives()
     {
@@ -46,15 +47,52 @@ public class GameSetup : MonoBehaviour
         for (var i = 0; i < NumberOfPlayersManager.NumberOfPlayers; i++)
         {
             var player =
-                Instantiate(playerPrefab,
-                    new Vector3(i == 0 ? 5.0f : -5.0f, Terrain.activeTerrain.SampleHeight(new Vector3(5.0f, 0.0f, 0.0f)),
-                        0.0f), new Quaternion()) as GameObject;
+                Instantiate(playerPrefab, GetPlayerStartingPosition(i + 1), GetPlayerStartingRotation(i + 1)) as GameObject;
 
-            AssignButtons(player, i+1);
-            player.GetComponentInChildren<Lumberjack>().Display = PlayerDisplays[i];
+            AssignButtons(player, i + 1);
+            var lumberjack = player.GetComponentInChildren<Lumberjack>();
+            lumberjack.Display = PlayerDisplays[i];
+            if (lumberjack.LumberJackModel != null)
+            {
+                lumberjack.LumberJackModel.renderer.material = PlayerMaterials[i];
+            }
             player.GetComponentInChildren<LumberjackLevler>().ScoreDisplay = PlayerDisplays[i];
             Players.Add(player);
         }
+    }
+
+    private Quaternion GetPlayerStartingRotation(int playerNumber)
+    {
+        switch (playerNumber)
+        {
+            case 1:
+                return Quaternion.LookRotation(new Vector3(1.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+            case 2:
+                return Quaternion.LookRotation(new Vector3(-1.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+            case 3:
+                return Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f), new Vector3(0.0f, 1.0f, 0.0f));
+            case 4:
+                return Quaternion.LookRotation(new Vector3(0.0f, 0.0f, -1.0f), new Vector3(0.0f, 1.0f, 0.0f));
+        }
+
+        return new Quaternion();
+    }
+
+    private Vector3 GetPlayerStartingPosition(int playerNumber)
+    {
+        switch (playerNumber)
+        {
+            case 1:
+                return new Vector3(5.0f, Terrain.activeTerrain.SampleHeight(new Vector3(5.0f, 0.0f, 0.0f)), 0.0f);
+            case 2:
+                return new Vector3(-5.0f, Terrain.activeTerrain.SampleHeight(new Vector3(-5.0f, 0.0f, 0.0f)), 0.0f);
+            case 3:
+                return new Vector3(0.0f, Terrain.activeTerrain.SampleHeight(new Vector3(0.0f, 0.0f, 5.0f)), 5.0f);
+            case 4:
+                return new Vector3(0.0f, Terrain.activeTerrain.SampleHeight(new Vector3(0.0f, 0.0f, -5.0f)), -5.0f);
+        }
+
+        return new Vector3();
     }
 
     private static void AssignButtons(GameObject player, int playerIndex)
@@ -102,8 +140,8 @@ public class GameSetup : MonoBehaviour
     }
 
     // Update is called once per frame
-	void Update () 
+    void Update()
     {
-	
-	}
+
+    }
 }
