@@ -1670,10 +1670,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4737ab933f9719344b8e97fb5b2b0e38, type: 3}
+  m_Script: {fileID: 11500000, guid: b4ef0bd2a55bcca4c84583206a3fd924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfPlayersLabel: {fileID: 11400034}
+  NumberOfPlayersLabel: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

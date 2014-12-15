@@ -111,7 +111,7 @@ namespace Assets.Scripts.Game
             {
                 Cut(collider, collider.GetComponent<Attack>());
             }
-            else if (collider.tag.Equals("Weapon") || collider.tag.Equals("Weapon2"))
+            else if (collider.tag.Equals("Weapon"))
             {
                 var axe = collider.GetComponentInParent<AxeStats>();
                 Cut(collider, axe.GetComponent<Attack>());

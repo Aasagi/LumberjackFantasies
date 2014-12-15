@@ -150,8 +150,8 @@ function UpdateSmoothedMovementDirection ()
     // Always orthogonal to the forward vector
     var right = Vector3(forward.z, 0, -forward.x);
 
-    var v = Input.GetAxis(VerticalAxisName);
-    var h = Input.GetAxis(HorizontalAxisName);
+    var v = Input.GetAxisRaw(VerticalAxisName);
+    var h = Input.GetAxisRaw(HorizontalAxisName);
 
     // Are we moving backwards or looking backwards
     if (v < -0.2)
@@ -450,7 +450,7 @@ function CalculateJumpVerticalSpeed (targetJumpHeight : float)
 
         function IsMoving ()  : boolean
         {
-                return Mathf.Abs(Input.GetAxis(VerticalAxisName)) + Mathf.Abs(Input.GetAxis(HorizontalAxisName)) > 0.5;
+            return Mathf.Abs(Input.GetAxisRaw(VerticalAxisName)) + Mathf.Abs(Input.GetAxisRaw(HorizontalAxisName)) > 0.5;
             }
 
             function HasJumpReachedApex ()
