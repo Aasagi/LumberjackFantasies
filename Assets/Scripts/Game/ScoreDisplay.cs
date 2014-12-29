@@ -17,7 +17,6 @@ namespace Assets.Scripts.Game
         private int _choppedTrees;
         private int _collectedLogs;
         private int _currentLevel;
-        private int _playerNumber;
         #endregion
 
         #region Public Properties
@@ -74,15 +73,9 @@ namespace Assets.Scripts.Game
         }
         public int PlayerNumber
         {
-            set
-            {
-                _playerNumber = value;
-                PlayerDisplay.text = _playerNumber.ToString();
-            }
-
             get
             {
-                return _playerNumber;
+                return int.Parse(PlayerDisplay.text);
             }
         }
         #endregion
