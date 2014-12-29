@@ -138,9 +138,10 @@ namespace Assets.Scripts.Game
             {
                 if (_attackThatHitMe.Owner != null)
                 {
-                    var componentInParent = _attackThatHitMe.Owner.GetComponent<Lumberjack>();
-                    pickupSpawner.PlayerPosition = componentInParent.transform;
-                    _attackThatHitMe.Owner.GetComponent<Lumberjack>().DownedTrees++;
+                    var lumberjack = _attackThatHitMe.Owner.GetComponent<Lumberjack>();
+                    pickupSpawner.PlayerPosition = lumberjack.transform;
+                    pickupSpawner.OwningPlayer = lumberjack.Display.PlayerNumber;
+                    lumberjack.DownedTrees++;
                 }
             }
             rigidbody.isKinematic = false;
