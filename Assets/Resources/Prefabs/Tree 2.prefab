@@ -175,7 +175,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_CullingType: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,11 +187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591416d5ef08def418ab687693b6f0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxSpawn: 9
+  MinSpawn: 6
+  OwningPlayer: 0
+  PlayerPosition: {fileID: 0}
   SpawnableObjects:
   - {fileID: 100000, guid: 0a3d1b0c74faec54d9268f07efaabe27, type: 2}
-  PlayerPosition: {fileID: 0}
-  MinSpawn: 6
-  MaxSpawn: 9
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,11 +204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684b965b149497344bc9f09e894ac104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 2
-  Health: 100
   BirdScatterPrefab: {fileID: 100000, guid: 0d73d5fa7a738ac45858dd03af91501d, type: 2}
-  TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
+  Health: 100
   TreeDeathPrefab: {fileID: 100002, guid: 43bd649102fc5a84cb49577382b0495a, type: 2}
+  TreeHitPrefab: {fileID: 100004, guid: d577b521659072d4bb3cf10470a94aa6, type: 2}
+  Type: 2
   pickupSpawner: {fileID: 11400000}
 --- !u!136 &13600000
 CapsuleCollider:
