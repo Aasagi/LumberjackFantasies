@@ -13,9 +13,14 @@ public class GameSetup : MonoBehaviour
     public UISprite TwoPlayerSplitSprite;
     public UISprite FourPlayerSplitSprite;
 
+
+
     // Use this for initialization
     void Start()
     {
+        Cameras.Clear();
+        Players.Clear();
+        
         SetSpriteActives();
 
         SetupPlayers();
@@ -111,7 +116,8 @@ public class GameSetup : MonoBehaviour
 
         for (var i = 0; i < NumberOfPlayersManager.NumberOfPlayers; i++)
         {
-            var camera = Instantiate(cameraPrefab, new Vector3(), new Quaternion()) as GameObject;
+            var camera = Instantiate(cameraPrefab, new Vector3(0.0f, 35.0f, 0.0f), new Quaternion()) as GameObject;
+            camera.transform.LookAt(new Vector3());
             Cameras.Add(camera);
             camera.GetComponent<SmoothFollow>().target = Players[i].transform;
         }

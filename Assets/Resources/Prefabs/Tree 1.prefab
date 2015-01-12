@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.551651, y: 9.30688572, z: -13.1737366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -105,7 +105,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: ba3b46bcc3d1c1b4d9355c6f962b1b1f, type: 2}
+  - {fileID: 2100000, guid: 7e4c45de15df77041b4964d9add27d1e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -176,7 +176,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_CullingType: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpawn: 6
   MinSpawn: 3
+  OwningPlayer: 0
   PlayerPosition: {fileID: 0}
   SpawnableObjects:
   - {fileID: 100000, guid: 0a3d1b0c74faec54d9268f07efaabe27, type: 2}

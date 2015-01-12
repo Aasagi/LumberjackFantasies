@@ -10,6 +10,8 @@ namespace Assets.Scripts.Game
         #region Fields
         public List<GameObject> TreePrefabs;
         public Terrain terrain;
+
+        private List<GameObject> TreeTypeCollectorObjects = new List<GameObject>(); 
         #endregion
 
         // Use this for initialization
@@ -56,14 +58,19 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
+            for (var i = 0; i < 3; i++)
+            {
+                var node = new GameObject();
+                node.transform.parent = terrain.transform;
+                node.name = "Type " + i + " Trees";
+                TreeTypeCollectorObjects.Add(node);
+            }
+
             if (TreePrefabs.Count > 0)
             {
-                var mapSizeX = terrain.terrainData.size.x;
-                var mapSizeZ = terrain.terrainData.size.z;
-                var halfMapSizeX = terrain.terrainData.size.x * 0.5f - 20.0f;
-                var halfMapSizeZ = terrain.terrainData.size.z * 0.5f - 20.0f;
-                var numberOfTrees = (mapSizeX + (Math.Abs(mapSizeZ - mapSizeX))) * 10;
-                for (var i = 0; i < numberOfTrees; i++)
+                var halfMapSizeX = terrain.terrainData.size.x * 0.35f;
+                var halfMapSizeZ = terrain.terrainData.size.z * 0.35f;
+                for (var i = 0; i < 1500; i++)
                 {
                     var xPos = Random.Range(-halfMapSizeX, halfMapSizeX);
                     var zPos = Random.Range(-halfMapSizeZ, halfMapSizeZ);
@@ -75,10 +82,10 @@ namespace Assets.Scripts.Game
                         var treeToSpawn = GetTreeToSpawn(positioningFromMiddle);
 
                         var newObject =
-                            Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), new Quaternion()) as
+                            Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), Quaternion.Euler(0, Random.Range(0, 360), 0)) as
                                 GameObject;
                         newObject.transform.localScale = new Vector3(scale, scale, scale);
-                        newObject.transform.parent = terrain.transform;
+                        newObject.transform.parent = TreeTypeCollectorObjects[treeToSpawn].transform;
                     }
                 }
             }
