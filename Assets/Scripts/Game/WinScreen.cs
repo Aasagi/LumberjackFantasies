@@ -56,7 +56,7 @@ namespace Assets.Scripts.Game
             
             if (elapsedTime <= 10)
             {
-                NearEndLabel.text = string.Format("{0}", (int)elapsedTime);
+                NearEndLabel.text = string.Format("{0}", (int)elapsedTime + 1);
             }
             else if (elapsedTime <= 27)
             {
