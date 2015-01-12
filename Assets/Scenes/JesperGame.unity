@@ -1832,10 +1832,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackInputButton: Fire1Two
-  Axe: {fileID: 1197873201}
+  AxeContainer: {fileID: 0}
   Display: {fileID: 2118922097}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
+  LumberJackModel: {fileID: 0}
   Levler: {fileID: 510613657}
 --- !u!114 &510613657
 MonoBehaviour:
@@ -1855,6 +1856,7 @@ MonoBehaviour:
   LevelRequirementIncrement: 5
   LogsToLevel: 5
   ScoreDisplay: {fileID: 2118922097}
+  RunSpeedMultiplayer: 1.20000005
 --- !u!1 &525339024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,10 +2886,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackInputButton: Fire1One
-  Axe: {fileID: 343363594}
+  AxeContainer: {fileID: 0}
   Display: {fileID: 1746112545}
   Footsteps: {fileID: 19800000, guid: 3efca723fd127d34098c88bbd0b16f6f, type: 2}
   GroundSmashPrefab: {fileID: 100010, guid: 374d3d8b18668a74a832dcb42678cb0b, type: 2}
+  LumberJackModel: {fileID: 0}
   Levler: {fileID: 871596566}
 --- !u!114 &871596566
 MonoBehaviour:
@@ -2907,6 +2910,7 @@ MonoBehaviour:
   LevelRequirementIncrement: 5
   LogsToLevel: 5
   ScoreDisplay: {fileID: 1746112545}
+  RunSpeedMultiplayer: 1.20000005
 --- !u!4 &871596567
 Transform:
   m_ObjectHideFlags: 0
@@ -3094,7 +3098,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1595cd6ab092430439944cedc849aee7, type: 2}
+  - {fileID: 2100000, guid: 2960db0e26a5f144c8d41f37d60e9be3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5204,6 +5208,7 @@ GameObject:
   - 136: {fileID: 1446172966}
   - 54: {fileID: 1446172965}
   - 114: {fileID: 1446172964}
+  - 114: {fileID: 1446172971}
   m_Layer: 8
   m_Name: Tree
   m_TagString: Tree
@@ -5225,6 +5230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpawn: 3
   MinSpawn: 0
+  OwningPlayer: 0
   PlayerPosition: {fileID: 0}
   SpawnableObjects:
   - {fileID: 100000, guid: 0a3d1b0c74faec54d9268f07efaabe27, type: 2}
@@ -5317,6 +5323,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040203689}
   m_RootOrder: 0
+--- !u!114 &1446172971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 704dc4bb2cd542645a246a6d99ab5647,
+    type: 2}
+  m_PrefabInternal: {fileID: 1394706086}
+  m_GameObject: {fileID: 1446172963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6722aab973ad2514a9897b8ae5d411e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Colors: []
 --- !u!1001 &1520160134
 Prefab:
   m_ObjectHideFlags: 0
@@ -7937,7 +7956,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1a76abbafe842524abc4ab618af04923, type: 2}
+  - {fileID: 2100000, guid: 2960db0e26a5f144c8d41f37d60e9be3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
