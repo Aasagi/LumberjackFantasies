@@ -12,7 +12,9 @@ namespace Assets.Scripts.Game
         public ScoreDisplay PlayerTwoScore;
         public GameObject PlayerTwoWinScreen;
         public GameObject MyReplayButton;
-        public UILabel TimerDisplay;
+        public UILabel TimerLabel;
+        public GameObject TimerDisplay;
+        public UILabel NearEndLabel;
         private float elapsedTime;
         #endregion
 
@@ -29,6 +31,8 @@ namespace Assets.Scripts.Game
             }
 
             MyReplayButton.SetActive(true);
+            TimerDisplay.SetActive(false);
+            NearEndLabel.text = "";
 
             Time.timeScale = 0;
             //ReplayButton.SetActive(true);
@@ -46,7 +50,30 @@ namespace Assets.Scripts.Game
             elapsedTime -= Time.deltaTime;
 
             var time = TimeSpan.FromSeconds(elapsedTime);
-            TimerDisplay.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
+            TimerLabel.text = string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds);
+
+            
+            
+            if (elapsedTime <= 10)
+            {
+                NearEndLabel.text = string.Format("{0}", (int)elapsedTime);
+            }
+            else if (elapsedTime <= 27)
+            {
+                NearEndLabel.text = "";
+            }
+            else if (elapsedTime <= 31)
+            {
+                NearEndLabel.text = "30 seconds\nremaining!";
+            }
+            else if (elapsedTime <= 57)
+            {
+                NearEndLabel.text = "";
+            }
+            else if (elapsedTime <= 61)
+            {
+                NearEndLabel.text = "1 minute\nleft!";
+            }
 
             if (elapsedTime <= 0)
             {
