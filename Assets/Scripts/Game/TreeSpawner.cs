@@ -68,12 +68,9 @@ namespace Assets.Scripts.Game
 
             if (TreePrefabs.Count > 0)
             {
-                var mapSizeX = terrain.terrainData.size.x;
-                var mapSizeZ = terrain.terrainData.size.z;
-                var halfMapSizeX = terrain.terrainData.size.x * 0.5f - 20.0f;
-                var halfMapSizeZ = terrain.terrainData.size.z * 0.5f - 20.0f;
-                var numberOfTrees = (mapSizeX + (Math.Abs(mapSizeZ - mapSizeX))) * 10;
-                for (var i = 0; i < numberOfTrees; i++)
+                var halfMapSizeX = terrain.terrainData.size.x * 0.35f;
+                var halfMapSizeZ = terrain.terrainData.size.z * 0.35f;
+                for (var i = 0; i < 1500; i++)
                 {
                     var xPos = Random.Range(-halfMapSizeX, halfMapSizeX);
                     var zPos = Random.Range(-halfMapSizeZ, halfMapSizeZ);
