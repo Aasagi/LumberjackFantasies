@@ -11,7 +11,7 @@ namespace Assets.Scripts.MainMenu
         #region Methods
         private void OnClick()
         {
-            Manager.NumberOfPlayers--;
+            Manager.SetNumberOfPlayers(NumberOfPlayersManager.NumberOfPlayers - 1);
         }
         #endregion
     }

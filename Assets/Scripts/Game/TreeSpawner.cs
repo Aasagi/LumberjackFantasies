@@ -78,6 +78,7 @@ namespace Assets.Scripts.Game
                             Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), new Quaternion()) as
                                 GameObject;
                         newObject.transform.localScale = new Vector3(scale, scale, scale);
+                        newObject.transform.parent = terrain.transform;
                     }
                 }
             }

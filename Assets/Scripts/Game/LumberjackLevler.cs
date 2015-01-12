@@ -13,6 +13,7 @@ namespace Assets.Scripts.Game
         public int LevelRequirementIncrement;
         public int LogsToLevel;
         public ScoreDisplay ScoreDisplay;
+        public float RunSpeedMultiplayer = 1.2f;
 
         private int level = 1;
         private int logs = 0;

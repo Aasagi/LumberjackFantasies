@@ -7,23 +7,21 @@ namespace Assets.Scripts.MainMenu
     {
         #region Fields
         public UILabel NumberOfPlayersLabel;
-        private int nbrOfPlayers = 4;
+        private static int nbrOfPlayers = 1;
         #endregion
 
-        #region Public Properties
-        public int NumberOfPlayers
+        public static int NumberOfPlayers
         {
             get
             {
                 return nbrOfPlayers;
             }
-
-            set
-            {
-                nbrOfPlayers = LimitToRange(value, 2, 4);
-                NumberOfPlayersLabel.text = nbrOfPlayers.ToString(CultureInfo.InvariantCulture);
-                //GameManager.NumberOfPlayers = nbrOfPlayers;
-            }
+        }
+        #region Public Properties
+        public void SetNumberOfPlayers(int value)
+        {
+            nbrOfPlayers = LimitToRange(value, 1, 4);
+            NumberOfPlayersLabel.text = nbrOfPlayers.ToString(CultureInfo.InvariantCulture);
         }
         #endregion
 
@@ -47,7 +45,7 @@ namespace Assets.Scripts.MainMenu
         #region Methods
         private void Start()
         {
-            NumberOfPlayers = nbrOfPlayers;
+            SetNumberOfPlayers(nbrOfPlayers);
         }
         #endregion
     }

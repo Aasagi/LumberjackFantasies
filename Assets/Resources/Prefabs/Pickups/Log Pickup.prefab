@@ -68,8 +68,8 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
@@ -113,17 +113,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38137e57942e64e9b50a3942e58301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fYMaxForce: 400
-  m_fYMinForce: 300
   m_fXMaxForce: 400
-  m_fXMinForce: -400
-  m_fZMaxForce: 400
-  m_fZMinForce: -400
-  m_fYMaxScale: 1
-  m_fYMinScale: 1
   m_fXMaxScale: 1
+  m_fXMinForce: -400
   m_fXMinScale: 1
+  m_fYMaxForce: 400
+  m_fYMaxScale: 1
+  m_fYMinForce: 300
+  m_fYMinScale: 1
+  m_fZMaxForce: 400
   m_fZMaxScale: 1
+  m_fZMinForce: -400
   m_fZMinScale: 1
 --- !u!114 &11400002
 MonoBehaviour:

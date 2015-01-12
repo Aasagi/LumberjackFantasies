@@ -26,6 +26,8 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
+            if(Colors.Count <= 0) return;
+
             var color = Colors[Random.Range(0, Colors.Count)];
             var material = GetMaterial(color);
             renderer.material = material;
