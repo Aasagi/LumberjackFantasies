@@ -78,6 +78,7 @@ namespace Assets.Scripts.Game
                             Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), new Quaternion()) as
                                 GameObject;
                         newObject.transform.localScale = new Vector3(scale, scale, scale);
+                        newObject.transform.RotateAround(new Vector3(), new Vector3(0.0f, 1.0f, 0.0f), Random.Range(0, 360));
                         newObject.transform.parent = terrain.transform;
                     }
                 }
