@@ -10,6 +10,8 @@ namespace Assets.Scripts.Game
         #region Fields
         public List<GameObject> TreePrefabs;
         public Terrain terrain;
+
+        private List<GameObject> TreeTypeCollectorObjects = new List<GameObject>(); 
         #endregion
 
         // Use this for initialization
@@ -56,6 +58,14 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
+            for (var i = 0; i < 3; i++)
+            {
+                var node = new GameObject();
+                node.transform.parent = terrain.transform;
+                node.name = "Type " + i + " Trees";
+                TreeTypeCollectorObjects.Add(node);
+            }
+
             if (TreePrefabs.Count > 0)
             {
                 var mapSizeX = terrain.terrainData.size.x;
@@ -75,11 +85,10 @@ namespace Assets.Scripts.Game
                         var treeToSpawn = GetTreeToSpawn(positioningFromMiddle);
 
                         var newObject =
-                            Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), new Quaternion()) as
+                            Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), Quaternion.Euler(0, Random.Range(0, 360), 0)) as
                                 GameObject;
                         newObject.transform.localScale = new Vector3(scale, scale, scale);
-                        newObject.transform.RotateAround(new Vector3(), new Vector3(0.0f, 1.0f, 0.0f), Random.Range(0, 360));
-                        newObject.transform.parent = terrain.transform;
+                        newObject.transform.parent = TreeTypeCollectorObjects[treeToSpawn].transform;
                     }
                 }
             }

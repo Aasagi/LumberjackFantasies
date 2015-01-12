@@ -13,9 +13,14 @@ public class GameSetup : MonoBehaviour
     public UISprite TwoPlayerSplitSprite;
     public UISprite FourPlayerSplitSprite;
 
+
+
     // Use this for initialization
     void Start()
     {
+        Cameras.Clear();
+        Players.Clear();
+        
         SetSpriteActives();
 
         SetupPlayers();
