@@ -98,14 +98,14 @@ MonoBehaviour:
   - name: XPBar
     outer:
       serializedVersion: 2
-      x: 170
-      y: 440
+      x: 0
+      y: 189
       width: 101
       height: 101
     inner:
       serializedVersion: 2
-      x: 180
-      y: 450
+      x: 10
+      y: 199
       width: 81
       height: 81
     rotated: 0
@@ -116,13 +116,13 @@ MonoBehaviour:
   - name: XPBar_bg
     outer:
       serializedVersion: 2
-      x: 0
+      x: 151
       y: 393
       width: 169
       height: 148
     inner:
       serializedVersion: 2
-      x: 78
+      x: 229
       y: 426
       width: 13
       height: 94
@@ -131,6 +131,24 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: Arrow
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 291
+      width: 150
+      height: 250
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 291
+      width: 150
+      height: 250
+    rotated: 0
+    paddingLeft: .353333324
+    paddingRight: .353333324
+    paddingTop: .0160000008
+    paddingBottom: .00800000038
   mCoordinates: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
