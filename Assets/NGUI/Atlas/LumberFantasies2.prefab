@@ -62,13 +62,13 @@ MonoBehaviour:
   - name: KozukaGothic_0
     outer:
       serializedVersion: 2
-      x: 998
+      x: 1149
       y: 1977
       width: 510
       height: 71
     inner:
       serializedVersion: 2
-      x: 998
+      x: 1149
       y: 1977
       width: 510
       height: 71
@@ -80,14 +80,14 @@ MonoBehaviour:
   - name: XPBar
     outer:
       serializedVersion: 2
-      x: 770
-      y: 424
+      x: 467
+      y: 4
       width: 101
       height: 101
     inner:
       serializedVersion: 2
-      x: 780
-      y: 434
+      x: 477
+      y: 14
       width: 81
       height: 81
     rotated: 0
@@ -98,14 +98,14 @@ MonoBehaviour:
   - name: XPBar_bg
     outer:
       serializedVersion: 2
-      x: 467
-      y: 82
+      x: 862
+      y: 390
       width: 128
       height: 135
     inner:
       serializedVersion: 2
-      x: 545
-      y: 115
+      x: 940
+      y: 423
       width: -28
       height: 81
     rotated: 0
@@ -116,14 +116,14 @@ MonoBehaviour:
   - name: Arrow
     outer:
       serializedVersion: 2
-      x: 619
-      y: 275
+      x: 998
+      y: 1798
       width: 150
       height: 250
     inner:
       serializedVersion: 2
-      x: 619
-      y: 275
+      x: 998
+      y: 1798
       width: 150
       height: 250
     rotated: 0
@@ -134,14 +134,14 @@ MonoBehaviour:
   - name: Timer_pin
     outer:
       serializedVersion: 2
-      x: 467
-      y: 9
+      x: 569
+      y: 33
       width: 70
       height: 72
     inner:
       serializedVersion: 2
-      x: 467
-      y: 9
+      x: 569
+      y: 33
       width: 70
       height: 72
     rotated: 0
@@ -152,13 +152,13 @@ MonoBehaviour:
   - name: Timer_arrow
     outer:
       serializedVersion: 2
-      x: 467
+      x: 710
       y: 218
       width: 151
       height: 307
     inner:
       serializedVersion: 2
-      x: 467
+      x: 710
       y: 218
       width: 151
       height: 307
@@ -185,6 +185,42 @@ MonoBehaviour:
     paddingRight: .0150451353
     paddingTop: 0
     paddingBottom: 0
+  - name: log_particle
+    outer:
+      serializedVersion: 2
+      x: 467
+      y: 106
+      width: 225
+      height: 170
+    inner:
+      serializedVersion: 2
+      x: 467
+      y: 106
+      width: 225
+      height: 170
+    rotated: 0
+    paddingLeft: .0844444409
+    paddingRight: .0533333346
+    paddingTop: .188235298
+    paddingBottom: .31764707
+  - name: Tree_icon
+    outer:
+      serializedVersion: 2
+      x: 467
+      y: 277
+      width: 242
+      height: 248
+    inner:
+      serializedVersion: 2
+      x: 467
+      y: 277
+      width: 242
+      height: 248
+    rotated: 0
+    paddingLeft: .0330578499
+    paddingRight: .0247933883
+    paddingTop: .0201612897
+    paddingBottom: .0120967738
   mCoordinates: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
