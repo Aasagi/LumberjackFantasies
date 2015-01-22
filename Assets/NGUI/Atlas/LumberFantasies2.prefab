@@ -41,35 +41,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 783d287f29a1fdd45b5d2bad0a81a04a, type: 2}
   sprites:
-  - name: Woodplate1
-    outer:
-      serializedVersion: 2
-      x: 467
-      y: 638
-      width: 534
-      height: 386
-    inner:
-      serializedVersion: 2
-      x: 467
-      y: 638
-      width: 534
-      height: 386
-    rotated: 0
-    paddingLeft: .00374531839
-    paddingRight: .018726591
-    paddingTop: .00518134702
-    paddingBottom: .018134715
   - name: Woodplate2
     outer:
       serializedVersion: 2
       x: 0
-      y: 542
+      y: 43
       width: 466
       height: 482
     inner:
       serializedVersion: 2
       x: 0
-      y: 542
+      y: 43
       width: 466
       height: 482
     rotated: 0
@@ -80,14 +62,14 @@ MonoBehaviour:
   - name: KozukaGothic_0
     outer:
       serializedVersion: 2
-      x: 467
-      y: 566
+      x: 998
+      y: 1977
       width: 510
       height: 71
     inner:
       serializedVersion: 2
-      x: 467
-      y: 566
+      x: 998
+      y: 1977
       width: 510
       height: 71
     rotated: 0
@@ -98,14 +80,14 @@ MonoBehaviour:
   - name: XPBar
     outer:
       serializedVersion: 2
-      x: 170
-      y: 440
+      x: 770
+      y: 424
       width: 101
       height: 101
     inner:
       serializedVersion: 2
-      x: 180
-      y: 450
+      x: 780
+      y: 434
       width: 81
       height: 81
     rotated: 0
@@ -116,19 +98,91 @@ MonoBehaviour:
   - name: XPBar_bg
     outer:
       serializedVersion: 2
-      x: 0
-      y: 393
-      width: 169
-      height: 148
+      x: 467
+      y: 82
+      width: 128
+      height: 135
     inner:
       serializedVersion: 2
-      x: 78
-      y: 426
-      width: 13
-      height: 94
+      x: 545
+      y: 115
+      width: -28
+      height: 81
+    rotated: 0
+    paddingLeft: .140625
+    paddingRight: .1796875
+    paddingTop: .0592592582
+    paddingBottom: .0370370373
+  - name: Arrow
+    outer:
+      serializedVersion: 2
+      x: 619
+      y: 275
+      width: 150
+      height: 250
+    inner:
+      serializedVersion: 2
+      x: 619
+      y: 275
+      width: 150
+      height: 250
+    rotated: 0
+    paddingLeft: .353333324
+    paddingRight: .353333324
+    paddingTop: .0160000008
+    paddingBottom: .00800000038
+  - name: Timer_pin
+    outer:
+      serializedVersion: 2
+      x: 467
+      y: 9
+      width: 70
+      height: 72
+    inner:
+      serializedVersion: 2
+      x: 467
+      y: 9
+      width: 70
+      height: 72
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Timer_arrow
+    outer:
+      serializedVersion: 2
+      x: 467
+      y: 218
+      width: 151
+      height: 307
+    inner:
+      serializedVersion: 2
+      x: 467
+      y: 218
+      width: 151
+      height: 307
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .0325732902
+    paddingBottom: .0293159615
+  - name: Timer_base
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 526
+      width: 997
+      height: 1522
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 526
+      width: 997
+      height: 1522
+    rotated: 0
+    paddingLeft: .0120361084
+    paddingRight: .0150451353
     paddingTop: 0
     paddingBottom: 0
   mCoordinates: 0
