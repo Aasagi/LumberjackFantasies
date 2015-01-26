@@ -18,7 +18,7 @@ RenderSettings:
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_AmbientLight: {r: .264705896, g: .260813177, b: .260813177, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -874,7 +874,7 @@ Light:
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
-    m_Strength: 1
+    m_Strength: .899999976
     m_Bias: .0500000007
     m_Softness: 8
     m_SoftnessFade: 5
@@ -2525,6 +2525,10 @@ Prefab:
     - target: {fileID: 400206, guid: 4eb36270057090f4d9c7ff2be402cfdc, type: 2}
       propertyPath: m_LocalPosition.y
       value: -.703125
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 4eb36270057090f4d9c7ff2be402cfdc, type: 2}
+      propertyPath: m_Shadows.m_Strength
+      value: .899999976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4eb36270057090f4d9c7ff2be402cfdc, type: 2}
