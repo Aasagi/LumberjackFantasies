@@ -193,6 +193,7 @@
     <Compile Include="Assets\Scripts\Game\Lumberjack.cs" />
     <Compile Include="Assets\Scripts\Game\LumberjackLevler.cs" />
     <Compile Include="Assets\Scripts\Game\PickUp.cs" />
+    <Compile Include="Assets\Scripts\Game\PropSpawner.cs" />
     <Compile Include="Assets\Scripts\Game\ReplayButton.cs" />
     <Compile Include="Assets\Scripts\Game\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\Game\ThirdPersonController.cs" />

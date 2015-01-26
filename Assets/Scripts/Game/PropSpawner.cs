@@ -21,6 +21,7 @@ namespace Assets.Scripts.Game
         {
             var chance = Random.value;
 
+			// Genereras närmare kanterna på banan
             if (positioningFromMiddle < 30)
             {
                 if (chance <= 0.2)
@@ -31,7 +32,25 @@ namespace Assets.Scripts.Game
                 {
                     return 1;
                 }
+				if (chance <= 0.5)
+				{
+					return 3;
+				}
+				if (chance <= 0.6)
+				{
+					return 4;
+				}
+				if (chance <= 0.7)
+				{
+					return 6;
+				}
+				if (chance <= 0.8)
+				{
+					return 7;
+				}
+
             }
+			// Genereras närmare mitten på banan
             else if (positioningFromMiddle < 60)
             {
                 if (chance <= 0.1)
@@ -42,15 +61,32 @@ namespace Assets.Scripts.Game
                 {
                     return 1;
                 }
+				if (chance <= 0.4)
+				{
+					return 3;
+				}
+				if (chance <= 0.5)
+				{
+					return 4;
+				}
+				if (chance <= 0.6)
+				{
+					return 6;
+				}
+				if (chance <= 0.7)
+				{
+					return 7;
+				}
+
             }
 
             if (chance <= 0.05)
             {
-                return 2;
+                return 5;
             }
             if (chance <= 0.15)
             {
-                return 1;
+                return 4;
             }
 
             return 0;
@@ -58,7 +94,7 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < 8; i++)
             {
                 var node = new GameObject();
                 node.transform.parent = terrain.transform;
@@ -70,7 +106,7 @@ namespace Assets.Scripts.Game
             {
                 var halfMapSizeX = terrain.terrainData.size.x * 0.35f;
                 var halfMapSizeZ = terrain.terrainData.size.z * 0.35f;
-                for (var i = 0; i < 1500; i++)
+                for (var i = 100; i < 1500; i++)
                 {
                     var xPos = Random.Range(-halfMapSizeX, halfMapSizeX);
                     var zPos = Random.Range(-halfMapSizeZ, halfMapSizeZ);
@@ -82,7 +118,7 @@ namespace Assets.Scripts.Game
                         var propToSpawn = GetPropToSpawn(positioningFromMiddle);
 
                         var newObject =
-                            Instantiate(PropPrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), Quaternion.Euler(0, Random.Range(0, 360), 0)) as
+                            Instantiate(PropPrefabs[propToSpawn], new Vector3(xPos, yPos, zPos), Quaternion.Euler(0, Random.Range(0, 360), 0)) as
                                 GameObject;
                         newObject.transform.localScale = new Vector3(scale, scale, scale);
                         newObject.transform.parent = PropTypeCollectorObjects[propToSpawn].transform;
