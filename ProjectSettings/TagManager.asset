@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Weapon
-  - Tree
-  - PickUp
-  - Attack
-  - Weapon2
-  - Player2
+  - Prop
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -24,7 +19,7 @@ TagManager:
   User Layer 11: Player
   User Layer 12: terrain
   User Layer 13: FallenTrees
-  User Layer 14: 
+  User Layer 14: Prop
   User Layer 15: 
   User Layer 16: 
   User Layer 17: 
