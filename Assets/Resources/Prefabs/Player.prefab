@@ -354,6 +354,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 54: {fileID: 5400002}
   - 136: {fileID: 13600000}
+  - 148: {fileID: 14893840}
   m_Layer: 0
   m_Name: Lumberjack
   m_TagString: Untagged
@@ -1615,13 +1616,13 @@ Animation:
   m_GameObject: {fileID: 100076}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  m_Animation: {fileID: 7400010, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_Animations:
-  - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400010, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400000, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400004, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400008, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
-  - {fileID: 7400010, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  - {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   - {fileID: 7400006, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -1722,7 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c537df51ee8973498214e9a8867779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
+  idleAnimation: {fileID: 7400010, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   walkAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   runAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
   jumpPoseAnimation: {fileID: 7400002, guid: fed3c15d22feddd48ad778f847cda678, type: 3}
@@ -1829,6 +1830,18 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!148 &14893840
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100044}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400042}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

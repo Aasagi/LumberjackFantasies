@@ -9,6 +9,15 @@ namespace Assets.Scripts.Game
         // Use this for initialization
 
         #region Fields
+        private enum AnimationName
+        {
+            IdleAnimation,
+            RunAnimation,
+            ChopAnimation,
+            FallAnimation,
+            LevelAnimation,
+            NoAnimation
+        }
         public string AttackInputButton;
         public AxeContainer AxeContainer;
         public ScoreDisplay Display;
@@ -26,6 +35,8 @@ namespace Assets.Scripts.Game
         private CharacterController characterController;
         private float invincibilityTimer;
         private float lockAnimationTimer;
+
+        private AnimationName currentAnimation = AnimationName.NoAnimation;
         #endregion
 
         #region Public Properties
@@ -55,7 +66,7 @@ namespace Assets.Scripts.Game
             controller.walkSpeed *= Levler.RunSpeedMultiplayer;
             CurrentAnimation["Run"].speed *= Levler.RunSpeedMultiplayer;
 
-            PlayLockingAnimation("Level");
+            PlayLockingAnimation(AnimationName.LevelAnimation);
             invincibilityTimer = 2.0f;
         }
 
@@ -69,7 +80,6 @@ namespace Assets.Scripts.Game
             Physics.IgnoreCollision(gameObject.collider, AxeContainer.ActiveAxe.collider, true);
         }
 
-        // Update is called once per frame
 
         private void OnTriggerEnter(Collider collider)
         {
@@ -82,7 +92,7 @@ namespace Assets.Scripts.Game
             }
             if (invincibilityTimer <= 0.0f && collider.isTrigger && collider.tag.Equals("Weapon"))
             {
-                PlayLockingAnimation("Fall");
+                PlayLockingAnimation(AnimationName.LevelAnimation);
                 Display.CollectedLogs = Math.Max(0, Display.CollectedLogs - 5);
                 invincibilityTimer = 2.0f;
             }
@@ -96,9 +106,9 @@ namespace Assets.Scripts.Game
             groundSmash.GetComponent<Attack>().Owner = gameObject;
         }
 
-        private void PlayLockingAnimation(string animationName)
+        private void PlayLockingAnimation(AnimationName animationName)
         {
-            CurrentAnimation.Play(animationName);
+            PlayAnimation(animationName);
             lockAnimationTimer = CurrentAnimation.clip.length;
         }
 
@@ -117,6 +127,11 @@ namespace Assets.Scripts.Game
 
         private void Update()
         {
+            if (Network.isClient)
+                return;
+
+            CurrentAnimation = GetComponentInChildren<Animation>();
+
             AxeContainer.ToggleColliderActive(attackTimer > 0.0f);
 
             characterController.enabled = lockAnimationTimer <= 0.0f;
@@ -135,16 +150,9 @@ namespace Assets.Scripts.Game
                 return;
             }
 
-            if (characterController.velocity.magnitude > 0.0f)
+            if (characterController.velocity.magnitude > 0.1f)
             {
-                if (attackTimer <= 0.0f)
-                {
-                    CurrentAnimation.Play("Run");
-                }
-                else
-                {
-                    CurrentAnimation.Blend("Run");
-                }
+                PlayAnimation(AnimationName.RunAnimation);
                 if (Footsteps.isPlaying == false)
                 {
                     Footsteps.Play();
@@ -152,16 +160,13 @@ namespace Assets.Scripts.Game
             }
             else
             {
-                if (attackTimer <= 0.0f)
-                {
-                    CurrentAnimation.Play("Idle2");
-                }
+                PlayAnimation(AnimationName.IdleAnimation);
                 Footsteps.Stop();
             }
             if (Input.GetButton(AttackInputButton) && attackTimer <= 0.0f)
             {
                 CurrentAnimation["Chop"].speed = AxeContainer.AxeStats.SwingSpeedMultiplayer;
-                CurrentAnimation.Play("Chop");
+                PlayAnimation(AnimationName.ChopAnimation);
                 AudioSingleton.Instance.PlaySound(SoundType.Grunt);
                 attackTimer = CurrentAnimation["Chop"].length / CurrentAnimation["Chop"].speed;
                 if (AxeContainer.AxeThree.activeSelf == true && Random.Range(0, 100) > 80)
@@ -170,6 +175,76 @@ namespace Assets.Scripts.Game
                 }
             }
         }
+
+        private void PlayAnimation(AnimationName animationName)
+        {
+            if (currentAnimation == animationName)
+                return;
+
+            var blendAnimation = false;
+            var animationString = GetAnimationToPlay(animationName, out blendAnimation);
+            if (string.IsNullOrEmpty(animationString) == false)
+            {
+                if (Network.peerType != NetworkPeerType.Disconnected)
+                {
+                    networkView.RPC("PlayAnimationName", RPCMode.All, animationString, blendAnimation);
+                }
+                else
+                {
+                    PlayAnimationName(animationString, blendAnimation);
+                }
+
+                currentAnimation = animationName;
+            }
+        }
+
+        [RPC]
+        private void PlayAnimationName(string animationName, bool blendAnimation)
+        {
+            if(blendAnimation)
+                CurrentAnimation.Blend(animationName);
+            else
+                CurrentAnimation.Play(animationName);
+        }
+
+        private string GetAnimationToPlay(AnimationName animationName, out bool blendAnimation)
+        {
+            string animationString = null;
+            blendAnimation = false;
+
+            switch (animationName)
+            {
+                case AnimationName.IdleAnimation:
+                    if (attackTimer <= 0.0f)
+                    {
+                        animationString = "Idle2";
+                    }
+                    break;
+                case AnimationName.RunAnimation:
+                    if (attackTimer <= 0.0f)
+                    {
+                        animationString = "Run";
+                    }
+                    else
+                    {
+                        animationString = "Run";
+                        blendAnimation = true;
+                    }
+                    break;
+                case AnimationName.ChopAnimation:
+                    animationString = "Chop";
+                    break;
+                case AnimationName.FallAnimation:
+                    animationString = "Fall";
+                    break;
+                case AnimationName.LevelAnimation:
+                    animationString = "Level";
+                    break;
+            }
+
+            return animationString;
+        }
+
         #endregion
     }
 }

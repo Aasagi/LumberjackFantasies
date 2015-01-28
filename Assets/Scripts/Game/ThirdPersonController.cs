@@ -105,37 +105,6 @@ namespace Assets.Scripts.Game
         private void Awake()
         {
             moveDirection = transform.TransformDirection(Vector3.forward);
-            _animation = GetComponent<Animation>();
-            if (!_animation)
-                Debug.Log("The character you would like to control doesn't have animations. Moving her might look weird.");
-
-
-            if (!idleAnimation)
-            {
-                _animation = null;
-                Debug.Log("No idle animation found. Turning off animations.");
-            }
-            if (!walkAnimation)
-            {
-                _animation = null;
-                Debug.Log("No walk animation found. Turning off animations.");
-            }
-            if (!runAnimation)
-            {
-                _animation = null;
-                Debug.Log("No run animation found. Turning off animations.");
-            }
-            if (!jumpPoseAnimation && canJump)
-            {
-                _animation = null;
-                Debug.Log("No jump animation found and the character has canJump enabled. Turning off animations.");
-            }
-            if (!attackAnimation)
-            {
-                _animation = null;
-                Debug.Log("No attack animation found. Turning off animations.");
-            }
-
         }
 
 
@@ -312,6 +281,8 @@ namespace Assets.Scripts.Game
 
         private void Update()
         {
+            if (Network.isClient)
+                return;
 
             if (!isControllable)
             {
@@ -345,60 +316,6 @@ namespace Assets.Scripts.Game
             // Move the controller
             var controller = GetComponent<CharacterController>();
             collisionFlags = controller.Move(movement);
-
-            // ANIMATION sector
-            if (_animation)
-            {
-                if (_characterState == CharacterState.Jumping)
-                {
-                    if (!jumpingReachedApex)
-                    {
-                        _animation[jumpPoseAnimation.name].speed = jumpAnimationSpeed;
-                        _animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
-                        _animation.CrossFade(jumpPoseAnimation.name);
-                    }
-                    else
-                    {
-                        _animation[jumpPoseAnimation.name].speed = -landAnimationSpeed;
-                        _animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
-                        _animation.CrossFade(jumpPoseAnimation.name);
-                    }
-                }
-                else if (_characterState == CharacterState.Attacking)
-                {
-                    _animation.CrossFade(attackAnimation.name);
-                }
-                else
-                {
-                    if (controller.velocity.sqrMagnitude < 0.1)
-                    {
-                        _animation.CrossFade(idleAnimation.name);
-                    }
-                    else
-                    {
-                        if (_characterState == CharacterState.Running)
-                        {
-                            _animation[runAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f,
-                                runMaxAnimationSpeed);
-                            _animation.CrossFade(runAnimation.name);
-                        }
-                        else if (_characterState == CharacterState.Trotting)
-                        {
-                            _animation[walkAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f,
-                                trotMaxAnimationSpeed);
-                            _animation.CrossFade(walkAnimation.name);
-                        }
-                        else if (_characterState == CharacterState.Walking)
-                        {
-                            _animation[walkAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f,
-                                walkMaxAnimationSpeed);
-                            _animation.CrossFade(walkAnimation.name);
-                        }
-
-                    }
-                }
-            }
-            // ANIMATION sector
 
             // Set rotation to the move direction
             if (IsGrounded())

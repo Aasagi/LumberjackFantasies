@@ -283,6 +283,7 @@ GameObject:
   - 114: {fileID: 11400066}
   - 114: {fileID: 11476762}
   - 114: {fileID: 11452222}
+  - 148: {fileID: 14851674}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -4797,6 +4798,18 @@ MonoBehaviour:
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
+--- !u!148 &14851674
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100166}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!154 &15400000
 TerrainCollider:
   m_ObjectHideFlags: 1

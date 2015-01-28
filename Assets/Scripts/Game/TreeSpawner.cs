@@ -66,6 +66,9 @@ namespace Assets.Scripts.Game
                 TreeTypeCollectorObjects.Add(node);
             }
 
+            if (Network.peerType != NetworkPeerType.Disconnected && Network.isClient)
+                return;
+
             if (TreePrefabs.Count > 0)
             {
                 var halfMapSizeX = terrain.terrainData.size.x * 0.35f;
@@ -77,24 +80,36 @@ namespace Assets.Scripts.Game
                     var positioningFromMiddle = halfMapSizeX - new Vector2(xPos, zPos).magnitude;
                     var yPos = terrain.SampleHeight(new Vector3(xPos, 0.0f, zPos));
                     var scale = Random.Range(0.8f, 1.5f);
+                    var yRot = Random.Range(0, 360);
+                    var treeType = GetTreeToSpawn(positioningFromMiddle);
                     if (positioningFromMiddle < halfMapSizeX - 10.0f)
                     {
-                        var treeToSpawn = GetTreeToSpawn(positioningFromMiddle);
-
-                        var newObject =
-                            Instantiate(TreePrefabs[treeToSpawn], new Vector3(xPos, yPos, zPos), Quaternion.Euler(0, Random.Range(0, 360), 0)) as
-                                GameObject;
-                        newObject.transform.localScale = new Vector3(scale, scale, scale);
-                        newObject.transform.parent = TreeTypeCollectorObjects[treeToSpawn].transform;
+                        if (Network.peerType == NetworkPeerType.Disconnected)
+                        {
+                            SpawnTree(treeType, xPos, yPos, zPos, scale, yRot);
+                        }
+                        else
+                        {
+                            networkView.RPC("SpawnTree", RPCMode.All, treeType, xPos, yPos, zPos, scale, yRot);
+                        }
                     }
                 }
             }
+        }
+
+        [RPC]
+        private void SpawnTree(int treeType, float xPos, float yPos, float zPos, float scale, int yRot)
+        {
+            var newObject = Instantiate(TreePrefabs[treeType], new Vector3(xPos, yPos, zPos), Quaternion.Euler(0, yRot, 0)) as GameObject;
+            newObject.transform.localScale = new Vector3(scale, scale, scale);
+            newObject.transform.parent = TreeTypeCollectorObjects[treeType].transform;
         }
 
         // Update is called once per frame
         private void Update()
         {
         }
+
         #endregion
     }
 }

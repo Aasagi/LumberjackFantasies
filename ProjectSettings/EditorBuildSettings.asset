@@ -10,6 +10,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Robin.unity
   - enabled: 1
-    path: Assets/Scenes/MainMenuScene.unity
+    path: Assets/Scenes/Menues/MainMenuScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Menues/LocalGameMenuScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Menues/OnlineGameScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Menues/HostGameMenuScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Menues/JoinGameMenuScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Menues/DisconnectedMenuScene.unity
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
