@@ -4446,6 +4446,7 @@ MonoBehaviour:
   - {fileID: 156720, guid: 06acdbb39e9e0864e8a55da5cf90fb17, type: 2}
   - {fileID: 124520, guid: b3feb3e1db1dff64580e5b9b01ae7e30, type: 2}
   - {fileID: 169828, guid: bfa6a44ba8530da4e888fb3e204b6d62, type: 2}
+  - {fileID: 124916, guid: f7e68c76f543b474da3cf7e6ca443485, type: 2}
   terrain: {fileID: 11400068}
 --- !u!114 &11470368
 MonoBehaviour:

@@ -48,6 +48,10 @@ namespace Assets.Scripts.Game
 				{
 					return 7;
 				}
+				if (chance <= 0.9)
+				{
+					return 8;
+				}
 
             }
 			// Genereras närmare mitten på banan
@@ -77,6 +81,10 @@ namespace Assets.Scripts.Game
 				{
 					return 7;
 				}
+				if (chance <= 0.8)
+				{
+					return 8;
+				}
 
             }
 
@@ -94,7 +102,7 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
-            for (var i = 0; i < 8; i++)
+            for (var i = 0; i < 9; i++)
             {
                 var node = new GameObject();
                 node.transform.parent = terrain.transform;
