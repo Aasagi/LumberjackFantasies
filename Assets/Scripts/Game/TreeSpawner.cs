@@ -23,11 +23,11 @@ namespace Assets.Scripts.Game
 
             if (positioningFromMiddle < 30)
             {
-                if (chance <= 0.2)
+				if (chance <= 0.2)
                 {
                     return 2;
                 }
-                if (chance <= 0.4)
+				if (chance <= 0.4)
                 {
                     return 1;
                 }

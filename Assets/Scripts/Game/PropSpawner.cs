@@ -22,7 +22,7 @@ namespace Assets.Scripts.Game
             var chance = Random.value;
 
 			// Genereras närmare kanterna på banan
-            if (positioningFromMiddle < 30)
+            if (positioningFromMiddle < 5)
             {
                 if (chance <= 0.2)
                 {
@@ -60,7 +60,10 @@ namespace Assets.Scripts.Game
 				{
 					return 10;
 				}
-
+				if (chance <= 0.95)
+				{
+					return 11;
+				}
             }
 			// Genereras närmare mitten på banan
             else if (positioningFromMiddle < 60)
@@ -101,6 +104,10 @@ namespace Assets.Scripts.Game
 				{
 					return 10;
 				}
+				if (chance <= 0.93)
+				{
+					return 11;
+				}
 
             }
 
@@ -118,7 +125,7 @@ namespace Assets.Scripts.Game
 
         private void Start()
         {
-            for (var i = 0; i < 11; i++)
+            for (var i = 0; i < 12; i++)
             {
                 var node = new GameObject();
                 node.transform.parent = terrain.transform;
